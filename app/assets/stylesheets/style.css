@@ -43,7 +43,7 @@ font-size: 26px;
 	display: none;
 	padding: 20px;
 	overflow: auto;
-	background-image: url(images/waves.gif);
+	background-image: url('waves.gif');
 	-webkit-box-sizing: border-box;
 	   -moz-box-sizing: border-box;
 	        box-sizing: border-box;
