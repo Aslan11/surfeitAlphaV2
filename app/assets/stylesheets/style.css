@@ -7,17 +7,17 @@ src: url(Socialico.otf);
 
 @font-face {
 	font-family: 'choom';
-	src: url(redhg.ttf)
+	src: url(redhg.ttf);
 }
 
 @font-face {
 	font-family: 'typicons';
-	src: url(typicons.ttf)
+	src: url(typicons.ttf);
 }
 
 @font-face {
     font-family: "Surfeit";
-    src: url(fonts/andes.ttf) format("truetype");
+    src: url(andes.ttf) format("truetype");
 }
 
 .maximizer{

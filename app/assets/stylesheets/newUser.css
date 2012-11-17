@@ -1,0 +1,148 @@
+@font-face {
+    font-family: "Surfeit";
+    src: url(andes.ttf);
+}
+
+
+body{
+	background: black;
+}
+
+header{
+	display: block;
+	position: relative;
+	border-bottom: solid;
+	background-image: url('waves.gif');
+	width: 100%;
+	left: -16px;
+	height: 118px;
+	top: -10px;
+	padding-right: 26px;
+}
+
+.headerContent{
+	position: relative;
+	top: 12px;
+	left: 18px;
+}
+
+.surfeitTextLogo{
+	display: inline-block;
+	font-family: Surfeit;
+	font-size: 110px;
+	position: relative;
+	color: #000;
+	text-shadow: 1px 1px 1px #F00;
+	top: -78px;
+}
+
+form input{
+	font-size: 32px;
+}
+
+.actions{
+	
+}
+
+.surfeitLogo{
+	width: 90px;
+	position: absolute;
+	left: 260px;
+}
+
+.createYourAccount{
+	position: absolute;
+	top: -34px;
+	font-family: Surfeit;
+	left: 376px;
+	font-size: 62px;
+}
+
+.alreadyMember{
+	font-family: Surfeit;
+float: right;
+font-size: 19px;
+color: black;
+top: -254px;
+left: 1px;
+position: relative;
+}
+
+.container{
+	width: 800px;
+	height: 600px;
+	top: 9px;
+	position: relative;
+	background-color: black;
+	border-radius: 8px;
+	margin:	auto;
+}
+
+.container form{
+	font-family: Surfeit;
+	color: #9BF3D4;
+	font-size: 48px;
+}
+
+.nameInput{
+	position: absolute;
+	left: 90px;
+	top: 20px;
+}
+
+.userInput{
+	left: 26px;
+	position: relative;
+}
+
+.emailInput{
+	position: relative;
+	left: 92px;
+	top: -24px;
+}
+
+.pwdInput{
+	position: relative;
+	left: -16px;
+	top: -48px;
+}
+
+.pwdConfirm{
+	position: relative;
+	top: -22px;
+	left: 32px;
+}
+
+.updateInput{
+	position: relative;
+	left: -51px;
+}
+
+.wereCool{
+	font-size: 20px;
+color: red;
+position: relative;
+top: -32px;
+left: 84px;
+}
+
+.actions input{
+	width: 336px;
+height: 96px;
+font-size: 46px;
+font-family: Surfeit;
+background-color: #9BF3D4;
+position: relative;
+left: 272px;
+border-radius: 5px;
+border-color: red;
+}
+
+
+
+
+
+
+
+
+

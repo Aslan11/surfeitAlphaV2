@@ -1,4 +1,21 @@
-Already have an account?
-<%= link_to "Sign in here", login_path %> 
-
-<%= render 'form' %>
+<head>
+<title>Surfeit Alpha</title>
+  
+  <%= stylesheet_link_tag "newUser", :media => "all" %>
+</head>
+ 
+<body>
+	<header>
+    	<div class="headerContent">
+	      <h1 class="surfeitTextLogo">Surfeit</h1>
+	      <%= image_tag 'SurfeitLogo.svg', :class => 'surfeitLogo' %>
+	      <h2 class='createYourAccount'>Sign Up Below And Enjoy!</h2>
+	      <%= link_to "Already have an account?", login_path, :class => 'alreadyMember' %>
+    	</div>
+    </header>
+    
+    <div class="container">
+    	<%= render 'form' %>
+    </div>
+    <br>
+</body>
