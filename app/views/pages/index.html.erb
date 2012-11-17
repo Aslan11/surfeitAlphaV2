@@ -1,24 +1,38 @@
+<head>
+	<title>Surfeit Alpha!</title>
+	
+		 <%= stylesheet_link_tag "landingDemo", :media => "all" %>
+		 <%= stylesheet_link_tag "landingStyle", :media => "all" %>
+		 
+		 <%= javascript_include_tag "modernizr.custom.landing" %>
+		<link href='http://fonts.googleapis.com/css?family=Economica:700,400italic' rel='stylesheet' type='text/css'>
+		<noscript>
+			<%= stylesheet_link_tag "landingnojs.css", :media => "all" %>
+		</noscript>
+</head>
 
+<body>
    
         <div class="container">
 			<!-- Codrops top bar -->
 
 			<header>
 				<h1>Surfeit</h1>
-				<%= image_tag "SurfeitLogo.svg" %>
-				<%= form_tag "/sessions/create" do %>
+				<%= image_tag "SurfeitLogo.svg", :class => "surfeitLandingLogo" %>
+				<%= form_tag "/sessions/create", :class => "loginForm" do %>
 
   					<%= label_tag :email, "Email:" %>
-  					<%= text_field_tag :email %>
+  					<%= text_field_tag :email%>
   					<%= label_tag :password, "Password:" %>
   					<%= password_field_tag :password %><br />
 
-  				<%= submit_tag "Login" %>
+  				<%= submit_tag "Login", :class => "loginButton" %>
   
 				<% end %>
-
-
-				</form>
+				
+				<span class="rememberMe"><input type="checkbox" value="remember">Remember Me</span>
+				
+				<a class="forgotPwd" href="#">Forgot Your Password?</a>
 				
 			</header>
 			<div id="da-slider" class="da-slider">
@@ -26,7 +40,7 @@
 					<h2>Welcome To <em>Your</em> Internet</h2>
 					<p>When you sign up for Surfeit, all of your social networks and rss feeds will be displayed in one large dynamic collection. Your Twitter, Facebook, Instagram, Pinterest, Youtube, Google+, and all RSS feeds will be in one simple collection.</p>
 					<a href="#" class="da-link">Sign Up</a>
-					<div class="da-img"><%= image_tag "surfeitLogo.svg" %></div>
+					<div class="da-img"><%= image_tag "SurfeitLogo.svg" %></div>
 				</div>
 				<div class="da-slide">
 					<h2>Easy management</h2>
@@ -52,3 +66,16 @@
 				</nav>
 			</div>
         </div>
+        
+        
+        <%= javascript_include_tag "jquery-1.7.1.min" %>
+        <%= javascript_include_tag "jquery.cslider" %>
+		<script type="text/javascript">
+			$(function() {
+			
+				$('#da-slider').cslider();
+				
+			});
+		</script>	
+        
+</body>

@@ -1,6 +1,6 @@
 @font-face {
     font-family: "Surfeit";
-    src: url(fonts/andes.ttf) format("truetype");
+    src: url(andes.ttf) format("truetype");
 }
 
 .da-slider{
@@ -10,7 +10,7 @@
 	position: relative;
 	margin: 30px auto;
 	overflow: hidden;
-	background: transparent url(../images/blackGrain.gif) repeat 0% 0%;
+	background: transparent url('blackGrain.gif') repeat 0% 0%;
 	border-top: 8px solid #000;
 	border-bottom: 8px solid #000;
 	-webkit-transition: background-position 1.4s ease-in-out 0.3s;
@@ -18,7 +18,7 @@
 	-o-transition: background-position 1.4s ease-in-out 0.3s;
 	-ms-transition: background-position 1.4s ease-in-out 0.3s;
 	transition: background-position 1.4s ease-in-out 0.3s;
-	top: -134px;
+	top: -174px;
 }
 
 .surfeitLandingLogo{
@@ -46,13 +46,23 @@ width: 955px;
 
 .forgotPwd{
 	font-size: 20px;
-position: absolute;
-top: 44px;
-left: 744px;
+	position: absolute;
+	top: 90px;
+	left: 1082px;
+	font-family: Surfeit;
 }
 
-.formInput{
-	height: 38px; font-size: 32px; top: -8px; position: relative;
+.loginButton{
+	left: 632px;
+top: -20px;
+}
+
+input{
+	height: 38px;
+font-size: 32px;
+top: -8px;
+width: 320px;
+position: relative;
 }
 
 .da-slide{
@@ -212,7 +222,7 @@ left: 744px;
 	height: 20px;
 	top: 5px;
 	left: 5px;
-	background: transparent url(../images/arrows.png) no-repeat top left;
+	background: transparent url('arrows.png') no-repeat top left;
 	border-radius: 50%;
 	box-shadow: 1px 1px 2px rgba(0,0,0,0.1);
 }
