@@ -1,0 +1,234 @@
+<!--
+<h1>CURRENT</h1>
+<p><h3>[SURFEIT LOGO]</h3></p>
+<h3>The Meny</h3>
+<table>
+	<tr><%= User.find_by_id(session[:user_id]) %></tr>
+
+	<tr><%= link_to 'Sign Out', logout_path %></tr>
+</table>
+	<p><%= "[jQuery Sort Features]" %></p>
+
+	<p><%="[Twitter Logo] on/off"%></p>
+	<p><%="[Facebook Logo] on/off"%></p>
+	<p><%="[RSS Logo] on/off"%></p>
+
+	<%= link_to "Manage Channels", channels_path %><br>
+	<%= link_to "My Account", index_path %>
+-->
+
+
+<nav id="site-nav" class="meny">
+    <h1><a href="index.html">Surfeit</a></h1>
+  <section id="options">
+   <div class="option-combo">
+      <h2>Filter:</h2>
+      
+      <ul id="filter" class="option-set clearfix" data-option-key="filter">
+        <li><a href="#show-all" data-option-value="*" class="selected">All</a></li>
+        <li><a href="#elements" data-option-value=".facebook">Facebook</a></li>
+        <li><a href="#features" data-option-value=".twitter">Twitter</a></li>
+        <li><a href="#features" data-option-value=".youtube">Youtube</a></li>
+        <li><a href="#features" data-option-value=".rss">RSS</a></li>
+      </ul>
+      
+      <h2>Sort:</h2>
+      <ul id="sort" class="option-set clearfix" data-option-key="sortBy">
+        <li><a href="#mixed" data-option-value="originType" >Origin</a></li>
+        <li><a href="#original" data-option-value="original-order" class="selected">Recent</a></li>
+      </ul>
+    </div>
+      
+      </section>
+    
+  </nav> <!-- #site-nav -->
+  
+  
+  
+  <div class="contents">
+  <section id="content">
+  
+  <div id="container" class="super-list variable-sizes clearfix">
+    
+      
+          
+    <div class="element twitter width2">
+      <p class="originType">L</p>
+      <h3 class="symbol">Jim Turner</h3>
+      <h2 class="name"> a think I'm going to join the Surfeit team.</h2>
+      <a class="maximizer" href="#">m</a>
+    </div>
+    
+    <div class="element youtube width2 height2">
+    	<p class="originType">X</p>
+    	<h3 class="symbol">Brett Atchley</h3>
+    	<iframe width="220" height="150" src="http://www.youtube.com/embed/aT5l1KVe-NU" frameborder="0" allowfullscreen style="top: 3.5em; left: .4em;"></iframe>
+    </div>
+    
+     <div class="element twitter width2">
+      <p class="originType">L</p>
+      <h3 class="symbol">Sarah Binion</h3>
+      <h2 class="name">OMG Surfeit is so awesome!!!! OMG Surfeit is so eeeeeee!!!!</h2>
+      <a class="maximizer" href="#">m</a>
+    </div>
+    
+        <div class="element rss width2">
+      <p class="originType">R</p>
+      <h3 class="symbol">Gizmodo</h3>
+      <h2 class="name"><a href="http://gizmodo.com/5959068/a-week-with-the-ipad-mini"  target="_blank" style="position: relative">A week with iPad Mini</a></h2>
+      <a class="maximizer" href="#">m</a>
+    </div>
+    	
+    
+     <div class="element twitter width2">
+      <p class="originType">L</p>
+      <h3 class="symbol">Sarah Binion</h3>
+      <h2 class="name"> b OMG Surfeit is so awesome!!!!</h2>
+      <a class="maximizer" href="#">m</a>
+    </div>
+    
+     <div class="element facebook width2">
+      <p class="originType">F</p>
+      <h3 class="symbol">Brian Martinek</h3>
+      <h2 class="name">I'm a god damn back end sage</h2>
+      <a class="maximizer" href="#">m</a>
+    </div>
+    
+    
+     <div class="element twitter width2">
+      <p class="originType">L</p>
+      <h3 class="symbol">Jim Turner</h3>
+      <h2 class="name"> a think I'm going to join the Surfeit team.</h2>
+      <a class="maximizer" href="#">m</a>
+    </div>
+    
+    <div class="element youtube width2 height2">
+    	<p class="originType">X</p>
+    	<h3 class="symbol">Brett Atchley</h3>
+    	<iframe width="220" height="150" src="http://www.youtube.com/embed/aT5l1KVe-NU" frameborder="0" allowfullscreen style="top: 3.5em; left: .4em;"></iframe>
+    </div>
+    
+     <div class="element twitter width2">
+      <p class="originType">L</p>
+      <h3 class="symbol">Sarah Binion</h3>
+      <h2 class="name">OMG Surfeit is so awesome!!!! OMG Surfeit is so eeeeeee!!!!</h2>
+      <a class="maximizer" href="#">m</a>
+    </div>
+    
+        <div class="element rss width2">
+      <p class="originType">R</p>
+      <h3 class="symbol">Gizmodo</h3>
+      <h2 class="name"><a href="http://gizmodo.com/5959068/a-week-with-the-ipad-mini"  target="_blank" style="position: relative">A week with iPad Mini</a></h2>
+      <a class="maximizer" href="#">m</a>
+    </div>
+    	
+    
+     <div class="element twitter width2">
+      <p class="originType">L</p>
+      <h3 class="symbol">Sarah Binion</h3>
+      <h2 class="name"> b OMG Surfeit is so awesome!!!!</h2>
+      <a class="maximizer" href="#">m</a>
+    </div>
+    
+     <div class="element facebook width2">
+      <p class="originType">F</p>
+      <h3 class="symbol">Brian Martinek</h3>
+      <h2 class="name">I'm a god damn back end sage</h2>
+      <a class="maximizer" href="#">m</a>
+    </div>
+
+
+ <div class="element twitter width2">
+      <p class="originType">L</p>
+      <h3 class="symbol">Jim Turner</h3>
+      <h2 class="name"> a think I'm going to join the Surfeit team.</h2>
+      <a class="maximizer" href="#">m</a>
+    </div>
+    
+    <div class="element youtube width2 height2">
+    	<p class="originType">X</p>
+    	<h3 class="symbol">Brett Atchley</h3>
+    	<iframe width="220" height="150" src="http://www.youtube.com/embed/aT5l1KVe-NU" frameborder="0" allowfullscreen style="top: 3.5em; left: .4em;"></iframe>
+    </div>
+    
+     <div class="element twitter width2">
+      <p class="originType">L</p>
+      <h3 class="symbol">Sarah Binion</h3>
+      <h2 class="name">OMG Surfeit is so awesome!!!! OMG Surfeit is so eeeeeee!!!!</h2>
+      <a class="maximizer" href="#">m</a>
+    </div>
+    
+        <div class="element rss width2">
+      <p class="originType">R</p>
+      <h3 class="symbol">Gizmodo</h3>
+      <h2 class="name"><a href="http://gizmodo.com/5959068/a-week-with-the-ipad-mini"  target="_blank" style="position: relative">A week with iPad Mini</a></h2>
+      <a class="maximizer" href="#">m</a>
+    </div>
+    	
+    
+     <div class="element twitter width2">
+      <p class="originType">L</p>
+      <h3 class="symbol">Sarah Binion</h3>
+      <h2 class="name"> b OMG Surfeit is so awesome!!!!</h2>
+      <a class="maximizer" href="#">m</a>
+    </div>
+    
+     <div class="element facebook width2">
+      <p class="originType">F</p>
+      <h3 class="symbol">Brian Martinek</h3>
+      <h2 class="name">I'm a god damn back end sage</h2>
+      <a class="maximizer" href="#">m</a>
+    </div>
+
+
+ <div class="element twitter width2">
+      <p class="originType">L</p>
+      <h3 class="symbol">Jim Turner</h3>
+      <h2 class="name"> a think I'm going to join the Surfeit team.</h2>
+      <a class="maximizer" href="#">m</a>
+    </div>
+    
+    <div class="element youtube width2 height2">
+    	<p class="originType">X</p>
+    	<h3 class="symbol">Brett Atchley</h3>
+    	<iframe width="220" height="150" src="http://www.youtube.com/embed/aT5l1KVe-NU" frameborder="0" allowfullscreen style="top: 3.5em; left: .4em;"></iframe>
+    </div>
+    
+     <div class="element twitter width2">
+      <p class="originType">L</p>
+      <h3 class="symbol">Sarah Binion</h3>
+      <h2 class="name">OMG Surfeit is so awesome!!!! OMG Surfeit is so eeeeeee!!!!</h2>
+      <a class="maximizer" href="#">m</a>
+    </div>
+    
+        <div class="element rss width2">
+      <p class="originType">R</p>
+      <h3 class="symbol">Gizmodo</h3>
+      <h2 class="name"><a href="http://gizmodo.com/5959068/a-week-with-the-ipad-mini"  target="_blank" style="position: relative">A week with iPad Mini</a></h2>
+      <a class="maximizer" href="#">m</a>
+    </div>
+    	
+    
+     <div class="element twitter width2">
+      <p class="originType">L</p>
+      <h3 class="symbol">Sarah Binion</h3>
+      <h2 class="name"> b OMG Surfeit is so awesome!!!!</h2>
+      <a class="maximizer" href="#">m</a>
+    </div>
+    
+     <div class="element facebook width2">
+      <p class="originType">F</p>
+      <h3 class="symbol">Brian Martinek</h3>
+      <h2 class="name">I'm a god damn back end sage</h2>
+      <a class="maximizer" href="#">m</a>
+    </div>
+
+    
+
+     
+    <!-- <div class="link away" data-number="35"><a href="http://surfeit.me">Surfeit</a></div> -->
+  </div>
+ 
+
+  </section> <!-- #content -->
+  </div>

@@ -1,0 +1,45 @@
+class SessionsController < ApplicationController
+
+
+	def login
+	
+		
+	end
+	
+	def create_twitter
+		user = User.from_omniauth (env["omniauth.auth"])
+		session[:user_id] = user.id
+		redirect_to user_path, notice: "Signed In!"
+	end
+
+
+	  def auth_hash
+    request.env['omniauth.auth']
+  		end
+
+
+
+	def create_surfeit
+
+	 user = User.find_by_email(params[:email])
+    
+   		 if user != nil && user.authenticate(params[:password])
+   		   session[:user_id] = user.id
+   		   redirect_to users_path, :notice => "Welcome back, #{user.name}!"
+   		 else
+   		   redirect_to login_path, :notice => "Email & Password do not match"
+   		 end
+	end
+
+
+
+	def destroy
+	
+		session[:user_id] = nil
+    	redirect_to index_path
+
+	end
+
+
+end
+

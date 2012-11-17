@@ -1,0 +1,54 @@
+
+   
+        <div class="container">
+			<!-- Codrops top bar -->
+
+			<header>
+				<h1>Surfeit</h1>
+				<%= image_tag "SurfeitLogo.svg" %>
+				<%= form_tag "/sessions/create" do %>
+
+  					<%= label_tag :email, "Email:" %>
+  					<%= text_field_tag :email %>
+  					<%= label_tag :password, "Password:" %>
+  					<%= password_field_tag :password %><br />
+
+  				<%= submit_tag "Login" %>
+  
+				<% end %>
+
+
+				</form>
+				
+			</header>
+			<div id="da-slider" class="da-slider">
+				<div class="da-slide">
+					<h2>Welcome To <em>Your</em> Internet</h2>
+					<p>When you sign up for Surfeit, all of your social networks and rss feeds will be displayed in one large dynamic collection. Your Twitter, Facebook, Instagram, Pinterest, Youtube, Google+, and all RSS feeds will be in one simple collection.</p>
+					<a href="#" class="da-link">Sign Up</a>
+					<div class="da-img"><%= image_tag "surfeitLogo.svg" %></div>
+				</div>
+				<div class="da-slide">
+					<h2>Easy management</h2>
+					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+					<a href="#" class="da-link">Read more</a>
+					<div class="da-img"><%= image_tag "2.png" %></div>
+				</div>
+				<div class="da-slide">
+					<h2>Revolution</h2>
+					<p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
+					<a href="#" class="da-link">Read more</a>
+					<div class="da-img"><%= image_tag "3.png" %></div>
+				</div>
+				<div class="da-slide">
+					<h2>Quality Control</h2>
+					<p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p>
+					<a href="#" class="da-link">Read more</a>
+					<div class="da-img"><%= image_tag "4.png" %></div>
+				</div>
+				<nav class="da-arrows">
+					<span class="da-arrows-prev"></span>
+					<span class="da-arrows-next"></span>
+				</nav>
+			</div>
+        </div>
