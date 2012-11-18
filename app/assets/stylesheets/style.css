@@ -313,6 +313,15 @@ font-family: Pictograms;
 
 .variable-sizes .element.height2 { height: 230px; }
 
+.variable-sizes .element.width3 { width: 350px;}
+
+.variable-sizes .element.height3 { height: 350px;}
+
+.variable-sizes .element.width4 {width: 470px;}
+
+.variable-sizes .element.height4 {height: 470px;}
+}
+
 .variable-sizes .element.width2.height2 {
   font-size: 1.0em;
 }
