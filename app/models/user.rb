@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
   validates_presence_of :name, :email, :username
   validates_uniqueness_of :email, :username
 
+
   def self.from_omniauth(auth)
 	where(auth.slice("provider", "uid")).first || create_from_omniauth(auth)
 	

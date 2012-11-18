@@ -13,7 +13,7 @@ Surfeitalpha::Application.routes.draw do
   resource :account
   match 'account'  => 'users#show'
 
-  get '/:username' => 'pages#current', :as => :current
+  get '/current' => 'pages#current', :as => :user_current
 
   #Social Channels
 
