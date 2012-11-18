@@ -1,21 +1,4 @@
-<!--
-<h1>CURRENT</h1>
-<p><h3>[SURFEIT LOGO]</h3></p>
-<h3>The Meny</h3>
-<table>
-	<tr><%= User.find_by_id(session[:user_id]) %></tr>
 
-	<tr><%= link_to 'Sign Out', logout_path %></tr>
-</table>
-	<p><%= "[jQuery Sort Features]" %></p>
-
-	<p><%="[Twitter Logo] on/off"%></p>
-	<p><%="[Facebook Logo] on/off"%></p>
-	<p><%="[RSS Logo] on/off"%></p>
-
-	<%= link_to "Manage Channels", channels_path %><br>
-	<%= link_to "My Account", index_path %>
--->
 <head>
 	 <title>Surfeit Alpha</title>
   
@@ -26,6 +9,15 @@
 
 <nav id="site-nav" class="meny">
     <h1><a href="index.html">Surfeit</a></h1>
+    
+    <% if session[:user_id] == nil   # no one is logged in  %>
+      <%= redirect_to index_url %>
+    <% else # someone is logged in %>
+      
+      Welcome, <%= User.find_by_id(session[:user_id]).name %> | 
+      <%= link_to 'Sign Out', logout_path %>
+    <% end %>
+
   <section id="options">
    <div class="option-combo">
       <h2>Filter:</h2>
