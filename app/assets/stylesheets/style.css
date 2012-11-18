@@ -269,7 +269,7 @@ width: 118%;
 .element .symbol {
 	left: 0.2em;
 	top: 0.4em;
-	font-size: 2.0em;
+	font-size: 1.5em;
 	line-height: 1.0em;
 	color: #FFF;
 }
@@ -284,7 +284,7 @@ width: 118%;
 .element .name {
   left: 0.5em;
   top: 2.6em;
-  font-size: 1.3em;
+  font-size: 1.0em;
 }
 
 .element .weight {
@@ -311,9 +311,9 @@ font-family: Pictograms;
 
 .variable-sizes .element.width2 { width: 230px; }
 
-.variable-sizes .element.height2 { height: 230px; }
+.variable-sizes .element.height2 { height: 230px;}
 
-.variable-sizes .element.width3 { width: 350px;}
+.variable-sizes .element.width3 { width: 350px;font-size: 1.3em }
 
 .variable-sizes .element.height3 { height: 350px;}
 
@@ -325,6 +325,8 @@ font-family: Pictograms;
 .variable-sizes .element.width2.height2 {
   font-size: 1.0em;
 }
+
+
 
 .element.large,
 .variable-sizes .element.large,
