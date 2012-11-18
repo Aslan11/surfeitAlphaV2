@@ -1,6 +1,30 @@
-<h1> Edit User </h1>
+ <head>
+<title>Surfeit Alpha</title>
+  
+  <%= stylesheet_link_tag "newUser", :media => "all" %>
+</head>
 
-<%= render 'form' %>
+  <body>
+    <header>
+    	<div class="navbar">
+      	<nav>
+         
+            <%= link_to 'Current', user_current_path %> |
+            <%= link_to 'Networks', channels_path %> |
+            <%= link_to "Account", user_current_path %> | 
+            <%= current_user.name %> 
+            <%= link_to "Sign Out", logout_path %>
+      	</nav>
+      	<div class="headerContent">
+	      <h1 class="surfeitTextLogo">Surfeit</h1>
+	      <%= image_tag 'SurfeitLogo.svg', :class => 'surfeitLogo' %>
+	      <h2 class='createYourAccount'>Update User Information</h2>
+	  </div>
+    </header>
 
-<%= link_to 'Show', @user %>
-<%= link_to 'Back', movies_url %>
+
+    <div class="container">
+    	<%= render 'form_edit' %>
+    </div>
+    <br>
+</body>
