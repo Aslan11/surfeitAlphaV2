@@ -28,6 +28,13 @@ bottom: -3px;
 font-size: 26px;
 }
 
+.stache{
+width: 25%;
+position: absolute;
+bottom: -9px;
+left: -4px;
+}
+
 /**** Isotope Filtering ****/
 
 .isotope-item {
