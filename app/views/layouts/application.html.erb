@@ -10,7 +10,7 @@
       <%= link_to "Sign In", login_url %>
     <% else # someone is logged in %>
       
-      <%= User.find_by_id(session[:user_id]).name %>
+      <%= User.find_by_id(session[:user_id]) %>
       <%= link_to 'Account', account_path %>
       <%= link_to 'Sign Out', logout_path %>
     <% end %>
