@@ -2,7 +2,13 @@ class SessionsController < ApplicationController
 
 
 	def login
-	
+		if 
+      		session[:user_id] != nil
+      		redirect_to users_path
+    	else
+      		flash[:notice] = "Email or Password do not match. Try again."
+      		redirect_to index_path
+    end
 		
 	end
 	

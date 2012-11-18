@@ -21,6 +21,12 @@
 				<%= image_tag "SurfeitLogo.svg", :class => "surfeitLandingLogo" %>
 				<%= form_tag "/sessions/create", :class => "loginForm" do %>
 
+					<div class="content">
+      					<% if flash[:notice] %>
+        				<p id="notice"><%= flash[:notice] %></p>
+      					<% end %>
+      				</div>
+
   					<%= label_tag :email, "Email:" %>
   					<%= text_field_tag :email%>
   					<%= label_tag :password, "Password:" %>
