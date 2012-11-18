@@ -1,21 +1,7 @@
 <!DOCTYPE html>
 <html>
 
-<!--
-  <nav>
-    <%= link_to "Sign in with Twitter", "/auth/twitter"%>
-    
-    
-    <% if session[:user_id] == nil   # no one is logged in  %>
-      <%= link_to "Sign In", login_url %>
-    <% else # someone is logged in %>
-      
-      <%= User.find_by_id(session[:user_id]) %>
-      <%= link_to 'Account', account_path %>
-      <%= link_to 'Sign Out', logout_path %>
-    <% end %>
-  </nav>
--->
+
 
 <%= yield %>
 

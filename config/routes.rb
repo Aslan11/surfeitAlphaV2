@@ -8,10 +8,11 @@ Surfeitalpha::Application.routes.draw do
   match 'auth/:provider/callback', to: 'sessions#create_twitter'
   
   #users
-
+  get '/current' => 'pages#current', :as => :user_current
+  
   resources :users
 
-  get '/current' => 'pages#current', :as => :user_current
+  
 
   #Social Channels
 
