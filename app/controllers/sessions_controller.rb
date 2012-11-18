@@ -31,9 +31,9 @@ class SessionsController < ApplicationController
     
    		 if user != nil && user.authenticate(params[:password])
    		   session[:user_id] = user.id
-   		   redirect_to users_path, :notice => "Welcome back, #{user.name}!"
+   		   redirect_to users_path
    		 else
-   		   redirect_to login_path, :notice => "Email & Password do not match"
+   		   redirect_to index_path, :notice => "Email & Password do not match"
    		 end
 	end
 

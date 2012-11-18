@@ -10,13 +10,9 @@
 <nav id="site-nav" class="meny">
     <h1><a href="index.html">Surfeit</a></h1>
     
-    <% if session[:user_id] == nil   # no one is logged in  %>
-      <%= redirect_to index_url %>
-    <% else # someone is logged in %>
-      
       Welcome, <%= User.find_by_id(session[:user_id]).name %> | 
       <%= link_to 'Sign Out', logout_path %>
-    <% end %>
+    
 
   <section id="options">
    <div class="option-combo">
