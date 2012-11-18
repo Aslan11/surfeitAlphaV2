@@ -1,3 +1,15 @@
+<header>
+<div class="navBar">
+      	<nav>
+         
+            <%= link_to 'Current', user_current_path %> |
+            <%= link_to 'Networks', channels_path %> |
+            <%= link_to "Account", user_current_path %> | 
+            <%= current_user.name %> 
+            <%= link_to "Sign Out", logout_path %>
+      	</nav>
+      </header>
+
 <h1> USER PAGE </h1>
 
 Welcome, <%= User.find_by_id(session[:user_id]).name %>
