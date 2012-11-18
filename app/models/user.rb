@@ -2,7 +2,6 @@ class User < ActiveRecord::Base
   attr_accessible :email, :name, :password, :password_confirmation, :username, :email_opt_in
 
   has_many :channels
-  has_one :account
 
   has_secure_password
 
