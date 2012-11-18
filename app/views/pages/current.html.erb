@@ -31,6 +31,12 @@
         <li><a href="#mixed" data-option-value="originType" >Origin</a></li>
         <li><a href="#original" data-option-value="original-order" class="selected">Recent</a></li>
       </ul>
+      
+      
+      Prepend:
+      <ul class="clearfix">
+      <li id="prepend"><a href='#prepend'>Prepend</a></li>
+      </ul>
     </div>
       
       </section>
@@ -229,6 +235,7 @@
   
   <%= javascript_include_tag "jquery-1.7.1.min" %>
 <%= javascript_include_tag "jquery.isotope.min" %>
+<%= javascript_include_tag "fake-element" %>
 <%= javascript_include_tag "meny.min" %>
 <script>
     $(function(){
@@ -254,6 +261,17 @@
           }
         }
       });
+      
+       $('#prepend a').click(function(){
+        var $newEls = $( fakeElement.getGroup() );
+        $container
+          .prepend( $newEls ).isotope('reloadItems').isotope({ sortBy: 'original-order' })
+          // set sort back to symbol for inserting
+          .isotope('option', { sortBy: 'symbol' });
+
+        return false;
+      });
+
     
       
       var $optionSets = $('#options .option-set'),
