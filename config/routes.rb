@@ -10,8 +10,6 @@ Surfeitalpha::Application.routes.draw do
   #users
 
   resources :users
-  resource :account
-  match 'account'  => 'users#show'
 
   get '/current' => 'pages#current', :as => :user_current
 
