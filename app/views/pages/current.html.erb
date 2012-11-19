@@ -57,6 +57,15 @@
   
   <div id="container" class="super-list variable-sizes clearfix">
     
+	<div class="blackout"></div> 
+	
+	
+	<div class="element test twitter width2">
+      <p class="originType">L</p>
+      <h3 class="symbol">Test</h3>
+      <h2 class="name"> "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h2>
+      <%= image_tag "stache.svg", :class => 'stache' %>
+    </div>
 
     <% @mediafeed.data.each do |media| %>
     <div class="element width2 height2 instagram">
@@ -64,30 +73,13 @@
     <p style="display: none"><%= media.likes.first.last%></p>
     </div>
     <% end%> 
-
-    <div class="blackout"></div>  
-          
-    <div class="element twitter width2">
-      <p class="originType">L</p>
-      <h3 class="symbol">Test</h3>
-      <h2 class="name"> "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h2>
-      <%= image_tag "stache.svg", :class => 'stache' %>
-    </div>
-    
-        <div class="element instagram">
-    	<%=image_tag "SurfeitLogo.svg", :width => '100%'%>
-    </div>
     
     <div class="element youtube width2 height2">
     	<p class="originType">X</p>
     	<h3 class="symbol">Brett Atchley</h3>
     	<iframe width="220" height="150" src="http://www.youtube.com/embed/aT5l1KVe-NU" frameborder="0" allowfullscreen style="top: 3.5em; left: .4em;"></iframe>
     </div>
-    
-    <div class="element instagram">
-    	<%=image_tag "SurfeitLogo.svg", :width => '100%'%>
-    </div>
-    
+   
      <div class="element twitter width2">
       <p class="originType">L</p>
       <h3 class="symbol">Sarah Binion</h3>
@@ -129,10 +121,6 @@
     	<p class="originType">X</p>
     	<h3 class="symbol">Brett Atchley</h3>
     	<iframe width="95%" height="75%" src="http://www.youtube.com/embed/aT5l1KVe-NU" frameborder="0" allowfullscreen style="top: 3.5em; left: .4em;"></iframe>
-    </div>
-    
-    <div class="element instagram width4 height4">
-    	<%=image_tag "SurfeitLogo.svg", :width => '100%'%>
     </div>
     
      <div class="element twitter width3">
@@ -253,11 +241,6 @@
       <h2 class="name">I'm a god damn back end sage</h2>
       <%= image_tag "stache.svg", :class => 'stache' %>
     </div>
-
-        <div class="element instagram">
-    	<%=image_tag "SurfeitLogo.svg", :width => '100%'%>
-    </div>
-
      
     <!-- <div class="link away" data-number="35"><a href="http://surfeit.me">Surfeit</a></div> -->
   </div>
@@ -346,19 +329,44 @@
 	   });
    });
    
+   var tempWidth = '';
+   var tempHeight = '';
+   var tempTransform = '';
+   var tempZIndex = '';
+   
    $(".instagram").on("click", function(){
-	$(this).css({webkitTransform: "", left: "23%", width: "50%", height: "50%", zIndex: "5"});
-		   $(".blackout").css({webkitTransform: "", zIndex: "4", backgroundColor: "black", width: "100%", height: "100%"})
+	   if($(this).hasClass("expanded") == false){
+	   	tempWidth = $(this).css("width");
+	   	tempHeight = $(this).css("height");
+	   	tempTransform = $(this).css("webkitTransform");
+	   	tempZIndex = $(this).css("zIndex");
+		$(this).css({webkitTransform: "", left: "23%", width: "50%", height: "50%", zIndex: "5"});
+		$(".blackout").css({webkitTransform: "", zIndex: "4", backgroundColor: "black", width: "100%", height: "100%"});
+		$(this).addClass("expanded");
+	   }
+	   else if($(this).hasClass("expanded") == true){
+		   $(".blackout").css({zIndex: "0", width: "0px", height: "0px"});
+		   $(this).css({webkitTransform: tempTransform, left: "0px", width: tempWidth, height: tempHeight, zIndex: tempZIndex});
+		   $(this).removeClass("expanded");
+		   $("#container").isotope({ sortBy: 'original-order' });
+	   };
    });
    $(".element h3").on("click", function(){
 	   if ($(this).parent(this).hasClass("expanded") == false){
+	   	   tempWidth = $(this).parent(this).css("width");
+	   	   tempHeight = $(this).parent(this).css("height");
+	   	   tempTransform = $(this).parent(this).css("webkitTransform");
+	   	   tempZIndex = $(this).parent(this).css("zIndex");
 		   $(this).parent(this).css({webkitTransform: "", left: "23%", width: "50%", height: "50%", zIndex: "5"});
-		   $(".blackout").css({webkitTransform: "", zIndex: "4", backgroundColor: "black", width: "100%", height: "100%"})
-		   $(this).parent(this).addClass("expanded")
+		   $(".blackout").css({webkitTransform: "", zIndex: "4", backgroundColor: "black", width: "100%", height: "100%"});
+		   $(this).parent(this).addClass("expanded");
+		   
 	   }
 	   else if ($(this).parent(this).hasClass("expanded") == true){
 		 $(".blackout").css({zIndex: "0", width: "0px", height: "0px"});
-		   
+		 $(this).parent(this).css({webkitTransform: tempTransform, left: "0px", width: tempWidth, height: tempHeight, zIndex: tempZIndex});
+		 $(this).parent(this).removeClass("expanded");
+		 $("#container").isotope({ sortBy: 'original-order' });
 	   };
 
    });
