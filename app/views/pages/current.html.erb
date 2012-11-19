@@ -57,6 +57,7 @@
   
   <div id="container" class="super-list variable-sizes clearfix">
     
+
     <% @mediafeed.data.each do |media| %>
     <div class="element width2 height2 instagram">
     <img src="<%= media.images.first.last.url%>" style="width: 100%; height: 100%">
@@ -64,6 +65,8 @@
     </div>
     <% end%> 
 
+    <div class="blackout"></div>  
+          
     <div class="element twitter width2">
       <p class="originType">L</p>
       <h3 class="symbol">Test</h3>
@@ -125,7 +128,7 @@
     <div class="element youtube width2 height2">
     	<p class="originType">X</p>
     	<h3 class="symbol">Brett Atchley</h3>
-    	<iframe width="220" height="150" src="http://www.youtube.com/embed/aT5l1KVe-NU" frameborder="0" allowfullscreen style="top: 3.5em; left: .4em;"></iframe>
+    	<iframe width="95%" height="75%" src="http://www.youtube.com/embed/aT5l1KVe-NU" frameborder="0" allowfullscreen style="top: 3.5em; left: .4em;"></iframe>
     </div>
     
     <div class="element instagram width4 height4">
@@ -342,6 +345,11 @@
 		   opacity: "1",
 	   });
    });
+   
+   $(".element h3").on("click", function(){
+$(this).parent(this).css({webkitTransform: "", left: "23%", width: "50%", height: "50%", zIndex: "5"});
+$(".blackout").css({webkitTransform: "", zIndex: "4", backgroundColor: "black", width: "100%", height: "100%"});
+});
   </script> 
   <script>
 			// Create an instance of Meny

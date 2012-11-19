@@ -16,7 +16,9 @@ Surfeitalpha::Application.routes.draw do
   #users
   get '/current' => 'pages#current', :as => :user_current
   
-  resources :users
+  resources :users do 
+
+  end
 
   
 

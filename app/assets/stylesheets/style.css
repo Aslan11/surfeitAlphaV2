@@ -20,14 +20,6 @@ src: url(Socialico.otf);
     src: url(andes.ttf) format("truetype");
 }
 
-.maximizer{
-	font-family: typicons;
-	position: absolute;
-right: -2px;
-bottom: -3px;
-font-size: 26px;
-}
-
 .stache{
 width: 25%;
 position: absolute;
@@ -43,28 +35,20 @@ opacity: 0.25;
 transition: all 2s ease-in-out
 }
 
-.withfadeout {
-  -webkit-transition: all 2s ease-in-out;
-  -moz-transition: all 2s ease-in-out;
-  -ms-transition: all 2s ease-in-out;
-  -o-transition: all 2s ease-in-out;
-  transition: all 2s ease-in-out;
-}
-.withfadeout:hover {
-  -webkit-opacity: 1;
-  -moz-opacity: 1;
-  opacity: 1;
-}
 
+.blackout{
+width: 0%;
+height: 0%;
+opacity: 0.66;
+position: absolute;
+left: 0px;
+top: 0px;
+z-index: -1;
+};
 /**** Isotope Filtering ****/
 
 .isotope-item {
   z-index: 2;
-}
-
-.isotope-hidden.isotope-item {
-  pointer-events: none;
-  z-index: 1;
 }
 
 .meny {
@@ -187,10 +171,7 @@ h1, h2, h3, p, ul, ol, pre, dl {
   margin-bottom: 1.0em;
 }
 
-h1, h2, #super-list, .element, .tagline, #index-list, 
-.super-list .link {
-  font-family: "Advent Pro", Arial, sans-serif;
-}
+
 
 h1, h2, h3 { font-weight: bold; }
 
@@ -268,6 +249,7 @@ width: 118%;
   position: relative;
   background: #888;
   color: #ffffff;
+  
 }
 
 
