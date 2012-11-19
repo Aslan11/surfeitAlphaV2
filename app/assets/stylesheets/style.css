@@ -33,6 +33,27 @@ width: 25%;
 position: absolute;
 bottom: -9px;
 left: -4px;
+-webkit-opacity: 0.25;
+-moz-opacity: 0.25;
+opacity: 0.25;
+-webkit-transition: all 2s ease-in-out;
+-moz-transition: all 2s ease-in-out;
+-ms-transition: all 2s ease-in-out;
+-o-transition: all 2s ease-in-out;
+transition: all 2s ease-in-out
+}
+
+.withfadeout {
+  -webkit-transition: all 2s ease-in-out;
+  -moz-transition: all 2s ease-in-out;
+  -ms-transition: all 2s ease-in-out;
+  -o-transition: all 2s ease-in-out;
+  transition: all 2s ease-in-out;
+}
+.withfadeout:hover {
+  -webkit-opacity: 1;
+  -moz-opacity: 1;
+  opacity: 1;
 }
 
 /**** Isotope Filtering ****/
