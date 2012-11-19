@@ -338,10 +338,22 @@
 	   });
    });
    
+   $(".instagram").on("click", function(){
+	$(this).css({webkitTransform: "", left: "23%", width: "50%", height: "50%", zIndex: "5"});
+		   $(".blackout").css({webkitTransform: "", zIndex: "4", backgroundColor: "black", width: "100%", height: "100%"})
+   });
    $(".element h3").on("click", function(){
-$(this).parent(this).css({webkitTransform: "", left: "23%", width: "50%", height: "50%", zIndex: "5"});
-$(".blackout").css({webkitTransform: "", zIndex: "4", backgroundColor: "black", width: "100%", height: "100%"});
-});
+	   if ($(this).parent(this).hasClass("expanded") == false){
+		   $(this).parent(this).css({webkitTransform: "", left: "23%", width: "50%", height: "50%", zIndex: "5"});
+		   $(".blackout").css({webkitTransform: "", zIndex: "4", backgroundColor: "black", width: "100%", height: "100%"})
+		   $(this).parent(this).addClass("expanded")
+	   }
+	   else if ($(this).parent(this).hasClass("expanded") == true){
+		 $(".blackout").css({zIndex: "0", width: "0px", height: "0px"});
+		   
+	   };
+
+   });
   </script> 
   <script>
 			// Create an instance of Meny
