@@ -1,11 +1,17 @@
 Surfeitalpha::Application.routes.draw do
 
+  get "feed/index"
+  match 'session/:action', :to => 'sessions'
+  match '/sessions', :to => 'sessions#connect'
+
 
   get '/' => 'pages#index', :as => :index
 
   get '/login' => 'sessions#login', :as => :login
   post '/sessions/create' => 'sessions#create_surfeit'
   match 'auth/:provider/callback', to: 'sessions#create_twitter'
+
+
   
   #users
   get '/current' => 'pages#current', :as => :user_current

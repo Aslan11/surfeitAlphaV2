@@ -57,8 +57,13 @@
   
   <div id="container" class="super-list variable-sizes clearfix">
     
-      
-          
+    <% @mediafeed.data.each do |media| %>
+    <div class="element width2 height2 instagram">
+    <img src="<%= media.images.first.last.url%>" style="width: 100%; height: 100%">
+    <p style="display: none"><%= media.likes.first.last%></p>
+    </div>
+    <% end%> 
+
     <div class="element twitter width2">
       <p class="originType">L</p>
       <h3 class="symbol">Test</h3>
