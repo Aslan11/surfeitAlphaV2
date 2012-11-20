@@ -20,7 +20,7 @@ src: url(Socialico.otf);
     src: url(andes.ttf) format("truetype");
 }
 
-.stacheInsta{
+.stache{
 width: 66%;
 position: absolute;
 top: 0%;
@@ -35,7 +35,7 @@ opacity: 0.25;
 transition: all 2s ease-in-out
 }
 
-.expandInsta{
+.expand{
 width: 60%;
 position: absolute;
 top: 36%;
@@ -46,7 +46,7 @@ opacity: 0.25;
 display: block;
 }
 
-.shrinkRayInsta{
+.shrinkRay{
 width: 60%;
 position: absolute;
 top: 36%;
@@ -55,6 +55,54 @@ left: 20%;
 -moz-opacity: 0.25;
 opacity: 0.25;
 display: none;
+}
+
+.twitter .stache{
+width: 50%%;
+position: absolute;
+top: 18%;
+left: 0%;
+-webkit-opacity: 0.25;
+-moz-opacity: 0.25;
+opacity: 0.25;
+-webkit-transition: all 2s ease-in-out;
+-moz-transition: all 2s ease-in-out;
+-ms-transition: all 2s ease-in-out;
+-o-transition: all 2s ease-in-out;
+transition: all 2s ease-in-out
+}
+
+.twitter .expand{
+width: 45%%;
+position: absolute;
+top: 4%;
+left: 49%;
+-webkit-opacity: 0.25;
+-moz-opacity: 0.25;
+opacity: 0.25;
+display: block;
+}
+
+.twitter .shrinkRay{
+width: 45%%;
+position: absolute;
+top: 4%;
+left: 49%;
+-webkit-opacity: 0.25;
+-moz-opacity: 0.25;
+opacity: 0.25;
+display: hidden;
+
+}
+
+.expanded .stache{
+left: 25%;
+top: 4%;
+}
+
+.expanded .shrinkRay{
+top: 30%;
+left: 26.4%;
 }
 
 .blackout{
