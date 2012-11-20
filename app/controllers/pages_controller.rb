@@ -13,7 +13,8 @@ class PagesController < ApplicationController
   
   def index
   	if session[:user_id]   # someone is already logged in
-     	redirect_to user_current_path
+     	# redirect_to user_current_path
+      puts "Logged in as #{session[:email]}"
   	 end
   end
 

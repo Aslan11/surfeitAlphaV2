@@ -1,6 +1,8 @@
-<% @mediafeed.data.each do |media| %>
-<div class="element width2 height2 instagram">
-<img src="<%= media.images.first.last.url%>"><br>
-<p style="display: none"><%= media.likes.first.last%></p>
-</div>
-<% end%>
+<% if current_user %>
+  Welcome <%= current_user.name %>!
+  <%= link_to "Sign Out", logout_path %>
+<% else %>
+  <%= link_to "Sign in with Facebook", "/auth/facebook" %>
+<% end %>
+
+

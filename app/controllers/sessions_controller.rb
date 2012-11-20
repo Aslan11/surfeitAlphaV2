@@ -21,9 +21,9 @@ class SessionsController < ApplicationController
     	else
       		flash[:notice] = "Email or Password do not match. Try again."
       		redirect_to index_path
-    end
-		
+    	end	
 	end
+
 	
 	def create_twitter
 		user = User.from_omniauth (env["omniauth.auth"])
@@ -32,8 +32,21 @@ class SessionsController < ApplicationController
 	end
 
 
-	  def auth_hash
-    request.env['omniauth.auth']
+	def auth_hash
+    		request.env['omniauth.auth']
+  	end
+
+  	def create_facebook
+  		user = User.from_omniauth (env["omniauth.auth"])
+			session[:user_id] = user.id
+			session[:email] = user.email
+
+		    redirect_to feed_index_path, notice: "Signed In!"
+  	end
+
+
+  		def failure
+  			
   		end
 
 
@@ -44,7 +57,7 @@ class SessionsController < ApplicationController
     
    		 if user != nil && user.authenticate(params[:password])
    		   session[:user_id] = user.id
-   		   redirect_to user_current_path
+   		   redirect_to instagram_access_url
    		 else
    		   redirect_to index_path, :notice => "Email & Password do not match"
    		 end
@@ -55,6 +68,7 @@ class SessionsController < ApplicationController
 	def destroy
 	
 		session[:user_id] = nil
+    session[:access_token] = nil
     	redirect_to index_path
 
 	end

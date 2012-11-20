@@ -50,21 +50,17 @@ before_filter :require_user, :except => [:new, :create]
   # POST /users.json
   def create
     @user = User.new(params[:user])
-    
 
-    respond_to do |format|
       if @user.save
-        format.html { redirect_to @user, notice: 'User was successfully created.' }
-        format.json { render json: @user, status: :created, location: @user }
+        session[:user_id] = @user.id
+        redirect_to user_current_url, :notice => "Signed up!"
       else
-        format.html { render action: "new" }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
+        redirect_to new_user_url
+        flash[:notice] = "User Exists!!!!"
       end
-    end
   end
 
-  # PUT /users/1
-  # PUT /users/1.json
+
   def update
     @user = User.find(params[:id])
 

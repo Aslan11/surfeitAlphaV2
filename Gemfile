@@ -6,6 +6,7 @@ gem 'rails', '3.2.8'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'omniauth-twitter'
+gem 'omniauth-facebook'
 gem 'omniauth'
 
 gem 'sqlite3'
@@ -23,6 +24,8 @@ group :assets do
   	gem 'awesome_print'
 
   end
+
+  gem 'koala'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
