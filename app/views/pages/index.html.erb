@@ -2,9 +2,10 @@
 	<title>Surfeit Alpha!</title>
 	
 		 <%= stylesheet_link_tag "landingdemo", :media => "all" %>
+		 <%= stylesheet_link_tag "currentLandingStyle", :media => "all" %>
 		 <%= stylesheet_link_tag "landingstyle", :media => "all" %>
 		 
-		 <%= javascript_include_tag "modernizr.custom.landing" %>
+		 
 		<link href='http://fonts.googleapis.com/css?family=Economica:700,400italic' rel='stylesheet' type='text/css'>
 		<noscript>
 			<%= stylesheet_link_tag "landingnojs.css", :media => "all" %>
@@ -13,11 +14,11 @@
 
 <body>
    
-        <div class="container">
+        <div class="nav">
 			<!-- Codrops top bar -->
 
 			<header>
-				<h1>Surfeit</h1>
+				<h1 class="surfeitLogoTitle">Surfeit</h1>
 				<%= image_tag "SurfeitLogo.svg", :class => "surfeitLandingLogo" %>
 				<%= form_tag "/sessions/create", :class => "loginForm" do %>
 
@@ -36,52 +37,54 @@
   
 				<% end %>
 				
-				<span class="rememberMe"><input type="checkbox" value="remember">Remember Me</span>
+				<span class="rememberMe"><input type="checkbox" value="remember" style="left: 298px;
+top: 11px;">Remember Me</span>
 				
 				<a class="forgotPwd" href="#">Forgot Your Password?</a>
 				
 			</header>
-			<div id="da-slider" class="da-slider">
-				<div class="da-slide">
-					<h2>Welcome To <em>Your</em> Internet</h2>
-					<p>When you sign up for Surfeit, all of your social networks and rss feeds will be displayed in one large dynamic collection. Your Twitter, Facebook, Instagram, Pinterest, Youtube, Google+, and all RSS feeds will be in one simple collection.</p>
-					<%= link_to 'Sign Up', new_user_path, :class => "da-link" %>
-					<div class="da-img"><%= image_tag "SurfeitLogo.svg" %></div>
-				</div>
-				<div class="da-slide">
-					<h2>Easy management</h2>
-					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-					<a href="#" class="da-link">Read more</a>
-					<div class="da-img"><%= image_tag "2.png" %></div>
-				</div>
-				<div class="da-slide">
-					<h2>Revolution</h2>
-					<p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-					<a href="#" class="da-link">Read more</a>
-					<div class="da-img"><%= image_tag "3.png" %></div>
-				</div>
-				<div class="da-slide">
-					<h2>Quality Control</h2>
-					<p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p>
-					<a href="#" class="da-link">Read more</a>
-					<div class="da-img"><%= image_tag "4.png" %></div>
-				</div>
-				<nav class="da-arrows">
-					<span class="da-arrows-prev"></span>
-					<span class="da-arrows-next"></span>
-				</nav>
-			</div>
-        </div>
-        
-        
-        <%= javascript_include_tag "jquery-1.7.1.min" %>
-        <%= javascript_include_tag "jquery.cslider" %>
-		<script type="text/javascript">
-			$(function() {
 			
-				$('#da-slider').cslider();
-				
-			});
-		</script>	
-        
+			<div class="contents">
+	  <section id="content">
+	  
+	  <div id="container" class="super-list variable-sizes clearfix">
+	    
+		<div class="element twitter width2">
+		 <div class="smokeScreen">
+	    	<%= image_tag "stache.svg", :class => 'stache' %>
+	    	<%= image_tag "expand.svg", :class => 'expand' %>
+	    	<%= image_tag "contract.svg", :class => 'shrinkRay' %>
+	     </div>
+	      <p class="originType">L</p>
+	      <h3 class="symbol">Test</h3>
+	      <h2 class="name"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h2>
+	    </div>
+	    
+	    <div class="element youtube width2 height2">
+	    	<p class="originType">X</p>
+	    	<h3 class="symbol">Brett Atchley</h3>
+	    	<iframe width="220" height="150" src="http://www.youtube.com/embed/aT5l1KVe-NU" frameborder="0" allowfullscreen style="top: 3.5em; left: .4em;"></iframe>
+	    </div>
+	    
+	    <div class="element rss width2">
+	      <p class="originType">R</p>
+	      <h3 class="symbol">Gizmodo</h3>
+	      <h2 class="name"><a href="http://gizmodo.com/5959068/a-week-with-the-ipad-mini"  target="_blank" style="position: relative">A week with iPad Mini</a></h2>
+	    </div>
+	    
+	     <div class="element facebook width3">
+	      <p class="originType">F</p>
+	      <h3 class="symbol">Brian Martinek</h3>
+	      <h2 class="name">I'm a god damn back end sage</h2>
+	    </div>	     
+	    <!-- <div class="link away" data-number="35"><a href="http://surfeit.me">Surfeit</a></div> -->
+	  </div>
+	 
+	
+	  </section> <!-- #content -->
+  </div>
+			
+        <%= javascript_include_tag "jquery-1.7.1.min" %>
+		<%= javascript_include_tag "jquery.isotope.min" %>
+		<%= javascript_include_tag "fake-element" %>
 </body>
