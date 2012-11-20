@@ -60,15 +60,24 @@
 	<div class="blackout"></div> 
 	
 	
-	<div class="element test twitter width2">
+	<div class="element twitter width2">
+	 <div class="smokeScreen">
+    	<%= image_tag "stache.svg", :class => 'stacheTweet' %>
+    	<%= image_tag "expand.svg", :class => 'expandTweet' %>
+    	<%= image_tag "contract.svg", :class => 'shrinkRayTweet' %>
+    </div>
       <p class="originType">L</p>
       <h3 class="symbol">Test</h3>
-      <h2 class="name"> "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h2>
-      <%= image_tag "stache.svg", :class => 'stache' %>
+      <h2 class="name"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h2>
     </div>
 
     <% @mediafeed.data.each do |media| %>
     <div class="element width2 height2 instagram">
+    <div class="smokeScreen">
+    	<%= image_tag "stache.svg", :class => 'stacheInsta' %>
+    	<%= image_tag "expand.svg", :class => 'expandInsta' %>
+    	<%= image_tag "contract.svg", :class => 'shrinkRayInsta' %>
+    </div>
     <img src="<%= media.images.first.last.url%>" style="width: 100%; height: 100%">
     <p style="display: none"><%= media.likes.first.last%></p>
     </div>
@@ -84,14 +93,12 @@
       <p class="originType">L</p>
       <h3 class="symbol">Sarah Binion</h3>
       <h2 class="name">OMG Surfeit is so awesome!!!! OMG Surfeit is so eeeeeee!!!!</h2>
-      <%= image_tag "stache.svg", :class => 'stache' %>
     </div>
     
         <div class="element rss width2">
       <p class="originType">R</p>
       <h3 class="symbol">Gizmodo</h3>
       <h2 class="name"><a href="http://gizmodo.com/5959068/a-week-with-the-ipad-mini"  target="_blank" style="position: relative">A week with iPad Mini</a></h2>
-      <%= image_tag "stache.svg", :class => 'stache' %>
     </div>
     	
     
@@ -99,14 +106,12 @@
       <p class="originType">L</p>
       <h3 class="symbol">Sarah Binion</h3>
       <h2 class="name"> b OMG Surfeit is so awesome!!!!</h2>
-      <%= image_tag "stache.svg", :class => 'stache' %>
     </div>
     
      <div class="element facebook width3">
       <p class="originType">F</p>
       <h3 class="symbol">Brian Martinek</h3>
       <h2 class="name">I'm a god damn back end sage</h2>
-      <%= image_tag "stache.svg", :class => 'stache' %>
     </div>
     
     
@@ -114,7 +119,6 @@
       <p class="originType">L</p>
       <h3 class="symbol">Jim Turner</h3>
       <h2 class="name"> a think I'm going to join the Surfeit team.</h2>
-      <%= image_tag "stache.svg", :class => 'stache' %>
     </div>
     
     <div class="element youtube width2 height2">
@@ -127,14 +131,12 @@
       <p class="originType">L</p>
       <h3 class="symbol">Sarah Binion</h3>
       <h2 class="name">OMG Surfeit is so awesome!!!! OMG Surfeit is so eeeeeee!!!!</h2>
-      <%= image_tag "stache.svg", :class => 'stache' %>
     </div>
     
         <div class="element rss width2">
       <p class="originType">R</p>
       <h3 class="symbol">Gizmodo</h3>
       <h2 class="name"><a href="http://gizmodo.com/5959068/a-week-with-the-ipad-mini"  target="_blank" style="position: relative">A week with iPad Mini</a></h2>
-      <%= image_tag "stache.svg", :class => 'stache' %>
     </div>
     	
     
@@ -142,14 +144,12 @@
       <p class="originType">L</p>
       <h3 class="symbol">Sarah Binion</h3>
       <h2 class="name"> b OMG Surfeit is so awesome!!!!</h2>
-      <%= image_tag "stache.svg", :class => 'stache' %>
     </div>
     
      <div class="element facebook width2">
       <p class="originType">F</p>
       <h3 class="symbol">Brian Martinek</h3>
       <h2 class="name">I'm a god damn back end sage</h2>
-      <%= image_tag "stache.svg", :class => 'stache' %>
     </div>
 
 
@@ -157,7 +157,6 @@
       <p class="originType">L</p>
       <h3 class="symbol">Jim Turner</h3>
       <h2 class="name"> a think I'm going to join the Surfeit team.</h2>
-      <%= image_tag "stache.svg", :class => 'stache' %>
     </div>
     
     <div class="element youtube width2 height2">
@@ -170,14 +169,12 @@
       <p class="originType">L</p>
       <h3 class="symbol">Sarah Binion</h3>
       <h2 class="name">OMG Surfeit is so awesome!!!! OMG Surfeit is so eeeeeee!!!!</h2>
-      <%= image_tag "stache.svg", :class => 'stache' %>
     </div>
     
         <div class="element rss width2">
       <p class="originType">R</p>
       <h3 class="symbol">Gizmodo</h3>
       <h2 class="name"><a href="http://gizmodo.com/5959068/a-week-with-the-ipad-mini"  target="_blank" style="position: relative">A week with iPad Mini</a></h2>
-      <%= image_tag "stache.svg", :class => 'stache' %>
     </div>
     	
     
@@ -185,26 +182,18 @@
       <p class="originType">L</p>
       <h3 class="symbol">Sarah Binion</h3>
       <h2 class="name"> b OMG Surfeit is so awesome!!!!</h2>
-      <%= image_tag "stache.svg", :class => 'stache' %>
     </div>
     
      <div class="element facebook width2">
       <p class="originType">F</p>
       <h3 class="symbol">Brian Martinek</h3>
       <h2 class="name">I'm a god damn back end sage</h2>
-      <%= image_tag "stache.svg", :class => 'stache' %>
-    </div>
-
-
-       <div class="element instagram width2 height2">
-    	<%=image_tag "SurfeitLogo.svg", :width => '100%'%>
     </div>
 
  <div class="element twitter width2">
       <p class="originType">L</p>
       <h3 class="symbol">Jim Turner</h3>
       <h2 class="name"> a think I'm going to join the Surfeit team.</h2>
-      <%= image_tag "stache.svg", :class => 'stache' %>
     </div>
     
     <div class="element youtube width2 height2">
@@ -217,14 +206,12 @@
       <p class="originType">L</p>
       <h3 class="symbol">Sarah Binion</h3>
       <h2 class="name">OMG Surfeit is so awesome!!!! OMG Surfeit is so eeeeeee!!!!</h2>
-      <%= image_tag "stache.svg", :class => 'stache' %>
     </div>
     
         <div class="element rss width2">
       <p class="originType">R</p>
       <h3 class="symbol">Gizmodo</h3>
       <h2 class="name"><a href="http://gizmodo.com/5959068/a-week-with-the-ipad-mini"  target="_blank" style="position: relative">A week with iPad Mini</a></h2>
-      <%= image_tag "stache.svg", :class => 'stache' %>
     </div>
     	
     
@@ -232,14 +219,12 @@
       <p class="originType">L</p>
       <h3 class="symbol">Sarah Binion</h3>
       <h2 class="name"> b OMG Surfeit is so awesome!!!!</h2>
-      <%= image_tag "stache.svg", :class => 'stache' %>
     </div>
     
      <div class="element facebook width2">
       <p class="originType">F</p>
       <h3 class="symbol">Brian Martinek</h3>
       <h2 class="name">I'm a god damn back end sage</h2>
-      <%= image_tag "stache.svg", :class => 'stache' %>
     </div>
      
     <!-- <div class="link away" data-number="35"><a href="http://surfeit.me">Surfeit</a></div> -->
@@ -333,40 +318,42 @@
    var tempHeight = '';
    var tempTransform = '';
    var tempZIndex = '';
-   
-   $(".instagram").on("click", function(){
-	   if($(this).hasClass("expanded") == false){
-	   	tempWidth = $(this).css("width");
-	   	tempHeight = $(this).css("height");
-	   	tempTransform = $(this).css("webkitTransform");
-	   	tempZIndex = $(this).css("zIndex");
-		$(this).css({webkitTransform: "", left: "23%", width: "50%", height: "50%", zIndex: "5"});
-		$(".blackout").css({webkitTransform: "", zIndex: "4", backgroundColor: "black", width: "100%", height: "100%"});
-		$(this).addClass("expanded");
-	   }
-	   else if($(this).hasClass("expanded") == true){
-		   $(".blackout").css({zIndex: "0", width: "0px", height: "0px"});
-		   $(this).css({webkitTransform: tempTransform, left: "0px", width: tempWidth, height: tempHeight, zIndex: tempZIndex});
-		   $(this).removeClass("expanded");
-		   $("#container").isotope({ sortBy: 'original-order' });
-	   };
+  
+  
+   //smokeScreen
+   $(".smokeScreen").each(function(){
+		$(this).hover(
+		function() {
+		$(this).stop().animate({"opacity": ".80"}, "slow");
+		},
+		function() {
+		$(this).stop().animate({"opacity": "0"}, "slow");
+		});
+	});
+  
+   //expansion
+   $(".expand").on("click", function(){
+	   if ($(this).parent().parent().hasClass("expanded") == false){
+	   	   tempWidth = $(this).parent().parent().css("width");
+	   	   tempHeight = $(this).parent().parent().css("height");
+	   	   tempTransform = $(this).parent().parent().css("webkitTransform");
+	   	   tempZIndex = $(this).parent().parent().css("zIndex");
+		   $(this).parent().parent().css({webkitTransform: "", left: "23%", width: "50%", height: "50%", zIndex: "5"});
+		   $(".blackout").css({webkitTransform: "", zIndex: "4", backgroundColor: "black", width: "100%", height: "100%", opacity: ".80"});
+		   $(this).parent().parent().addClass("expanded");
+		$(this).css({display: "none"});
+		$(".shrinkRay").css({display: "block"});   
+	   }	  
    });
-   $(".element h3").on("click", function(){
-	   if ($(this).parent(this).hasClass("expanded") == false){
-	   	   tempWidth = $(this).parent(this).css("width");
-	   	   tempHeight = $(this).parent(this).css("height");
-	   	   tempTransform = $(this).parent(this).css("webkitTransform");
-	   	   tempZIndex = $(this).parent(this).css("zIndex");
-		   $(this).parent(this).css({webkitTransform: "", left: "23%", width: "50%", height: "50%", zIndex: "5"});
-		   $(".blackout").css({webkitTransform: "", zIndex: "4", backgroundColor: "black", width: "100%", height: "100%"});
-		   $(this).parent(this).addClass("expanded");
-		   
-	   }
-	   else if ($(this).parent(this).hasClass("expanded") == true){
+   
+   $(".shrinkRay").on("click", function(){
+	   if ($(this).parent().parent().hasClass("expanded") == true){
 		 $(".blackout").css({zIndex: "0", width: "0px", height: "0px"});
-		 $(this).parent(this).css({webkitTransform: tempTransform, left: "0px", width: tempWidth, height: tempHeight, zIndex: tempZIndex});
-		 $(this).parent(this).removeClass("expanded");
+		 $(this).parent().parent().css({webkitTransform: tempTransform, left: "0px", width: tempWidth, height: tempHeight, zIndex: tempZIndex});
+		 $(this).parent().parent().removeClass("expanded");
 		 $("#container").isotope({ sortBy: 'original-order' });
+		 $(".shrinkRay").css({display: "none"});
+		$(".expand").css({display: "block"}); 
 	   };
 
    });
