@@ -20,9 +20,7 @@ Surfeitalpha::Application.routes.draw do
   get '/sessions/logout' => 'sessions#destroy', :as => :logout
 
   
-  resources :users do 
-
-  end
+  resources :users 
 
   
 
@@ -31,10 +29,9 @@ Surfeitalpha::Application.routes.draw do
   resources :channels
   get 'channels/twitter' => 'channels#twitter', :as => :twitter
   get 'channels/facebook' => 'channels#facebook', :as => :facebook
- #get 'channels/instagram' => 'channels#instagram', :as => :instagram
-  
 
-    # root :to => 'Directors#index'  DO THIS
+ #get 'channels/instagram' => 'channels#instagram', :as => :instagram
+  # root :to => 'Directors#index'  DO THIS
  
 
   

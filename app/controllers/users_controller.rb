@@ -51,28 +51,22 @@ before_filter :require_user, :except => [:new, :create]
   def create
     @user = User.new(params[:user])
 
-      if @user.save
-        session[:user_id] = @user.id
-        redirect_to user_current_url, :notice => "Signed up!"
-      else
-        redirect_to new_user_url
-        flash[:notice] = "User Exists!!!!"
-      end
+
+    (@user.save) ? (session[:user_id] = @user.id ; redirect_to(instagram_access_url) ) : (redirect_to(new_user_url) ;   flash[:notice] = "User exists!!!")
+
+      # if @user.save
+      #   session[:user_id] = @user.id
+      #   redirect_to user_current_url, :notice => "Signed up!"
+      # else
+      #   redirect_to new_user_url
+      #   flash[:notice] = "User Exists!!!!"
+      # end
   end
 
 
   def update
     @user = User.find(params[:id])
-
-    respond_to do |format|
-      if @user.update_attributes(params[:user])
-        format.html { redirect_to @user, notice: 'User was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: "edit" }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
-      end
-    end
+    @user.update_attributes(params[:user]) ? (redirect_to @user, notice: 'User was successfully updated.') :  (render action: "edit") 
   end
 
   # DELETE /users/1
