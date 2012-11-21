@@ -23,7 +23,7 @@ Surfeitalpha::Application.routes.draw do
   resources :users 
 
   #Social Channels'
-    get '/channels' => 'channels#index', :as => :channels_url
+    get '/channels' => 'channels#index', :as => :channels
 
 
 
