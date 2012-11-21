@@ -17,3 +17,20 @@
 
 <a href="/sessions"> <img src="http://blazomania.com/wp-content/uploads/2012/11/instagram-logo.png"></a>
 <a href="/session">Click the image peoplee!!!! Muahahaha</a>
+<br>
+<br>      
+<br>
+<br>
+<br>
+
+<a href="/auth/facebook"> <img src="http://1.bp.blogspot.com/-YIW3V91w6rw/T70p8XbSmwI/AAAAAAAABcE/l-KLarIKifA/s1600/Facebook-CEO-Mark-Zuckerberg.jpeg"></a>
+
+<% if current_user %>
+  Welcome <%= current_user.name %>!
+  <%= link_to "Sign Out", logout_path %>
+<% else %>
+  <%= link_to "Sign in with Facebook", "/auth/facebook" %>
+<% end %>
+
+
+

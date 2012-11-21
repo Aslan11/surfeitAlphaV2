@@ -41,7 +41,8 @@ class SessionsController < ApplicationController
 			session[:user_id] = user.id
 			session[:email] = user.email
 
-		    redirect_to feed_index_path, notice: "Signed In!"
+      redirect_to user_current_url
+      
   	end
 
 
