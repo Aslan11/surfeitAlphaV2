@@ -22,16 +22,11 @@ Surfeitalpha::Application.routes.draw do
   
   resources :users 
 
-  
+  #Social Channels'
+    get '/channels' => 'channels#index', :as => :channels_url
 
-  #Social Channels
 
-  resources :channels
-  get 'channels/twitter' => 'channels#twitter', :as => :twitter
-  get 'channels/facebook' => 'channels#facebook', :as => :facebook
 
- #get 'channels/instagram' => 'channels#instagram', :as => :instagram
-  # root :to => 'Directors#index'  DO THIS
  
 
   
