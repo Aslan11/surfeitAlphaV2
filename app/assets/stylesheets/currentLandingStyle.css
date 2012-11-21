@@ -131,15 +131,7 @@ z-index: 3;
   z-index: 2;
 }
 
-.meny {
-	display: none;
-	padding: 20px;
-	overflow: auto;
-	background-image: url('waves.gif');
-	-webkit-box-sizing: border-box;
-	   -moz-box-sizing: border-box;
-	        box-sizing: border-box;
-}
+
 /**** Isotope CSS3 transitions ****/
 
 .contents {
@@ -148,6 +140,8 @@ z-index: 3;
 	-webkit-box-sizing: border-box;
 	   -moz-box-sizing: border-box;
 	        box-sizing: border-box;
+	        top: -25px;
+position: relative;
 }
 
 .meny-arrow {
@@ -238,28 +232,14 @@ footer, header, hgroup, menu, nav, section {
   display: block;
 }
 
-body {
-  padding: 20px;
-  font-family: "Advent Pro", Arial, sans-serif;
-  font-size: 13px;
-  line-height: 1.7em;
-  background: #112;
-  color: #FFF;
-}
-
 h1, h2, h3, p, ul, ol, pre, dl {
-  margin-bottom: 1.0em;
+  
 }
-
-
 
 h1, h2, h3 { font-weight: bold; }
 
-
-
 h1 {
   font-size: 32px;
-  line-height: 1.1em;
 }
 
 h2 {
@@ -310,14 +290,14 @@ body {
 }
 
 #container {
-  border: 1px solid #666;
-  padding: 5px;
-  margin-bottom: 20px;
-  position: relative;
+border: 1px solid #666;
+padding: 5px;
+margin-bottom: 20px;
+position: relative;
 overflow: hidden;
-left: -197px;
-height: 720px;
-width: 118%;
+top: -76px;
+width: 100%;
+background-color: #112;
 }
 
 .element {
@@ -538,7 +518,7 @@ font-family: Pictograms;
 }
 
 #content {
-  margin-left: 210px;
+
 }
 
 /* The Magnificent Clearfix: nicolasgallagher.com/micro-clearfix-hack/ */

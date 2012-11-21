@@ -358,6 +358,9 @@
     
    });
    
+   
+   //Custom jQuery --Kevin
+   ///////////////////////
    $(".stache").on("click", function(){
 	   $(this).css({
 		   opacity: "1",
@@ -388,7 +391,7 @@
    	   tempHeight = $(this).parent().parent().css("height");
    	   tempTransform = $(this).parent().parent().css("webkitTransform");
    	   tempZIndex = $(this).parent().parent().css("zIndex");
-	   $(this).parent().parent().css({webkitTransform: "", left: "23%", width: "50%", height: "50%", zIndex: "5"});
+	   $(this).parent().parent().css({webkitTransform: "", left: "23%", width: "50%", height: "35%", zIndex: "5"});
 	   $(".blackout").css({webkitTransform: "", zIndex: "4", backgroundColor: "black", width: "100%", height: "100%", opacity: ".80"});
 	   $(this).css({display: "none"});
 	   $(".shrinkRay").css({display: "block"});   
