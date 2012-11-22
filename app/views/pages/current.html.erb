@@ -16,7 +16,8 @@
 
   <section id="options">
    <div class="option-combo">
-      <h2>Filter:</h2>
+      <!--
+<h2>Filter:</h2>
       
       <ul id="filter" class="option-set clearfix" data-option-key="filter">
         <li><a href="#show-all" data-option-value="*" class="selected">All</a></li>
@@ -27,7 +28,16 @@
         <li><a href="#features" data-option-value=".rss">RSS</a></li>
         
       </ul>
+-->
       
+      <h2>Filter 2.0</h2>
+      
+      <ul id="filters">
+		  <li><a href="#" data-filter=".facebook"><span class="fbGlowIcon">F</span></a></li>
+		  <li><a href="#" data-filter=".twitter"><span class="twitterGlowIcon">L</span></a></li>
+		  <li><a href="#" data-filter=".instagram"><span class="instaGlowIcon">D</span></a></li>
+		  <li><a href="#" data-filter=".rss"><span class="rssGlowIcon">R</span></a></li>
+	  </ul>
       <h2>Sort:</h2>
       <ul id="sort" class="option-set clearfix" data-option-key="sortBy">
         <li><a href="#mixed" data-option-value="originType" >Origin</a></li>
@@ -312,6 +322,42 @@
           }
         }
       });
+	
+	
+      	//Kevin's custom filtering
+      	//////////////////////////
+      	var theChosen = [];
+		
+		// filter items when filter link is clicked
+		$('#filters a').click(function(){
+		var selector = $(this).attr('data-filter');
+		if($.inArray(selector, theChosen) == -1){
+		  theChosen.push(selector);
+		  $(this).addClass('selected');
+		  }
+		  else{
+			  var index = theChosen.indexOf(selector);
+			  theChosen.splice(index, 1);
+			  $(this).removeClass('selected');
+		  }
+	
+		var selected = '';
+		  for (i = 0; i < theChosen.length; i++)
+		  {
+		  	if (i == (theChosen.length - 1)){
+			  	selected = selected + theChosen[i];
+			}
+			else {
+				selected = selected + theChosen[i] + ', ';
+			}
+		  };
+		  if(theChosen.length == 0){
+			selected = '*';
+		  };
+		  
+		  $container.isotope({ filter: selected});
+		  return false;
+		});
       
        $('#prepend a').click(function(){
         var $newEls = $( fakeElement.getGroup() );
@@ -325,17 +371,20 @@
 
     
       
-      var $optionSets = $('#options .option-set'),
+      /*
+var $optionSets = $('#options .option-set'),
           $optionLinks = $optionSets.find('a');
 
       $optionLinks.click(function(){
         var $this = $(this);
         // don't proceed if already selected
         if ( $this.hasClass('selected') ) {
+          $this.removeClass('selected')
           return false;
         }
         var $optionSet = $this.parents('.option-set');
-        $optionSet.find('.selected').removeClass('selected');
+        
+        //mark button as selected
         $this.addClass('selected');
   
         // make option object dynamically, i.e. { filter: '.my-filter-class' }
@@ -355,6 +404,7 @@
         
         return false;
       });
+*/
     
    });
    
