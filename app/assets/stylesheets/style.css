@@ -574,8 +574,8 @@ left: 0px;
 
 #options li a.selected {
   background-color: #171717;
-  text-shadow: 0px 0px 7px greenyellow;
-color: greenyellow;
+  text-shadow: 0px 0px 7px lightblue;
+color: lightblue;
 }
 
 /* Combination filter options*/

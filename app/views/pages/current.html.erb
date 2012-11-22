@@ -38,6 +38,8 @@
 		  <li><a href="#" data-filter=".instagram"><span class="instaGlowIcon">D</span></a></li>
 		  <li><a href="#" data-filter=".rss"><span class="rssGlowIcon">R</span></a></li>
 	  </ul>
+	  <!--
+
       <h2>Sort:</h2>
       <ul id="sort" class="option-set clearfix" data-option-key="sortBy">
         <li><a href="#mixed" data-option-value="originType" >Origin</a></li>
@@ -45,12 +47,15 @@
       </ul>
       
       
-      Prepend:
+-->
+     <!--
+ Prepend:
       <ul class="clearfix">
       <li id="prepend"><a href='#prepend'>Prepend</a></li>
       </ul>
     </div>
       
+-->
       </section>
       <br><br>  
       <div class="lower_nav_links">
@@ -92,12 +97,6 @@
     <p style="display: none"><%= media.likes.first.last%></p>
     </div>
     <% end%> 
-    
-    <div class="element youtube width2 height2">
-    	<p class="originType">X</p>
-    	<h3 class="symbol">Brett Atchley</h3>
-    	<iframe width="220" height="150" src="http://www.youtube.com/embed/aT5l1KVe-NU" frameborder="0" allowfullscreen style="top: 3.5em; left: .4em;"></iframe>
-    </div>
    
      <div class="element twitter width2">
 	 <div class="smokeScreen">
@@ -146,13 +145,6 @@
       <h3 class="symbol">Test</h3>
       <h2 class="name"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h2>
     </div>
-
-    
-    <div class="element youtube width2 height2">
-    	<p class="originType">X</p>
-    	<h3 class="symbol">Brett Atchley</h3>
-    	<iframe width="95%" height="75%" src="http://www.youtube.com/embed/aT5l1KVe-NU" frameborder="0" allowfullscreen style="top: 3.5em; left: .4em;"></iframe>
-    </div>
     
      <div class="element twitter width2">
 	 <div class="smokeScreen">
@@ -202,12 +194,6 @@
       <h2 class="name"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h2>
     </div>
     
-    <div class="element youtube width2 height2">
-    	<p class="originType">X</p>
-    	<h3 class="symbol">Brett Atchley</h3>
-    	<iframe width="220" height="150" src="http://www.youtube.com/embed/aT5l1KVe-NU" frameborder="0" allowfullscreen style="top: 3.5em; left: .4em;"></iframe>
-    </div>
-    
      <div class="element twitter width2">
 	 <div class="smokeScreen">
     	<%= image_tag "stache.svg", :class => 'stache' %>
@@ -253,13 +239,6 @@
       <p class="originType">L</p>
       <h3 class="symbol">Test</h3>
       <h2 class="name"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h2>
-    </div>
-
-    
-    <div class="element youtube width2 height2">
-    	<p class="originType">X</p>
-    	<h3 class="symbol">Brett Atchley</h3>
-    	<iframe width="220" height="150" src="http://www.youtube.com/embed/aT5l1KVe-NU" frameborder="0" allowfullscreen style="top: 3.5em; left: .4em;"></iframe>
     </div>
     
      <div class="element twitter width2">
@@ -482,6 +461,8 @@ var $optionSets = $('#options .option-set'),
 				// [optional] Distance from mouse (in pixels) when menu should open
 				threshold: 40
 			});
+			
+			
 
 			// API Methods:
 			// meny.open();
