@@ -1,0 +1,25 @@
+<h1>Listing stashes</h1>
+
+<table>
+  <tr>
+    <th>User</th>
+    <th>Stashed item</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @stashes.each do |stash| %>
+  <tr>
+    <td><%= stash.user_id %></td>
+    <td><%= stash.stashed_item %></td>
+    <td><%= link_to 'Show', stash %></td>
+    <td><%= link_to 'Edit', edit_stash_path(stash) %></td>
+    <td><%= link_to 'Destroy', stash, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Stash', new_stash_path %>
