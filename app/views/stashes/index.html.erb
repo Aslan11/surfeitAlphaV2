@@ -1,4 +1,18 @@
-<h1>Listing stashes</h1>
+  <div class="container">
+    <header>
+      <nav>
+            <%= "Surfeit" %>
+            <%= '[SurfeitLogo]' %>
+            <%= link_to 'Current', user_current_path %> |
+            <%= link_to 'My Stash', stashes_path %> |
+            <%= link_to 'Networks', channels_path %> |
+            <%= link_to "Account", users_path %> | 
+            <%= current_user.name %> 
+            <%= link_to "Sign Out", logout_path %>
+      </nav>
+    </header>
+
+<h1>My Stash</h1>
 
 <table>
   <tr>
@@ -15,11 +29,11 @@
     <td><%= stash.stashed_item %></td>
     <td><%= link_to 'Show', stash %></td>
     <td><%= link_to 'Edit', edit_stash_path(stash) %></td>
-    <td><%= link_to 'Destroy', stash, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Remove', stash, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Stash', new_stash_path %>
+<%= link_to 'Manually Add Item to Stash', new_stash_path %>

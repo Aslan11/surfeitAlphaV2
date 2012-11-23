@@ -1,9 +1,10 @@
-  <div class="container">
+  <div class="navBar">
     <header>
       <nav>
             <%= "Surfeit" %>
             <%= '[SurfeitLogo]' %>
             <%= link_to 'Current', user_current_path %> |
+            <%= link_to 'My Stash', stashes_path %> |
             <%= link_to 'Networks', channels_path %> |
             <%= link_to "Account", users_path %> | 
             <%= current_user.name %> 
