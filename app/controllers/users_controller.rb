@@ -3,9 +3,11 @@ class UsersController < ApplicationController
 before_filter :require_user, :except => [:new, :create]
   
   def require_user
-    if !session[:user_id] 
-      redirect_to index_path, notice: "You must sign in first."
-    end
+    # if !session[:user_id] 
+    #   redirect_to index_path, notice: "You must sign in first."
+    # elsif session[:user_id] != params[:id]
+    #   redirect_to user_path(session[:user_id]), notice: "Not authorized"
+    # end
   end
 
   # GET /users
@@ -24,9 +26,13 @@ before_filter :require_user, :except => [:new, :create]
   def show
     @user = User.find(params[:id])
 
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @user }
+    if session[:user_id] != @user.id
+      redirect_to user_path(session[:user_id]), notice: "Not authorized"
+    else 
+      respond_to do |format|
+        format.html # show.html.erb
+        format.json { render json: @user }
+      end
     end
   end
 

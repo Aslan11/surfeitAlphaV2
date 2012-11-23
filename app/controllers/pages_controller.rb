@@ -26,10 +26,12 @@ class PagesController < ApplicationController
   redirect_to :controller => 'sessions', :action => 'connect' if !session[:access_token] 
 
   client = Instagram.client(:access_token => session[:access_token])
-    @user = client.user
+    user = client.user
     @recent_media_items = client.user_media_feed
     @mediafeed = client.user_media_feed
     
+    @user = User.find(session[:user_id])
+
   end
 
 end
