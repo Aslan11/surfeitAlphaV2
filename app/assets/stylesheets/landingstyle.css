@@ -22,16 +22,28 @@
 }
 
 .surfeitLandingLogo{
-	width: 90px;
-	position: absolute;
-	left: 230px;
-	top: 8px;
+	width: 84px;
+position: absolute;
+left: 225px;
+top: 8px;
+}
+
+.surfeitLogoTitle{
+font-family: "Surfeit";
+text-shadow: 1px 1px 1px red;
+font-size: 100px;
+display: block;
+width: 232px;
+top: 8px;
+position: relative;
+
 }
 
 .rememberMe{
 position: relative;
-right: -86px;
-top: -22px;
+right: -310px;
+top: -140px;
+font-family: Surfeit;
 font-size: 22px;
 }
 
@@ -40,7 +52,7 @@ font-family: Surfeit;
 font-size: 46px;
 right: -315px;
 position: relative;
-top: -106px;
+top: -80px;
 width: 955px;
 }
 
@@ -48,7 +60,7 @@ width: 955px;
 	font-size: 20px;
 	position: absolute;
 	top: 90px;
-	left: 1082px;
+	left: 1012px;
 	font-family: Surfeit;
 }
 

@@ -16,7 +16,8 @@
 
   <section id="options">
    <div class="option-combo">
-      <h2>Filter:</h2>
+      <!--
+<h2>Filter:</h2>
       
       <ul id="filter" class="option-set clearfix" data-option-key="filter">
         <li><a href="#show-all" data-option-value="*" class="selected">All</a></li>
@@ -27,7 +28,18 @@
         <li><a href="#features" data-option-value=".rss">RSS</a></li>
         
       </ul>
+-->
       
+      <h2>Filter 2.0</h2>
+      
+      <ul id="filters">
+		  <li><a href="#" data-filter=".facebook"><span class="fbGlowIcon">F</span></a></li>
+		  <li><a href="#" data-filter=".twitter"><span class="twitterGlowIcon">L</span></a></li>
+		  <li><a href="#" data-filter=".instagram"><span class="instaGlowIcon">D</span></a></li>
+		  <li><a href="#" data-filter=".rss"><span class="rssGlowIcon">R</span></a></li>
+	  </ul>
+	  <!--
+
       <h2>Sort:</h2>
       <ul id="sort" class="option-set clearfix" data-option-key="sortBy">
         <li><a href="#mixed" data-option-value="originType" >Origin</a></li>
@@ -35,12 +47,15 @@
       </ul>
       
       
-      Prepend:
+-->
+     <!--
+ Prepend:
       <ul class="clearfix">
       <li id="prepend"><a href='#prepend'>Prepend</a></li>
       </ul>
     </div>
       
+-->
       </section>
       <br><br>  
       <div class="lower_nav_links">
@@ -82,12 +97,6 @@
     <p style="display: none"><%= media.likes.first.last%></p>
     </div>
     <% end%> 
-    
-    <div class="element youtube width2 height2">
-    	<p class="originType">X</p>
-    	<h3 class="symbol">Brett Atchley</h3>
-    	<iframe width="220" height="150" src="http://www.youtube.com/embed/aT5l1KVe-NU" frameborder="0" allowfullscreen style="top: 3.5em; left: .4em;"></iframe>
-    </div>
    
      <div class="element twitter width2">
 	 <div class="smokeScreen">
@@ -136,13 +145,6 @@
       <h3 class="symbol">Test</h3>
       <h2 class="name"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h2>
     </div>
-
-    
-    <div class="element youtube width2 height2">
-    	<p class="originType">X</p>
-    	<h3 class="symbol">Brett Atchley</h3>
-    	<iframe width="95%" height="75%" src="http://www.youtube.com/embed/aT5l1KVe-NU" frameborder="0" allowfullscreen style="top: 3.5em; left: .4em;"></iframe>
-    </div>
     
      <div class="element twitter width2">
 	 <div class="smokeScreen">
@@ -192,12 +194,6 @@
       <h2 class="name"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h2>
     </div>
     
-    <div class="element youtube width2 height2">
-    	<p class="originType">X</p>
-    	<h3 class="symbol">Brett Atchley</h3>
-    	<iframe width="220" height="150" src="http://www.youtube.com/embed/aT5l1KVe-NU" frameborder="0" allowfullscreen style="top: 3.5em; left: .4em;"></iframe>
-    </div>
-    
      <div class="element twitter width2">
 	 <div class="smokeScreen">
     	<%= image_tag "stache.svg", :class => 'stache' %>
@@ -243,13 +239,6 @@
       <p class="originType">L</p>
       <h3 class="symbol">Test</h3>
       <h2 class="name"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h2>
-    </div>
-
-    
-    <div class="element youtube width2 height2">
-    	<p class="originType">X</p>
-    	<h3 class="symbol">Brett Atchley</h3>
-    	<iframe width="220" height="150" src="http://www.youtube.com/embed/aT5l1KVe-NU" frameborder="0" allowfullscreen style="top: 3.5em; left: .4em;"></iframe>
     </div>
     
      <div class="element twitter width2">
@@ -312,6 +301,42 @@
           }
         }
       });
+	
+	
+      	//Kevin's custom filtering
+      	//////////////////////////
+      	var theChosen = [];
+		
+		// filter items when filter link is clicked
+		$('#filters a').click(function(){
+		var selector = $(this).attr('data-filter');
+		if($.inArray(selector, theChosen) == -1){
+		  theChosen.push(selector);
+		  $(this).addClass('selected');
+		  }
+		  else{
+			  var index = theChosen.indexOf(selector);
+			  theChosen.splice(index, 1);
+			  $(this).removeClass('selected');
+		  }
+	
+		var selected = '';
+		  for (i = 0; i < theChosen.length; i++)
+		  {
+		  	if (i == (theChosen.length - 1)){
+			  	selected = selected + theChosen[i];
+			}
+			else {
+				selected = selected + theChosen[i] + ', ';
+			}
+		  };
+		  if(theChosen.length == 0){
+			selected = '*';
+		  };
+		  
+		  $container.isotope({ filter: selected});
+		  return false;
+		});
       
        $('#prepend a').click(function(){
         var $newEls = $( fakeElement.getGroup() );
@@ -325,17 +350,20 @@
 
     
       
-      var $optionSets = $('#options .option-set'),
+      /*
+var $optionSets = $('#options .option-set'),
           $optionLinks = $optionSets.find('a');
 
       $optionLinks.click(function(){
         var $this = $(this);
         // don't proceed if already selected
         if ( $this.hasClass('selected') ) {
+          $this.removeClass('selected')
           return false;
         }
         var $optionSet = $this.parents('.option-set');
-        $optionSet.find('.selected').removeClass('selected');
+        
+        //mark button as selected
         $this.addClass('selected');
   
         // make option object dynamically, i.e. { filter: '.my-filter-class' }
@@ -355,9 +383,13 @@
         
         return false;
       });
+*/
     
    });
    
+   
+   //Custom jQuery --Kevin
+   ///////////////////////
    $(".stache").on("click", function(){
 	   $(this).css({
 		   opacity: "1",
@@ -388,7 +420,7 @@
    	   tempHeight = $(this).parent().parent().css("height");
    	   tempTransform = $(this).parent().parent().css("webkitTransform");
    	   tempZIndex = $(this).parent().parent().css("zIndex");
-	   $(this).parent().parent().css({webkitTransform: "", left: "23%", width: "50%", height: "50%", zIndex: "5"});
+	   $(this).parent().parent().css({webkitTransform: "", left: "23%", width: "50%", height: "35%", zIndex: "5"});
 	   $(".blackout").css({webkitTransform: "", zIndex: "4", backgroundColor: "black", width: "100%", height: "100%", opacity: ".80"});
 	   $(this).css({display: "none"});
 	   $(".shrinkRay").css({display: "block"});   
@@ -429,6 +461,8 @@
 				// [optional] Distance from mouse (in pixels) when menu should open
 				threshold: 40
 			});
+			
+			
 
 			// API Methods:
 			// meny.open();

@@ -20,21 +20,13 @@ Surfeitalpha::Application.routes.draw do
   get '/sessions/logout' => 'sessions#destroy', :as => :logout
 
   
-  resources :users do 
+  resources :users 
 
-  end
+  #Social Channels'
+    get '/channels' => 'channels#index', :as => :channels
 
-  
 
-  #Social Channels
 
-  resources :channels
-  get 'channels/twitter' => 'channels#twitter', :as => :twitter
-  get 'channels/facebook' => 'channels#facebook', :as => :facebook
- #get 'channels/instagram' => 'channels#instagram', :as => :instagram
-  
-
-    # root :to => 'Directors#index'  DO THIS
  
 
   

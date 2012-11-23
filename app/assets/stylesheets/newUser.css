@@ -1,21 +1,16 @@
-@font-face {
-    font-family: "Surfeit";
-    src: url(andes.ttf);
-}
-
 
 body{
 	background: black;
 }
 
-header{
+header {
 	display: block;
 	position: relative;
 	border-bottom: solid;
 	background-image: url('waves.gif');
 	width: 100%;
 	left: -16px;
-	height: 118px;
+	height: 80px;
 	top: -10px;
 	padding-right: 26px;
 }
@@ -28,12 +23,12 @@ header{
 
 .surfeitTextLogo{
 	display: inline-block;
-	font-family: Surfeit;
-	font-size: 110px;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 50px;
 	position: relative;
-	color: #000;
-	text-shadow: 1px 1px 1px #F00;
-	top: -78px;
+	color: black;
+	text-shadow: 1px 1px 1px red;
+	top: -44px;
 }
 
 form input{
@@ -44,28 +39,28 @@ form input{
 	
 }
 
-.surfeitLogo{
-	width: 90px;
+.surfeitLogo {
+	width: 50px;
 	position: absolute;
-	left: 260px;
+	left: 180px;
 }
 
-.createYourAccount{
+.createYourAccount {
 	position: absolute;
-	top: -34px;
-	font-family: Surfeit;
-	left: 376px;
-	font-size: 62px;
+	top: -4px;
+	font-family: 'Open Sans', sans-serif;
+	left: 841px;
+	font-size: 20px;
 }
 
 .alreadyMember{
-	font-family: Surfeit;
-float: right;
-font-size: 19px;
-color: black;
-top: -254px;
-left: 1px;
-position: relative;
+	font-family: 'Open Sans', sans-serif;
+	float: right;
+	font-size: 19px;
+	color: black;
+	top: -254px;
+	left: 1px;
+	position: relative;
 }
 
 .container{
@@ -79,7 +74,7 @@ position: relative;
 }
 
 .container form{
-	font-family: Surfeit;
+	font-family: 'Open Sans', sans-serif;
 	color: #9BF3D4;
 	font-size: 48px;
 }
@@ -120,22 +115,22 @@ position: relative;
 
 .wereCool{
 	font-size: 20px;
-color: red;
-position: relative;
-top: -32px;
-left: 84px;
+	color: red;
+	position: relative;
+	top: -32px;
+	left: 84px;
 }
 
 .actions input{
 	width: 336px;
-height: 96px;
-font-size: 46px;
-font-family: Surfeit;
-background-color: #9BF3D4;
-position: relative;
-left: 272px;
-border-radius: 5px;
-border-color: red;
+	height: 96px;
+	font-size: 46px;
+	font-family: 'Open Sans', sans-serif;
+	background-color: #9BF3D4;
+	position: relative;
+	left: 272px;
+	border-radius: 5px;
+	border-color: red;
 }
 
 
