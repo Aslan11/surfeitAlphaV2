@@ -30,6 +30,8 @@ class PagesController < ApplicationController
     @recent_media_items = client.user_media_feed
     @mediafeed = client.user_media_feed
     
+    # @user = User.find(session[:user_id])  cannot have two @user instance variables when defining a method. This line needs to be in there to link from Current to User show page
+
   end
 
 end
