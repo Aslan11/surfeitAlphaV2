@@ -10,34 +10,34 @@
       </ul>
     </div>
   <% end %>
-
+    <h2>Sign In</h2>
     <span class="nameInput">
-    <%= f.label :name, "Name:" %>
+    <%= f.label :name, "Name" %>
     <%= f.text_field :name %>
-    </span> <br><br>
+    </span>
      <span class="userInput">
-    <%= f.label :username, "Username:" %>
+    <%= f.label :username, "Username" %>
     <%= f.text_field :username %>
-    </span> <br><br>
+    </span>
     <span class="emailInput">
-    <%= f.label :email, "Email:" %>
+    <%= f.label :email, "Email" %>
     <%= f.email_field :email %>
     </span><br>
     <p class="wereCool">Don't worry, we promise to never share, sell, or spam your email. We're cool like that.</p>
     <span class="pwdInput">
-    <%= f.label :password, "Password:" %>
+    <%= f.label :password, "Password" %>
     <%= f.password_field :password %>
-    </span><br>
+    </span>
     <span class="pwdConfirm">
     <%= f.label :password_confirmation, "Confirm:" %>
     <%= f.password_field :password_confirmation %>
-    </span><br>
+    </span>
     <span class="updateInput">
-    <%= f.label :email_opt_in, "Email Updates:" %>
-    <%= f.check_box :email_opt_in %>
-    </span><br><br>
+
     <div class="actions">
     	<%= f.submit "Join Us!" %>
     </div>
 	
 <% end %> 
+
+    
