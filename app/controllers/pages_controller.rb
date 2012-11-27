@@ -6,7 +6,7 @@ class PagesController < ApplicationController
   redirect_to :controller => 'sessions', :action => 'connect' if !session[:access_token] 
 
   client = Instagram.client(:access_token => session[:access_token])
-    @user = client.user
+    @instagram_user = client.user
     @recent_media_items = client.user_recent_media
     
   end
@@ -26,11 +26,11 @@ class PagesController < ApplicationController
   redirect_to :controller => 'sessions', :action => 'connect' if !session[:access_token] 
 
   client = Instagram.client(:access_token => session[:access_token])
-    @user = client.user
+    @instagram_user = client.user
     @recent_media_items = client.user_media_feed
     @mediafeed = client.user_media_feed
     
-    # @user = User.find(session[:user_id])  cannot have two @user instance variables when defining a method. This line needs to be in there to link from Current to User show page
+    @user = User.find(session[:user_id])  
 
   end
 

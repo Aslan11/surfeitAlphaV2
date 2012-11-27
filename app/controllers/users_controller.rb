@@ -1,14 +1,14 @@
 class UsersController < ApplicationController
 
-before_filter :require_user, :except => [:new, :create]
+  # before_filter :require_user, :except => [:new, :create]
   
-  def require_user
-    # if !session[:user_id] 
-    #   redirect_to index_path, notice: "You must sign in first."
-    # elsif session[:user_id] != params[:id]
-    #   redirect_to user_path(session[:user_id]), notice: "Not authorized"
-    # end
-  end
+  # def require_user
+  #   # if !session[:user_id] 
+  #   #   redirect_to index_path, notice: "You must sign in first."
+  #   # elsif session[:user_id] != params[:id]
+  #   #   redirect_to user_path(session[:user_id]), notice: "Not authorized"
+  #   # end
+  # end
 
   # GET /users
   # GET /users.json
@@ -69,4 +69,5 @@ before_filter :require_user, :except => [:new, :create]
     @user.destroy
   
   end
-end
+
+#TODO: Might be missing an 'end' on the user controller 
