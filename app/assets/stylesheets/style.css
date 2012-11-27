@@ -124,6 +124,32 @@ background-color: black;
 left: 0px;
 top: 0px;
 z-index: 3;
+border-radius: 5px;
+}
+
+
+/**** Glow Icons ****/
+.fbGlowIcon{
+position: relative;
+top: 16px;
+}
+.twitterGlowIcon{
+position: relative;
+top: 18px;
+right: 10px;
+}
+.instaGlowIcon{
+position: relative;
+font-family: typicons;
+top: 20px;
+right: 18px;
+
+}
+.rssGlowIcon{
+position: relative;
+position: relative;
+top: 15px;
+right: 7px;
 }
 /**** Isotope Filtering ****/
 
@@ -135,7 +161,7 @@ z-index: 3;
 	display: none;
 	padding: 20px;
 	overflow: auto;
-	background-image: url('waves.gif');
+	background-image: url('gun_metal.png');
 	-webkit-box-sizing: border-box;
 	   -moz-box-sizing: border-box;
 	        box-sizing: border-box;
@@ -154,7 +180,7 @@ z-index: 3;
 	position: absolute;
 	z-index: 10;
 
-	border: 10px solid #FFF;
+	border: 10px solid #fff;
 
 	-webkit-transition: opacity 0.4s ease 0.4s; 
 	   -moz-transition: opacity 0.4s ease 0.4s; 
@@ -243,7 +269,7 @@ body {
   font-family: "Advent Pro", Arial, sans-serif;
   font-size: 13px;
   line-height: 1.7em;
-  background: #112;
+  background-image: url('skewed_print.png');
   color: #FFF;
 }
 
@@ -328,16 +354,45 @@ width: 118%;
   overflow: hidden;
   position: relative;
   background: #888;
-  color: #ffffff;
-  
+  color: #bebfb5;
+  border-radius: 5px;
 }
 
-.element.facebook        { background: #0007a6;}
-.element.twitter		 { background: #00a3ff;}
-.element.rss   			 { background: #ff7800;}
-.element.youtube		 { background: #ff0000;}
-.element.instagram		 { background: #ffe100;}
+.element.facebook{ 
+background: #4a4d4f;
+-webkit-box-shadow:0 0 8px #3B5998; 
+-moz-box-shadow: 0 0 8px #3B5998; 
+box-shadow:0 0 8px #3B5998;
+}
 
+.element.twitter{ 
+background: #4a4d4f;
+-webkit-box-shadow:0 0 8px #4099ff; 
+-moz-box-shadow: 0 0 8px #4099ff; 
+box-shadow:0 0 8px #4099ff;
+}
+
+.element.rss{
+background: #4a4d4f;
+-webkit-box-shadow:0 0 8px #ff9200; 
+-moz-box-shadow: 0 0 8px #ff9200; 
+box-shadow:0 0 8px #ff9200;
+}
+
+.element.youtube{ 
+background: #4a4d4f;
+}
+
+.element.instagram{
+background: #4a4d4f;
+-webkit-box-shadow:0 0 8px #fff; 
+-moz-box-shadow: 0 0 8px #fff; 
+box-shadow:0 0 8px #fff;
+}
+
+.instagram img{
+border-radius: 5px;
+}
 
 .element * {
   position: absolute;
@@ -460,21 +515,25 @@ font-family: Pictograms;
 }
 
 #options li a {
-  display: block;
-  padding: 0.4em 0.5em;
-  background-color: #DDD;
-  color: #222;
-  font-weight: bold;
-  text-shadow: 0 1px hsla( 0, 0%, 100%, 0.5 );
-  background-image: -webkit-linear-gradient( top, hsla( 0, 0%, 100%, 0.5 ), hsla( 0, 0%, 100%, 0.0 ) );
-  background-image:    -moz-linear-gradient( top, hsla( 0, 0%, 100%, 0.5 ), hsla( 0, 0%, 100%, 0.0 ) );
-  background-image:     -ms-linear-gradient( top, hsla( 0, 0%, 100%, 0.5 ), hsla( 0, 0%, 100%, 0.0 ) );
-  background-image:      -o-linear-gradient( top, hsla( 0, 0%, 100%, 0.5 ), hsla( 0, 0%, 100%, 0.0 ) );
-  background-image:         linear-gradient( top, hsla( 0, 0%, 100%, 0.5 ), hsla( 0, 0%, 100%, 0.0 ) );
+display: block;
+padding: 0.4em 0.5em;
+background-color: #393939;
+color: #222;
+width: 29px;
+height: 43px;
+font-size: 64px;
+font-weight: bold;
+font-family: Pictograms;
+text-shadow: 0 1px hsla( 0, 0%, 100%, 0.5 );
+background-image: -webkit-linear-gradient( top, hsla( 0, 0%, 100%, 0.5 ), hsla( 0, 0%, 100%, 0.0 ) );
+background-image: -moz-linear-gradient( top, hsla( 0, 0%, 100%, 0.5 ), hsla( 0, 0%, 100%, 0.0 ) );
+background-image: -ms-linear-gradient( top, hsla( 0, 0%, 100%, 0.5 ), hsla( 0, 0%, 100%, 0.0 ) );
+background-image: -o-linear-gradient( top, hsla( 0, 0%, 100%, 0.5 ), hsla( 0, 0%, 100%, 0.0 ) );
+background-image: linear-gradient( top, hsla( 0, 0%, 100%, 0.5 ), hsla( 0, 0%, 100%, 0.0 ) );
 }
 
 #options li a:hover {
-  background-color: #5BF;
+  background-color: #696969;
 }
 
 #options li a:active {
@@ -491,18 +550,32 @@ font-family: Pictograms;
 }
 
 #options li:first-child a {
-  border-radius: 7px 0 0 7px;
+  border-radius: 7px 0 0 0;
   border-left: none;
 }
 
+#options li:nth-child(2) a {
+border-radius: 0 7px 0 0;
+}
+
+#options li:nth-child(3) a {
+border-radius: 0 0 0 7px;
+position: relative;
+top: -3px;
+width: 28px;
+}
+
 #options li:last-child a {
-  border-radius: 0 7px 7px 0;
+  border-radius: 0 0 7px 0;
+  position: relative;
+top: -3px;
+left: 0px;
 }
 
 #options li a.selected {
-  background-color: #13F;
-  text-shadow: none;
-  color: white;
+  background-color: #171717;
+  text-shadow: 0px 0px 7px lightblue;
+color: lightblue;
 }
 
 /* Combination filter options*/

@@ -1,5 +1,7 @@
 Surfeitalpha::Application.routes.draw do
 
+  
+
   get "feed/index"
   match 'session/:action', :to => 'sessions'
   match '/sessions', :to => 'sessions#connect', :as => :instagram_access
@@ -21,6 +23,7 @@ Surfeitalpha::Application.routes.draw do
 
   
   resources :users 
+  resources :stashes
 
   #Social Channels'
     get '/channels' => 'channels#index', :as => :channels
