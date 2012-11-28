@@ -53,7 +53,7 @@ before_filter :require_user, :except => [:new, :create]
   # POST /users.json
   def create
     @user = User.new(params[:user])
-    (@user.save) ? (session[:user_id] = @user.id ; redirect_to instagram_access_url) ) : (redirect_to(new_user_url) ;   flash[:notice] = "User exists!!!")
+    (@user.save) ? (session[:user_id] = @user.id ; redirect_to(instagram_access_url)) : (redirect_to(new_user_url) ;   flash[:notice] = "User exists!!!")
 
   end
 
@@ -69,4 +69,3 @@ before_filter :require_user, :except => [:new, :create]
     @user.destroy
   
   end
-end
