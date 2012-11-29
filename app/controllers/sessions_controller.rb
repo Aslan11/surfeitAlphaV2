@@ -70,7 +70,7 @@ class SessionsController < ApplicationController
 
       redirect_to user_current_url
 
-   
+    end
       
   	
 
@@ -79,6 +79,7 @@ class SessionsController < ApplicationController
   		def failure
   			
   		end
+
 
 
 
