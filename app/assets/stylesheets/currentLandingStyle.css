@@ -16,8 +16,7 @@ src: url(Socialico.otf);
 }
 
 @font-face {
-    font-family: "Surfeit";
-    src: url(andes.ttf) format("truetype");
+   font-family: 'PT Sans', sans-serif;
 }
 
 .stache{
@@ -225,6 +224,7 @@ time, mark, audio, video {
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
+  font-family: 'PT Sans', sans-serif;
 }
 
 article, aside, details, figcaption, figure,
@@ -236,15 +236,22 @@ h1, h2, h3, p, ul, ol, pre, dl {
   
 }
 
-h1, h2, h3 { font-weight: bold; }
+h1, h2, h3 { font-weight: normal 400; }
 
 h1 {
-  font-size: 32px;
+  font-size: 14px;
 }
 
 h2 {
-  font-size: 24px;
+  font-size: 14px;
   line-height: 1.1em;
+  color: #666666;
+}
+
+h3 {
+   font-size: 11px;
+    line-height: 1.1em;
+    color: #999999;
 }
 
 ul, ol {
@@ -253,7 +260,7 @@ ul, ol {
 
 a,
 a code {
-  color: #fff;
+  color: #666666;
   text-decoration: none;
   
 }
@@ -290,14 +297,15 @@ body {
 }
 
 #container {
-border: 1px solid #666;
+border: 1px solid #7F7F7F;
 padding: 5px;
 margin-bottom: 20px;
 position: relative;
 overflow: hidden;
 top: -76px;
 width: 100%;
-background-color: #112;
+background-color: #CCC;
+border-image: initial;
 }
 
 .element {
@@ -308,15 +316,22 @@ background-color: #112;
   overflow: hidden;
   position: relative;
   background: #888;
-  color: #ffffff;
+  color: #FFFFFF;
   
 }
 
-.element.facebook        { background: #0007a6;}
-.element.twitter		 { background: #00a3ff;}
-.element.rss   			 { background: #ff7800;}
-.element.youtube		 { background: #ff0000;}
-.element.instagram		 { background: #ffe100;}
+.element.facebook { 
+  background: #FFFFFF;
+  -webkit-box-shadow: 0 0 2px 1px #999999; 
+
+}
+.element.twitter { 
+  background: #FFFFFF;
+
+}
+.element.rss { background: #FFFFFF;}
+.element.youtube { background: #FFFFFF;}
+.element.instagram { background: #FFFFFF;}
 
 
 .element * {
@@ -325,11 +340,11 @@ background-color: #112;
 }
 
 .element .symbol {
-	left: 0.2em;
+	font-size: 11px;
+  color: #999999;
+  left: 0.2em;
 	top: 0.4em;
-	font-size: 1.5em;
 	line-height: 1.0em;
-	color: #FFF;
 }
 .element.large .symbol {
   font-size: 4.5em;
@@ -342,7 +357,8 @@ background-color: #112;
 .element .name {
   left: 0.5em;
   top: 2.6em;
-  font-size: 1.0em;
+  font-size: 14px;
+  line-height: 18px;
 }
 
 .element .weight {
@@ -367,15 +383,27 @@ top: 0.3em;
 font-family: Pictograms;
 }
 
-.variable-sizes .element.width2 { width: 230px; }
+.variable-sizes .element.width2 { 
+  width: 230px; 
+  -webkit-box-shadow: 0 0 2px 1px #999999; 
+}
 
-.variable-sizes .element.height2 { height: 230px;}
+.variable-sizes .element.height2 { 
+  height: 230px;
+}
 
-.variable-sizes .element.width3 { width: 350px;font-size: 1.3em }
+.variable-sizes .element.width3 { 
+  width: 350px;font-size: 1.3em
+  -webkit-box-shadow: 0 0 2px 1px #999999;  
+}
 
-.variable-sizes .element.height3 { height: 350px;}
+.variable-sizes .element.height3 { 
+  height: 350px;
+}
 
-.variable-sizes .element.width4 {width: 470px;}
+.variable-sizes .element.width4 {
+  width: 470px;
+}
 
 .variable-sizes .element.height4 {height: 470px;}
 }

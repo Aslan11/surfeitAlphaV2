@@ -41,7 +41,6 @@ class UsersController < ApplicationController
   def new
     @user = User.new
       
-    end
   end
 
   # GET /users/1/edit
@@ -53,7 +52,7 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(params[:user])
-    (@user.save) ? (session[:user_id] = @user.id ; redirect_to(instagram_access_url) ) : (redirect_to(new_user_url) ;   flash[:notice] = "User exists!!!")
+    (@user.save) ? (session[:user_id] = @user.id ; redirect_to(instagram_access_url)) : (redirect_to(new_user_url) ;   flash[:notice] = "User exists!!!")
 
   end
 
@@ -69,5 +68,8 @@ class UsersController < ApplicationController
     @user.destroy
   
   end
+<<<<<<< HEAD
+=======
 
 #TODO: Might be missing an 'end' on the user controller 
+>>>>>>> f815cb077cab28387b237cc243fa787fa29397c0

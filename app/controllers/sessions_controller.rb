@@ -36,14 +36,18 @@ class SessionsController < ApplicationController
     		request.env['omniauth.auth']
   	end
 
-  	# def create_facebook
-  	# 	user = User.from_omniauth (env["omniauth.auth"])
-			# session[:user_id] = user.id
-			# session[:email] = user.email
 
-   #    redirect_to user_current_url
+  	def create_facebook
+  		user = User.from_omniauth (env["omniauth.auth"])
+      token = env['omniauth']['credentials']['token']
+			session[:user_id] = user.id
+			session[:email] = user.email
+
+      redirect_to user_current_url
+
+   
       
-  	# end
+  	
 
 
 
@@ -70,9 +74,9 @@ class SessionsController < ApplicationController
 
 	def destroy
 	
-		session[:user_id] = nil
-    session[:access_token] = nil
-    	redirect_to index_path
+		# session[:user_id] = nil
+    reset_session
+    redirect_to index_path
 
 	end
 

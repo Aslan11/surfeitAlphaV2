@@ -23,15 +23,3 @@
 <br>
 <br>
 <br>
-
-<a href="/auth/facebook"> <img src="http://1.bp.blogspot.com/-YIW3V91w6rw/T70p8XbSmwI/AAAAAAAABcE/l-KLarIKifA/s1600/Facebook-CEO-Mark-Zuckerberg.jpeg"></a>
-
-<% if current_user %>
-  Welcome <%= current_user.name %>!
-  <%= link_to "Sign Out", logout_path %>
-<% else %>
-  <%= link_to "Sign in with Facebook", "/auth/facebook" %>
-<% end %>
-
-
-

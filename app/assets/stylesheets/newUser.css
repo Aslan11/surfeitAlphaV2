@@ -1,18 +1,18 @@
 
 body{
-	background: black;
+	background: #EFEFEF;
 }
 
 header {
 	display: block;
 	position: relative;
-	border-bottom: solid;
-	background-image: url('waves.gif');
+	border-bottom: 1px solid;
 	width: 100%;
 	left: -16px;
 	height: 80px;
 	top: -10px;
 	padding-right: 26px;
+	background: #8F8F8F;
 }
 
 .headerContent{
@@ -21,29 +21,27 @@ header {
 	left: 18px;
 }
 
-.surfeitTextLogo{
+.surfeitTextLogo {
 	display: inline-block;
 	font-family: 'Open Sans', sans-serif;
 	font-size: 50px;
 	position: relative;
-	color: black;
-	text-shadow: 1px 1px 1px red;
+	color: white;
 	top: -44px;
-}
-
-form input{
-	font-size: 32px;
-}
-
-.actions{
-	
+	left: 20px;
 }
 
 .surfeitLogo {
 	width: 50px;
 	position: absolute;
-	left: 180px;
+	left: 200px;
 }
+
+form input {
+	font-size: 32px;
+	margin: 0 0 20px;
+}
+
 
 .createYourAccount {
 	position: absolute;
@@ -58,38 +56,58 @@ form input{
 	float: right;
 	font-size: 19px;
 	color: black;
+
 	top: -254px;
 	left: 1px;
 	position: relative;
 }
 
-.container{
-	width: 800px;
+.container {
+	width: 1000px;
 	height: 600px;
-	top: 9px;
+	top: 20px;
 	position: relative;
-	background-color: black;
+	background-color: #EFEFEF;
 	border-radius: 8px;
-	margin:	auto;
+	margin: auto;
 }
 
 .container form {
 	font-family: 'Open Sans', sans-serif;
-	color: #9BF3D4;
-	margin: auto;
-	width: 550px;
-	height: 450px;
-	font-size: 14px;
+	color: #8F8F8F;
+	font-size: 13px;
 }
 
 input {
-	width: 375px;
+	width: 350px;
 	display: block;
-	height: 25px;
+	height: 44px;
+}
+
+
+.wereCool {
+	color: #FFB13D;
+	width: 350px;
+	line-height: 16px;
+	font-size: 11px;
+	margin: 0 0 10px;
+}
+.actions input {
+	width: 200px;
+	height: 44px;
+	font-family: 'Open Sans', sans-serif;
+	background-color: #FFC940;
+	position: relative;
+	border-radius: 5px;
+	font-size: 18px;
+
+}
+
+.actions{
+	padding-top: 15px;
 }
 
 .nameInput {
-
 }
 
 .userInput{
@@ -106,24 +124,6 @@ input {
 
 .updateInput{
 }
-
-.wereCool {
-	color: red;
-	width: 375px;
-	line-height: 16px;
-	font-size: 11px;
-	margin: 0 0 10px;
-}
-.actions input {
-	width: 336px;
-	height: 96px;
-	font-family: 'Open Sans', sans-serif;
-	background-color: #9BF3D4;
-	position: relative;
-	border-radius: 5px;
-}
-
-
 
 
 

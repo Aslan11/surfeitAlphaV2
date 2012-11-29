@@ -8,6 +8,8 @@ gem 'rails', '3.2.8'
 gem 'omniauth-twitter'
 gem 'omniauth-facebook'
 gem 'omniauth'
+gem 'fb_graph'
+gem 'koala'
 
 gem 'sqlite3'
 
