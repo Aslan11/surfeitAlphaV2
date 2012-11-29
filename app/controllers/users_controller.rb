@@ -68,8 +68,4 @@ class UsersController < ApplicationController
     @user.destroy
   
   end
-<<<<<<< HEAD
-=======
 
-#TODO: Might be missing an 'end' on the user controller 
->>>>>>> f815cb077cab28387b237cc243fa787fa29397c0
