@@ -3,6 +3,11 @@ Surfeitalpha::Application.routes.draw do
   
 
   get "feed/index"
+
+  get 'home/index' => 'home#index'
+
+  match 'home/callback' => 'home#callback'
+
   match 'session/:action', :to => 'sessions'
   match '/sessions', :to => 'sessions#connect', :as => :instagram_access
 
@@ -27,10 +32,6 @@ Surfeitalpha::Application.routes.draw do
 
   #Social Channels'
     get '/channels' => 'channels#index', :as => :channels
-
-
-
- 
 
   
 
