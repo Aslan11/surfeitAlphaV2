@@ -16,13 +16,10 @@
 <h1>User Channels</h1>
 
 
-<a href="/sessions"> <img src="http://blazomania.com/wp-content/uploads/2012/11/instagram-logo.png"></a>
-<a href="/session">Click the image peoplee!!!! Muahahaha</a>
-<br>
-<br>      
-<br>
-<br>
-<br>
+<ul>
+  <li><%= link_to "Authorize Instagram", instagram_access_path %></li>
+  <li><%= link_to 'Authorize this Facebook app', facebook_auth_url, :class=>"button"%></li>
+</ul>
 
-<%= link_to 'Authenticate this Facebook app', facebook_auth_url, :class=>"button"%>
+
 
