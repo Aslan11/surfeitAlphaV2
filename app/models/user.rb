@@ -8,6 +8,11 @@ class User < ActiveRecord::Base
   validates_presence_of :name, :email
   validates_uniqueness_of :email, :username
 
+  before_save do
+  		self.username = self.username.downcase
+  		self.email = self.email.downcase
+	end
+
   def self.from_omniauth(auth)
 	where(auth.slice("provider", "uid")).first || create_from_omniauth(auth)
 	
