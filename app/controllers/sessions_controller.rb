@@ -10,8 +10,29 @@ class SessionsController < ApplicationController
 	def callback
     	response = Instagram.get_access_token(params[:code], :redirect_uri => CALLBACK_URL)
     	session[:access_token] = response.access_token
-    	redirect_to :controller => 'pages', :action => 'current'
+    	redirect_to :controller => 'channels', :action => 'index'
+
   	end
+
+    def callback_fb
+
+      if params[:code]
+      # acknowledge code and get access token from FB
+      session[:access_token] = session[:oauth].get_access_token(params[:code])
+    end   
+
+     # auth established, now do a graph call: 
+    @api = Koala::Facebook::API.new(session[:access_token])
+    @graph_data = @api.get_object("/me/home")
+ 
+    
+  
+    respond_to do |format|
+     format.html {   }       
+    end
+    
+      
+    end
 
 
 	def login
@@ -45,15 +66,16 @@ class SessionsController < ApplicationController
 
       redirect_to user_current_url
 
-   
+    end
       
-  	end
+
 
 
 
   		def failure
   			
   		end
+
 
 
 
