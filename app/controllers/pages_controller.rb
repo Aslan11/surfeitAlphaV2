@@ -1,5 +1,6 @@
 class PagesController < ApplicationController
 
+  
 
   def instagram
 
@@ -33,5 +34,10 @@ class PagesController < ApplicationController
     @user = User.find(session[:user_id])  
 
   end
+
+  def rss
+
+  end
+
 
 end
