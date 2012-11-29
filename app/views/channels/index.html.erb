@@ -6,7 +6,7 @@
             <%= link_to 'Current', user_current_path %> |
             <%= link_to 'My Stash', stashes_path %> |
             <%= link_to 'Networks', channels_path %> |
-            <%= link_to "Account", user_path(@user) %> | 
+            <%= link_to "Account", current_user %> | 
             <%= current_user.name %> 
             <%= link_to "Sign Out", logout_path %>
       </nav>
@@ -24,5 +24,5 @@
 <br>
 <br>
 
-<%= link_to 'Authenticate this Facebook app', @auth_url, :class=>"button"%>
+<%= link_to 'Authenticate this Facebook app', facebook_auth_url, :class=>"button"%>
 
