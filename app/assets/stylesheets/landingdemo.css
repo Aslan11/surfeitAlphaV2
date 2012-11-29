@@ -54,8 +54,8 @@ section, header{
 }
 /* General Demo Style */
 body{
-	font-family: Cambria, Palatino, "Palatino Linotype", "Palatino LT STD", Georgia, serif;
-	background-image: url('waves.gif');
+	font-family: 'PT Sans', sans-serif;
+	background: #666666;
 	font-weight: 400;
 	font-size: 15px;
 	color: #000;
