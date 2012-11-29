@@ -42,7 +42,7 @@ class SessionsController < ApplicationController
 	def login
 		if 
       		session[:user_id] != nil
-      		redirect_to channels_url
+      		redirect_to channels_path
     	else
       		flash[:notice] = "Email or Password do not match. Try again."
       		redirect_to index_path
@@ -61,6 +61,7 @@ class SessionsController < ApplicationController
     		request.env['omniauth.auth']
   	end
 
+
   	def create_facebook
   		user = User.from_omniauth (env["omniauth.auth"])
       token = env['omniauth']['credentials']['token']
@@ -68,8 +69,11 @@ class SessionsController < ApplicationController
 			session[:email] = user.email
 
       redirect_to user_current_url
+
+   
       
-  	end
+  	
+
 
 
   		def failure
