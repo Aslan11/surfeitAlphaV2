@@ -9,6 +9,8 @@ class StashesController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @stashes }
+
+      @user = User.find(session[:user_id])
     end
   end
 
