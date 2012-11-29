@@ -21,14 +21,10 @@ class SessionsController < ApplicationController
       session[:access_token] = session[:oauth].get_access_token(params[:code])
     end   
 
-     # auth established, now do a graph call:
-      
+     # auth established, now do a graph call: 
     @api = Koala::Facebook::API.new(session[:access_token])
-    begin
-      @graph_data = @api.get_object("/me/statuses", "fields"=>"message")
-    rescue Exception=>ex
-      puts ex.message
-    end
+    @graph_data = @api.get_object("/me/home")
+ 
     
   
     respond_to do |format|
@@ -72,7 +68,7 @@ class SessionsController < ApplicationController
 
     end
       
-  	end
+
 
 
 

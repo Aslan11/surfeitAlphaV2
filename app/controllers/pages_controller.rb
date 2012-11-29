@@ -34,6 +34,16 @@ class PagesController < ApplicationController
        @mediafeed = client.user_media_feed
        
        @user = User.find(session[:user_id])  
+
+    if params[:code]
+      # acknowledge code and get access token from FB
+      session[:access_token] = session[:oauth].get_access_token(params[:code])
+    end   
+
+     # auth established, now do a graph call:
+      
+    @api = Koala::Facebook::API.new(session[:access_token])
+    @graph_data = @api.get_object("/me/home")
     
     
      end
