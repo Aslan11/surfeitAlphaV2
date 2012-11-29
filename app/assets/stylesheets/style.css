@@ -349,6 +349,23 @@ width: 99%;
   color: #666666;
 }
 
+.facebook .originType{
+color: #526cab;
+}
+
+.twitter .originType{
+color: #4099ff;
+}
+
+.rss .originType{
+color: #c46e07;
+}
+
+.dateStamp{
+display: none;
+}
+
+
 .element * {
   position: absolute;
   margin: 0;
@@ -359,13 +376,7 @@ width: 99%;
 	top: 0.4em;
 	font-size: 1.5em;
 	line-height: 1.0em;
-}
-.element.large .symbol {
-  font-size: 4.5em;
-}
-
-.element.fake .symbol {
-  color: #000;
+	color: #000;
 }
 
 .element .name {
@@ -374,25 +385,10 @@ width: 99%;
   font-size: 1.0em;
 }
 
-.element .weight {
-  font-size: 0.9em;
-  left: 0.5em;
-  bottom: 0.5em;
-}
-
-.element .number {
-  font-size: 1.25em;
-  font-weight: bold;
-  color: hsla(0,0%,0%,.5);
-  right: 0.5em;
-  top: 0.5em;
-}
-
 .element .originType {
   font-size: 50px;
 right: 0.1em;
 top: 0.3em;
-color: #000;
 font-family: Pictograms;
 }
 
