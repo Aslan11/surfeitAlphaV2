@@ -72,7 +72,7 @@ class SessionsController < ApplicationController
 
     end
       
-  	
+  	end
 
 
 
@@ -106,6 +106,4 @@ class SessionsController < ApplicationController
 
 	end
 
-
 end
-
