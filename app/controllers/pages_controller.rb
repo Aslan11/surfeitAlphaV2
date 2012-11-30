@@ -34,7 +34,6 @@ class PagesController < ApplicationController
     @graph_data = @api.get_object("/me/home")
   end
     
-     end
     
   private
 
