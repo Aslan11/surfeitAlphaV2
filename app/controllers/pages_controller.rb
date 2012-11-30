@@ -3,13 +3,15 @@ class PagesController < ApplicationController
   before_filter :authenticate_user!, :only => [:current]
 
   def index
-    redirect_to user_current_path if session[:user_id]
+    redirect_to instagram_access_url if session[:user_id]
   end
 
   def current
     redirect_to :controller => 'sessions', :action => 'connect' unless session[:access_token] 
     client = Instagram.client(:access_token => session[:access_token])
     @mediafeed = client.user_media_feed
+
+    # binding.pry
 
     if params[:code]
       session[:access_token] = session[:oauth].get_access_token(params[:code])
