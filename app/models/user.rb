@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
   validates_presence_of :name, :email
   validates_uniqueness_of :email, :username
 
-  before_save do
+  before_validation do
   		self.username = self.username.downcase
   		self.email = self.email.downcase
 	end
