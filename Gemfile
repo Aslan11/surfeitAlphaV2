@@ -24,7 +24,7 @@ group :assets do
 
   group :development do
   	gem 'awesome_print'
-
+  	gem 'pry'
   end
 
   gem 'koala'

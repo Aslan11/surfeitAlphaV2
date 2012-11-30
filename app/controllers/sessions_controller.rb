@@ -8,41 +8,26 @@ class SessionsController < ApplicationController
 	end
 
 	def callback
-    	response = Instagram.get_access_token(params[:code], :redirect_uri => CALLBACK_URL)
-    	session[:access_token] = response.access_token
-    	redirect_to :controller => 'channels', :action => 'index'
 
-  	end
+   session[:oauth] = Koala::Facebook::OAuth.new(APP_ID, APP_SECRET, SITE_URL + '/current') ###these two lines are to specify the @auth_url
+   @auth_url =  session[:oauth].url_for_oauth_code(:permissions=>"read_stream")             ###WE SHOULD FIND A BETTER WAY TO DO THIS.
 
-    def callback_fb
 
-      if params[:code]
-      # acknowledge code and get access token from FB
-      session[:access_token] = session[:oauth].get_access_token(params[:code])
-    end   
+   response = Instagram.get_access_token(params[:code], :redirect_uri => CALLBACK_URL)
+   session[:access_token] = response.access_token
+   redirect_to @auth_url
 
-     # auth established, now do a graph call: 
-    @api = Koala::Facebook::API.new(session[:access_token])
-    @graph_data = @api.get_object("/me/home")
- 
-    
-  
-    respond_to do |format|
-     format.html {   }       
-    end
-    
-      
-    end
+  end
 
 
 	def login
 		if 
-      		session[:user_id] != nil
-      		redirect_to channels_path
-    	else
-      		flash[:notice] = "Email or Password do not match. Try again."
-      		redirect_to index_path
-    	end	
+      session[:user_id] != nil 
+      redirect_to channels_path
+    else
+      flash[:notice] = "Email or Password do not match. Try again."
+      redirect_to index_path
+    end	
 	end
 
 	
@@ -54,52 +39,43 @@ class SessionsController < ApplicationController
 
 
 	def auth_hash
-    		request.env['omniauth.auth']
-  	end
+    request.env['omniauth.auth']
+  end
 
 
-  	def create_facebook
-  		user = User.from_omniauth (env["omniauth.auth"])
-      token = env['omniauth']['credentials']['token']
-			session[:user_id] = user.id
-			session[:email] = user.email
+  def create_facebook
+  	user = User.from_omniauth (env["omniauth.auth"])
+    token = env['omniauth']['credentials']['token']
+		session[:user_id] = user.id
+		session[:email] = user.email
 
-      redirect_to user_current_url
-
-    end
+    redirect_to user_current_url
+  end
       
 
-
-
-
-  		def failure
-  			
-  		end
-
-
+  def failure
+  
+  end
 
 
 	def create_surfeit
-
-	 user = User.find_by_email(params[:email])
+    user = User.find_by_email(params[:email])
   #  (user != nil && user.authenticate(params[:password]) ? (session[:user_id] = user.id redirect_to(instagram_access_url)) : (redirect_to(index_path) ; :notice => "Email & Password do not match")
     
-   		 if user != nil && user.authenticate(params[:password])
-   		   session[:user_id] = user.id
-   		   redirect_to channels_url
-   		 else
-   		   redirect_to index_path, :notice => "Email & Password do not match"
-   		 end
+   	if user != nil && user.authenticate(params[:password])
+      session[:user_id] = user.id
+      redirect_to channels_url
+    else
+      redirect_to index_path, :notice => "Email & Password do not match"
+    end
 	end
 
 
 
 	def destroy
-	
-		# session[:user_id] = nil
-    reset_session
+		session[:user_id] = nil
+    # reset_session
     redirect_to index_path
-
 	end
 
 end
