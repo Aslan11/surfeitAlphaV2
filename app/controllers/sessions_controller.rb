@@ -8,7 +8,6 @@ class SessionsController < ApplicationController
 	end
 
 	def callback
-
    session[:oauth] = Koala::Facebook::OAuth.new(APP_ID, APP_SECRET, SITE_URL + '/current') ###these two lines are to specify the @auth_url
    @auth_url =  session[:oauth].url_for_oauth_code(:permissions=>"read_stream")             ###WE SHOULD FIND A BETTER WAY TO DO THIS.
 
@@ -16,7 +15,6 @@ class SessionsController < ApplicationController
    response = Instagram.get_access_token(params[:code], :redirect_uri => CALLBACK_URL)
    session[:access_token] = response.access_token
    redirect_to @auth_url
-
   end
 
 
@@ -60,7 +58,6 @@ class SessionsController < ApplicationController
 
 	def create_surfeit
     user = User.find_by_email(params[:email])
-  #  (user != nil && user.authenticate(params[:password]) ? (session[:user_id] = user.id redirect_to(instagram_access_url)) : (redirect_to(index_path) ; :notice => "Email & Password do not match")
     
    	if user != nil && user.authenticate(params[:password])
       session[:user_id] = user.id

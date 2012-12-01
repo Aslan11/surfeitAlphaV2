@@ -3,6 +3,7 @@ Surfeitalpha::Application.routes.draw do
   
 
   get "feed/index"
+  get "/authentications/index"
 
   match 'session/:action', :to => 'sessions'
   match '/sessions', :to => 'sessions#connect', :as => :instagram_access
