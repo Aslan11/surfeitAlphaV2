@@ -114,6 +114,13 @@ top: 0px;
 z-index: -1;
 }
 
+#notice{
+position: relative;
+left: 20px;
+top: 20px;
+color: darkRed;
+}
+
 .smokeScreen{
 width: 100%;
 height: 100%;
