@@ -1,7 +1,4 @@
 Surfeitalpha::Application.routes.draw do
-
-  
-
   get "feed/index"
   get "/authentications/index"
 
@@ -19,7 +16,6 @@ Surfeitalpha::Application.routes.draw do
 
   get '/rss' => 'pages#rss'
 
-  
   #users
   get '/current' => 'pages#current', :as => :user_current
   get '/sessions/logout' => 'sessions#destroy', :as => :logout
@@ -28,11 +24,5 @@ Surfeitalpha::Application.routes.draw do
   resources :users 
   resources :stashes
 
-  #Social Channels'
-    get '/channels' => 'channels#index', :as => :channels
-
-  
-
+  get '/authorizations' => 'authorizations#index', :as => :authorizations
 end
-
-
