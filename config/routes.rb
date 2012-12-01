@@ -16,7 +16,6 @@ Surfeitalpha::Application.routes.draw do
   # match 'auth/facebook/callback', :to => 'sessions#create_facebook', :as => :facebook_auth
   match 'auth/failure', :to => 'sessions#failure'
 
-  get '/rss' => 'pages#rss'
 
   
   #users
@@ -24,7 +23,7 @@ Surfeitalpha::Application.routes.draw do
   get '/sessions/logout' => 'sessions#destroy', :as => :logout
 
   
-  resources :users 
+  resources :users, :except => 'index'
   resources :stashes
 
   #Social Channels'

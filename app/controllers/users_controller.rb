@@ -10,6 +10,16 @@ class UsersController < ApplicationController
   #   # end
   # end
 
+  before_filter :ensure_correct_user_id, only: [:show, :edit]
+
+  def ensure_correct_user_id
+    if session[:user_id] != params[:id].to_i
+      flash[:message] = "You are not authorized to see/edit/delete any other User's user information."
+      redirect_to user_url(session[:user_id])
+      return
+    end
+  end
+
   # GET /users
   # GET /users.json
   def index
