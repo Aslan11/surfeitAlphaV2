@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-
+  
   before_filter :authenticate_user!, :only => [:current]
   before_filter :instagram, :only => [:current]
 
@@ -7,7 +7,8 @@ class PagesController < ApplicationController
     redirect_to instagram_access_url if session[:user_id]
   end
 
-  def current
+  def current 
+
     # binding.pry
     if params[:code]
     session[:access_token] = session[:oauth].get_access_token(params[:code])
@@ -27,13 +28,9 @@ class PagesController < ApplicationController
     
   end
 
-  def facebook
-
-
-    
+  def facebook  
   end
-
-
+    
     
   private
 

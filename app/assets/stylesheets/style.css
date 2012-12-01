@@ -82,6 +82,31 @@ left: 49%;
 opacity: 0.25;
 display: block;
 }
+.facebook .stache{
+width: 50%%;
+position: absolute;
+top: 18%;
+left: 0%;
+-webkit-opacity: 0.25;
+-moz-opacity: 0.25;
+opacity: 0.25;
+-webkit-transition: all 2s ease-in-out;
+-moz-transition: all 2s ease-in-out;
+-ms-transition: all 2s ease-in-out;
+-o-transition: all 2s ease-in-out;
+transition: all 2s ease-in-out
+}
+
+.facebook .expand{
+width: 45%%;
+position: absolute;
+top: 4%;
+left: 49%;
+-webkit-opacity: 0.25;
+-moz-opacity: 0.25;
+opacity: 0.25;
+display: block;
+}
 
 .twitter .shrinkRay{
 width: 45%%;
@@ -108,9 +133,10 @@ left: 27.4%;
 .blackout{
 width: 0%;
 height: 0%;
-opacity: 0.95;
+opacity: 0.05;
 position: absolute;
 left: 0px;
+background: black;
 top: 0px;
 z-index: -1;
 }
@@ -322,10 +348,7 @@ blockquote {
 /**** Isotope styles ****/
 
 /* required for containers to inherit vertical size from window */
-html,
-body {
-  height: 100%;
-}
+
 
 #container {
   border: 1px solid #666;
@@ -374,7 +397,7 @@ display: none;
 .element .symbol {
 	left: 0.2em;
 	top: 0.4em;
-	font-size: 1.5em;
+	font-size: 14px;
 	line-height: 1.0em;
 	color: #000;
 }
@@ -386,7 +409,7 @@ display: none;
 }
 
 .element .originType {
-  font-size: 50px;
+  font-size: 36px;
 right: 0.1em;
 top: 0.3em;
 font-family: Pictograms;
