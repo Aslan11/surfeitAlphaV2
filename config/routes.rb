@@ -12,6 +12,8 @@ Surfeitalpha::Application.routes.draw do
   resource  :session  
   resource  :authorizations
 
+  get '/sessions/destroy' => 'sessions#destroy', :as => :logout
+
   resources :users 
   resources :stashes
 end
