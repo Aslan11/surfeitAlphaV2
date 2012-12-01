@@ -133,9 +133,10 @@ left: 27.4%;
 .blackout{
 width: 0%;
 height: 0%;
-opacity: 0.95;
+opacity: 0.05;
 position: absolute;
 left: 0px;
+background: black;
 top: 0px;
 z-index: -1;
 }
@@ -347,10 +348,7 @@ blockquote {
 /**** Isotope styles ****/
 
 /* required for containers to inherit vertical size from window */
-html,
-body {
-  height: 100%;
-}
+
 
 #container {
   border: 1px solid #666;
