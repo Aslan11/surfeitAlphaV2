@@ -1,0 +1,63 @@
+/* ******************************************************************************
+ *
+ * Compass Setup
+ *
+ * First, let's include our Compass mixins. Add or remove as needed. See
+ * http://compass-style.org for compass documentation.
+ * 
+ * The first include is a file where we can override any of the Compass defaults
+ * we would like to change on a project wide basis.
+ *
+ ****************************************************************************** */
+
+@import "_partials/compass-variables";
+
+@import "compass/css3";
+@import "compass/typography";
+@import "compass/utilities/color";
+@import "compass/utilities/general/float";
+@import "compass/utilities/general/min";
+@import "compass/layout/stretching";
+
+/* @import "compass/layout/sticky-footer";
+ * Include if we need a sticky footer, sets up @include sticky-footer(); mixin, see
+ * http://compass-style.org/reference/compass/layout/sticky_footer/ for more details,
+ * including the HTML markup necessary for the Sticky Footer to work. */
+
+/* ******************************************************************************
+ *
+ * Project Building Blocks
+ *
+ * Now, we add are base files. Variables, mixins, extends, base, grid and type.
+ * 
+ ****************************************************************************** */
+
+@import "_partials/variables";
+@import "_partials/functions";
+@import "_partials/mixins";
+@import "_partials/extends";
+@import "_partials/grid";
+@import "_partials/general";
+@import "_partials/type";
+@import "_partials/forms";
+
+/* ******************************************************************************
+ *
+ * Project specific files
+ *
+ * Now's the time to starty building the site. The sass folder should structured
+ *
+ * [sass]
+ * - [partials]
+ * -- partial files (for importing into stylesheets)
+ * - loaded files (style.scss, page-specific.scss, etc.)
+ *
+ * Our goal is to load up to three stylesheets on every page. reset.css, style.css
+ * and finally a name-spaced css file depending on the site section we're in,
+ * containing section specific code, such as blog.css, podcast.css, etc.
+ *
+ * No style rules should be built here. They should all be broken out into specific
+ * SASS partials.
+ * 
+ ****************************************************************************** */
+ 

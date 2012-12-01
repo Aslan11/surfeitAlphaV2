@@ -1,0 +1,31 @@
+/*-  VANITY STYLES
+----------------------------------------------------------------------*/
+
+::selection { background: #fff; text-shadow: none; color: #000; }
+::-moz-selection { background: #fff; text-shadow: none; color: #000; }
+img::selection { background: transparent; }
+img::-moz-selection { background: transparent; }
+
+@media only screen and (max-device-width: 480px) {
+  html {-webkit-text-size-adjust: none}
+  a:link {-webkit-tap-highlight-color: #fff;}
+}
+
+/*-  BASE SITE STYLES
+----------------------------------------------------------------------*/
+
+*, *:after, *:before { @include box-sizing(border-box); }
+
+body {
+  @include font(Helvetica, 500);
+  font-size: 62.5%;
+  line-height: 1.3;
+  background-color: #fff;
+}
+
+body, select, input, textarea {
+  color: #000;
+}
+
+/*-  IMPORTED PIECES
+----------------------------------------------------------------------*/

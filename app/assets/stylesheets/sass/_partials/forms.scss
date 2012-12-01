@@ -1,0 +1,43 @@
+input[type='text'],
+input[type='email'],
+input[type='search'],
+input[type='tel'],
+input[type='url'],
+input[type='password'],
+textarea {
+  @extend %box-emboss;
+  @include border-radius;
+}
+
+input {
+  &[type='text'] {
+    
+  }
+  &[type='email'] {
+    
+  }
+  &[type='search'] {
+    
+  }
+  &[type='tel'] {
+    
+  }
+  &[type='url'] {
+    
+  }
+  &[type='password'] {
+    
+  }
+  &[type='submit'] {
+    @extend button;  
+  }
+}
+
+button {
+  
+}
+
+label {
+  display: block;
+  margin: 1em 0.5em;
+}

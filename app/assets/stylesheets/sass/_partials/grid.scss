@@ -1,0 +1,68 @@
+$gutter-width: 30px;
+
+/* ******************************************************************************
+ *
+ * Simple grids, based on http://css-tricks.com/dont-overthink-it-grids/
+ *
+ * First, update the gutter width you want above. Then apply the "grid" class
+ * to the columns' container. From there simply use the proper column class on
+ * each column. Syntax...
+ *
+ * col-[number of columns spanned]-[total number of columns in the section]
+ *
+ * If you want the grid container to include padding as well, just also include
+ * the "pad" class to the container, as such, <section class="grid pad">.
+ *
+ * Feel free to remove grid classes we aren't using, add grid classes we may
+ * need, and add in any responsive breakpoints that become necessary. This is
+ * just a starting point for each project.
+ *
+ ****************************************************************************** */
+
+.grid {
+  width: 100%;
+  padding: 0;
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  &.pad {
+    padding: $gutter-width;
+    padding-left: 0;
+  }
+}
+
+[class*='col-'] {
+  @include float;
+  padding-left: $gutter-width;
+  &:first-of-type {
+    padding-left: 0;
+    .grid.pad & {
+      padding-left: $gutter-width;
+    }
+  }
+}
+
+.col-1-2 { width: 50%; }
+.col-1-3 { width: 33.33333333%; }
+.col-2-3 { width: 66.66666666%; }
+.col-1-4 { width: 25%; }
+.col-2-4 { width: 50%; }
+.col-3-4 { width: 75%; }
+.col-1-5 { width: 20%; }
+.col-2-5 { width: 40%; }
+.col-3-5 { width: 60%; }
+.col-4-5 { width: 80%; }
+.col-1-6 { width: 16.66666666%; }
+.col-2-6 { width: 33.33333333%; }
+.col-3-6 { width: 50%; }
+.col-4-6 { width: 66.66666666%; }
+.col-5-6 { width: 83.33333333%; }
+.col-1-8 { width: 12.5%; }
+.col-2-8 { width: 25%; }
+.col-3-8 { width: 37.5%; }
+.col-4-8 { width: 50%; }
+.col-5-8 { width: 62.5%; }
+.col-6-8 { width: 75%; }
+.col-7-8 { width: 87.5%; }

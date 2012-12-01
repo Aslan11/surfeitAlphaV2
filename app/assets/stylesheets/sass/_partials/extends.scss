@@ -1,0 +1,26 @@
+/* ******************************************************************************
+ *
+ * Extend placeholder classes
+ *
+ * Sass let's us use @extend [selector] to highlight chunks of our file that all 
+ * share css with the same selector. By using @extend, it gathers these all up
+ * on output and places them in a single, shared selector, keeping filesize down.
+ * The benefit over using a mixin is that the mixin results are only added to the
+ * css file once with multiple selectors, instead of repeated for all the selectors.
+ *
+ * In this file, we can create "fake" selectors that won't parse on their own, but
+ * give us a hook to extend further selectors down the chain.
+ *
+ ****************************************************************************** */
+
+%ellipsis {
+  @include ellipsis;
+}
+
+%word-wrap {
+  @include word-wrap;
+}
+
+%box-emboss {
+  @include box-emboss;
+}

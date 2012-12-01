@@ -1,0 +1,12 @@
+/* ******************************************************************************
+ *
+ * Convert Pixels to Ems
+ *
+ * Use this in media queries to properly convert the breakpoint to an em.
+ * http://blog.55minutes.com/2012/04/media-queries-and-browser-zoom/
+ *
+ ****************************************************************************** */
+
+@function pem($pixels) {
+  @return #{$pixels/16.0}em
+}
