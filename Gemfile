@@ -10,6 +10,7 @@ gem 'omniauth-facebook'
 gem 'omniauth'
 gem 'fb_graph'
 gem 'koala'
+gem 'compass'
 
 gem 'sqlite3'
 
