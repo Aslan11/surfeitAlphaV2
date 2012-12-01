@@ -3,12 +3,32 @@
  * @font-face rules
  *
  ****************************************************************************** */
+@font-face {
+font-family: 'Pictograms';
+src: url(Socialico.otf);
+}
 
+@font-face {
+	font-family: 'choom';
+	src: url(redhg.ttf);
+}
+
+@font-face {
+	font-family: 'typicons';
+	src: url(typicons.ttf);
+}
+
+@font-face {
+    font-family: "Surfeit";
+    src: url(andes.ttf) format("truetype");
+}
 /* ******************************************************************************
  *
  * Default type styles
  *
  ****************************************************************************** */
+
+
 
 h1, h2, h3, h4, h5, h6 {
 }
@@ -17,9 +37,11 @@ h1 {
 }
 
 h2 {
+font-family: $pt;
 }
 
 h3 {
+font-family: $pt;
 }
 
 h4 {
@@ -43,6 +65,7 @@ h6 {
 
 p {
   font-size: 1.4em;
+  font-family: $pt;
 }
 
 ol {

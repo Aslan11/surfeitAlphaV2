@@ -36,7 +36,7 @@
 @import "_partials/functions";
 @import "_partials/mixins";
 @import "_partials/extends";
-@import "_partials/grid";
+/* @import "_partials/grid"; */
 @import "_partials/general";
 @import "_partials/type";
 @import "_partials/forms";
@@ -60,4 +60,7 @@
  * SASS partials.
  * 
  ****************************************************************************** */
- 
+
+@import '_partials/menyNav';
+@import '_partials/currentPartial';
+@import '_partials/isotope';

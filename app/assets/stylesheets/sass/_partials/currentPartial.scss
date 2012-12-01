@@ -1,0 +1,250 @@
+.contents {
+	-webkit-overflow-scrolling: touch;
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+}
+
+#container {
+  background: $containerColor;
+  padding: 5px;
+  margin-bottom: 20px;
+  position: relative;
+overflow: hidden;
+left: 8px;
+height: 720px;
+width: 99%;
+}
+
+.facebook .originType{
+color: $facebookColor;
+}
+
+.twitter .originType{
+color: $twitterColor;
+}
+
+.rss .originType{
+color: $rssColor;
+}
+
+.stache{
+width: 66%;
+position: absolute;
+top: 0%;
+left: 17%;
+-webkit-opacity: 0.25;
+-moz-opacity: 0.25;
+opacity: 0.25;
+-webkit-transition: all 2s ease-in-out;
+-moz-transition: all 2s ease-in-out;
+-ms-transition: all 2s ease-in-out;
+-o-transition: all 2s ease-in-out;
+transition: all 2s ease-in-out
+}
+
+.expand{
+width: 60%;
+position: absolute;
+top: 36%;
+left: 20%;
+-webkit-opacity: 0.25;
+-moz-opacity: 0.25;
+opacity: 0.25;
+display: block;
+}
+
+.shrinkRay{
+width: 60%;
+position: absolute;
+top: 36%;
+left: 20%;
+-webkit-opacity: 0.25;
+-moz-opacity: 0.25;
+opacity: 0.25;
+display: none;
+}
+
+.twitter .stache{
+width: 50%%;
+position: absolute;
+top: 18%;
+left: 0%;
+-webkit-opacity: 0.25;
+-moz-opacity: 0.25;
+opacity: 0.25;
+-webkit-transition: all 2s ease-in-out;
+-moz-transition: all 2s ease-in-out;
+-ms-transition: all 2s ease-in-out;
+-o-transition: all 2s ease-in-out;
+transition: all 2s ease-in-out
+}
+
+.twitter .expand{
+width: 45%%;
+position: absolute;
+top: 4%;
+left: 49%;
+-webkit-opacity: 0.25;
+-moz-opacity: 0.25;
+opacity: 0.25;
+display: block;
+}
+.facebook .stache{
+width: 50%%;
+position: absolute;
+top: 18%;
+left: 0%;
+-webkit-opacity: 0.25;
+-moz-opacity: 0.25;
+opacity: 0.25;
+-webkit-transition: all 2s ease-in-out;
+-moz-transition: all 2s ease-in-out;
+-ms-transition: all 2s ease-in-out;
+-o-transition: all 2s ease-in-out;
+transition: all 2s ease-in-out
+}
+
+.facebook .expand{
+width: 45%%;
+position: absolute;
+top: 4%;
+left: 49%;
+-webkit-opacity: 0.25;
+-moz-opacity: 0.25;
+opacity: 0.25;
+display: block;
+}
+
+.twitter .shrinkRay{
+width: 45%%;
+position: absolute;
+top: 4%;
+left: 49%;
+-webkit-opacity: 0.25;
+-moz-opacity: 0.25;
+opacity: 0.25;
+display: hidden;
+
+}
+
+.expanded .stache{
+left: 25%;
+top: 4%;
+}
+
+.expanded .shrinkRay{
+top: 30%;
+left: 27.4%;
+}
+
+.blackout{
+width: 0%;
+height: 0%;
+opacity: 0.05;
+position: absolute;
+left: 0px;
+background: black;
+top: 0px;
+z-index: -1;
+}
+
+.smokeScreen{
+width: 100%;
+height: 100%;
+position: absolute;
+opacity: 0;
+background-color: black;
+left: 0px;
+top: 0px;
+z-index: 3;
+}
+
+
+.variable-sizes .element.width2 { width: 230px; }
+
+.variable-sizes .element.height2 { height: 230px;}
+
+.variable-sizes .element.width3 { width: 350px;font-size: 1.3em }
+
+.variable-sizes .element.height3 { height: 350px;}
+
+.variable-sizes .element.width4 {width: 470px;}
+
+.variable-sizes .element.height4 {height: 470px;}
+
+
+#container {
+  border: 1px solid #666;
+  padding: 5px;
+  margin-bottom: 20px;
+  position: relative;
+overflow: hidden;
+left: 8px;
+height: 720px;
+width: 99%;
+}
+
+.element {
+  width: 110px;
+  height: 110px;
+  margin: 5px;
+  float: left;
+  overflow: hidden;
+  position: relative;
+  background: #fff;
+  color: #666666;
+}
+
+.facebook .originType{
+color: #526cab;
+}
+
+.twitter .originType{
+color: #4099ff;
+}
+
+.rss .originType{
+color: #c46e07;
+}
+
+.dateStamp{
+display: none;
+}
+
+
+.element * {
+  position: absolute;
+  margin: 0;
+}
+
+.element .symbol {
+	left: 0.2em;
+	top: 0.4em;
+	font-size: 14px;
+	line-height: 1.0em;
+	color: #000;
+}
+
+.element .name {
+  left: 0.5em;
+  top: 2.6em;
+  font-size: 1.0em;
+}
+
+.element .originType {
+  font-size: 36px;
+right: 0.1em;
+top: 0.3em;
+font-family: Pictograms;
+}
+
+.clickable .element:hover {
+  cursor: pointer;
+}
+
+
+/* The Magnificent Clearfix: nicolasgallagher.com/micro-clearfix-hack/ */
+.clearfix:before, .clearfix:after { content: ""; display: table; }
+.clearfix:after { clear: both; }
+.clearfix { zoom: 1; }

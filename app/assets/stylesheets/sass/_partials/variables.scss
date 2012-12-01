@@ -3,7 +3,9 @@
  * Font Stacks
  *
  ****************************************************************************** */
-
+$surfeit: 'Surfeit';
+$pt:  'PT Sans', sans-serif;
+$pictograms: "Pictograms";
 /* ******************************************************************************
  *
  * Colors
@@ -11,6 +13,13 @@
  * By Color Name
  *
  ****************************************************************************** */
+$facebookBlue: #526cab;
+$twitterBlue: #4099ff;
+$rssOrange: #c46e07;
+$lightGrey: #e6e6e6;
+$darkGrey: #5d5d5d;
+$mediumGrey: #a7a7a7;
+$yellow: #ffc940;
 
 /* ******************************************************************************
  *
@@ -20,6 +29,12 @@
  * in the actual SASS partials throughout the site.
  *
  ****************************************************************************** */
+$facebookColor: $facebookBlue;
+$twitterColor: $twitterBlue;
+$rssColor: $rssOrange;
+$containerColor: $lightGrey;
+$authorColor: $mediumGrey;
+$tileTextColor: $darkGrey;
 
 /* ******************************************************************************
  *

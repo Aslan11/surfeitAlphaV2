@@ -2,8 +2,8 @@
 <head>
 	 <title>Surfeit Alpha</title>
   
-  <%= stylesheet_link_tag "style", :media => "all" %>
-  <link href='http://fonts.googleapis.com/css?family=Economica:700,400italic' rel='stylesheet' type='text/css'>
+  <%= stylesheet_link_tag "application", :media => "all" %>
+
 </head>
 
 <body>
@@ -59,7 +59,7 @@
 -->
       </section>
       <br><br>  
-      <div class="lower_nav_links">
+      <div>
       <%= link_to 'My Stash', stashes_path %><br>  
       <%= link_to 'Manage Networks', channels_path %><br>
       <%= link_to 'My Account', current_user %>
