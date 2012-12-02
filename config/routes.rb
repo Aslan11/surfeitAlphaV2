@@ -10,7 +10,7 @@ Surfeitalpha::Application.routes.draw do
   match 'session/facebook', :to => 'authorizations#facebook',  :as => :authorize_facebook
 
   resource  :session  
-  resource  :authorizations
+  resources  :authorizations
 
   get '/sessions/destroy' => 'sessions#destroy', :as => :logout
 

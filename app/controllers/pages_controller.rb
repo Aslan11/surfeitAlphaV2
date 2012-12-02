@@ -18,7 +18,7 @@ class PagesController < ApplicationController
 private
 
   def check_for_authorizations
-     redirect_to new_authorizations_path unless has_authorizations?
+     redirect_to authorizations_path unless has_authorizations?
   end
 
 end
