@@ -1,5 +1,0 @@
-class AuthenticationsController < ApplicationController
-
-	
-
-end
