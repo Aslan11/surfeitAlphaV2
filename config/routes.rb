@@ -2,7 +2,6 @@ Surfeitalpha::Application.routes.draw do
   root to: "pages#current"
 
   get "feed/index"
-  get "/authentications/index"
 
   get '/feed/welcome'
   get '/current' => 'pages#current', :as => :user_current

@@ -11,14 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121201015213) do
+ActiveRecord::Schema.define(:version => 20121202175228) do
 
-  create_table "authentications", :force => true do |t|
-    t.string   "fb_access_token"
-    t.string   "twitter_access_token"
-    t.string   "instagram_access_token"
-    t.datetime "created_at",             :null => false
-    t.datetime "updated_at",             :null => false
+  create_table "access_tokens", :force => true do |t|
+    t.string   "service"
+    t.string   "access_token"
+    t.integer  "user_id"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
   end
 
   create_table "authorizations", :force => true do |t|

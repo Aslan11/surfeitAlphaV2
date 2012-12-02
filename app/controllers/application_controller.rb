@@ -24,11 +24,11 @@ private
   # social apps authorizations
 
   def instagram_authorization
-    cookies[:instagram_authorization]
+    current_user.access_token('instagram')
   end
 
   def facebook_authorization
-    cookies[:facebook_authorization]
+    current_user.access_token('facebook')
   end
 
   def has_authorizations?

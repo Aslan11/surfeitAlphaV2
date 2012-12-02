@@ -6,12 +6,12 @@ class PagesController < ApplicationController
   	@facebook_feed = []
   	@instagram_feed = []
 
-  	if facebook_authorization.present?
-    	 @facebook_feed = Koala::Facebook::API.new(facebook_authorization).get_object("/me/home")
+    if current_user.access_token('facebook').present?
+    	 @facebook_feed = Koala::Facebook::API.new(current_user.access_token('facebook')).get_object("/me/home")
     end
 
-    if instagram_authorization.present?
-    	@instagram_feed = Instagram.client(:access_token => instagram_authorization).user_media_feed.data
+    if current_user.access_token('instagram').present?
+    	@instagram_feed = Instagram.client(:access_token => current_user.access_token('instagram')).user_media_feed.data
     end
   end
 
@@ -22,3 +22,6 @@ private
   end
 
 end
+
+
+
