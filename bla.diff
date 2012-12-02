@@ -1,0 +1,657 @@
+diff --git a/.DS_Store b/.DS_Store
+index f88a2d9..779ca6a 100644
+Binary files a/.DS_Store and b/.DS_Store differ
+diff --git a/app/controllers/application_controller.rb b/app/controllers/application_controller.rb
+index 1fd7708..f502e60 100644
+--- a/app/controllers/application_controller.rb
++++ b/app/controllers/application_controller.rb
+@@ -1,13 +1,40 @@
+ class ApplicationController < ActionController::Base
+ 
+-  protect_from_forgery
++	protect_from_forgery
++	helper_method :current_user
+ 
+-    helper_method :current_user
++  before_filter :authenticate!
+ 
+ private
+ 
++  # user authentication
++
++  def authenticate!
++    unless current_user
++      flash[:error] = "Please sign in first!"
++      redirect_to new_session_path
++    end
++  end
++
+   def current_user
+-		@current_user ||= User.find(session[:user_id]) if session[:user_id]
++    @current_user ||= User.find_by_id(session[:user_id])
++  end
++  helper_method :current_user
++
++  # social apps authorizations
++
++  def instagram_authorization
++    session[:instagram_authorization]
+   end
+ 
+-end
++  def facebook_authorization
++    session[:facebook_authorization]
++  end
++
++  def has_authorizations?
++    instagram_authorization || facebook_authorization
++  end
++  helper_method :instagram_authorization, :facebook_authorization, :has_any_authorization?
++
++
++end
+\ No newline at end of file
+diff --git a/app/controllers/authorizations_controller.rb b/app/controllers/authorizations_controller.rb
+index 35e0a34..95397d3 100644
+--- a/app/controllers/authorizations_controller.rb
++++ b/app/controllers/authorizations_controller.rb
+@@ -1,7 +1,18 @@
+ class AuthorizationsController < ApplicationController
+   
+-  def index
+-  	
++  def new  	
++ 	end
++
++ 	def instagram
++	  response = Instagram.get_access_token(params[:code])
++	  session[:instagram_authorization] = response.access_token
++	  redirect_to user_current_path
++ 	end
++
++ 	def facebook
++		# session[:oauth] = Koala::Facebook::OAuth.new(APP_ID, APP_SECRET, SITE_URL + '/current') ###these two lines are to specify the @auth_url
++		# @auth_url =  session[:oauth].url_for_oauth_code(:permissions=>"read_stream")             ###WE SHOULD FIND A BETTER WAY TO DO THIS.
+  	end
+ 
+ end
++
+diff --git a/app/controllers/pages_controller.rb b/app/controllers/pages_controller.rb
+index 54b646f..1519928 100644
+--- a/app/controllers/pages_controller.rb
++++ b/app/controllers/pages_controller.rb
+@@ -1,37 +1,23 @@
+ class PagesController < ApplicationController
+-  
+-  before_filter :authenticate_user!, :only => [:current]
+-  before_filter :auth_instagram, :only => [:current]
+ 
+-  def index
+-    redirect_to instagram_access_url if session[:user_id]
+-  end
++  before_filter :check_for_authorizations
+ 
+   def current 
++    client = Instagram.client(:access_token => instagram_authorization)
++    @mediafeed = client.user_media_feed
+ 
+     if params[:code]
+-    session[:access_token] = session[:oauth].get_access_token(params[:code])
+-    end   
+-
++      session[:access_token] = session[:oauth].get_access_token(params[:code])
++    end
+ 
+     @api = Koala::Facebook::API.new(session[:access_token])
+     @graph_data = @api.get_object("/me/home")
+   end
+ 
+-  def auth_instagram
+-    redirect_to :controller => 'sessions', :action => 'connect' unless session[:access_token] 
+-    client = Instagram.client(:access_token => session[:access_token])
+-    @mediafeed = client.user_media_feed
+-  end
+-
+-  def facebook  
+-  end
+-    
+-    
+-  private
++private
+ 
+-  def authenticate_user!
+-    redirect_to index_path, notice: "You must sign in first" unless session[:user_id]
++  def check_for_authorizations
++     redirect_to new_authorizations_path unless has_authorizations?
+   end
+ 
+ end
+diff --git a/app/controllers/sessions_controller.rb b/app/controllers/sessions_controller.rb
+index 76d3ed1..8a8c42e 100644
+--- a/app/controllers/sessions_controller.rb
++++ b/app/controllers/sessions_controller.rb
+@@ -2,37 +2,19 @@ require 'instagram'
+ 
+ class SessionsController < ApplicationController
+ 
+-	def connect
+-		redirect_to Instagram.authorize_url(:redirect_uri => CALLBACK_URL)	
+-	end
+-
+-	def callback
+-   session[:oauth] = Koala::Facebook::OAuth.new(APP_ID, APP_SECRET, SITE_URL + '/current') ###these two lines are to specify the @auth_url
+-   @auth_url =  session[:oauth].url_for_oauth_code(:permissions=>"read_stream")             ###WE SHOULD FIND A BETTER WAY TO DO THIS.
++  skip_before_filter :authenticate!, except: [:destroy]
+ 
+-   response = Instagram.get_access_token(params[:code], :redirect_uri => CALLBACK_URL)
+-   session[:access_token] = response.access_token
+-   redirect_to @auth_url
+-  end
+-
+-	def login
+-		if 
+-      session[:user_id] != nil 
+-      redirect_to authorizations_path
+-    else
+-      flash[:notice] = "Email or Password do not match. Try again."
+-      redirect_to index_path
+-    end	
++	def new
+ 	end
+ 
+-	def create_surfeit
++	def create
+     user = User.find_by_email(params[:email])
+     
+    	if user != nil && user.authenticate(params[:password])
+       session[:user_id] = user.id
+-      redirect_to authorizations_path
++      redirect_to user_current_path
+     else
+-      redirect_to index_path, :notice => "Email & Password do not match"
++      redirect_to new_session_path, :notice => "Email & Password do not match"
+     end
+ 	end
+ 
+diff --git a/app/controllers/stashes_controller.rb b/app/controllers/stashes_controller.rb
+deleted file mode 100644
+index 00b2f02..0000000
+--- a/app/controllers/stashes_controller.rb
++++ /dev/null
+@@ -1,87 +0,0 @@
+-class StashesController < ApplicationController
+-
+-
+-  # GET /stashes
+-  # GET /stashes.json
+-  def index
+-    @stashes = Stash.all
+-
+-    respond_to do |format|
+-      format.html # index.html.erb
+-      format.json { render json: @stashes }
+-
+-      @user = User.find(session[:user_id])
+-    end
+-  end
+-
+-  # GET /stashes/1
+-  # GET /stashes/1.json
+-  def show
+-    @stash = Stash.find(params[:id])
+-
+-    respond_to do |format|
+-      format.html # show.html.erb
+-      format.json { render json: @stash }
+-    end
+-  end
+-
+-  # GET /stashes/new
+-  # GET /stashes/new.json
+-  def new
+-    @stash = Stash.new
+-
+-    respond_to do |format|
+-      format.html # new.html.erb
+-      format.json { render json: @stash }
+-    end
+-  end
+-
+-  # GET /stashes/1/edit
+-  def edit
+-    @stash = Stash.find(params[:id])
+-  end
+-
+-  # POST /stashes
+-  # POST /stashes.json
+-  def create
+-    @stash = Stash.new(params[:stash])
+-
+-    respond_to do |format|
+-      if @stash.save
+-        format.html { redirect_to @stash, notice: 'Stash was successfully created.' }
+-        format.json { render json: @stash, status: :created, location: @stash }
+-      else
+-        format.html { render action: "new" }
+-        format.json { render json: @stash.errors, status: :unprocessable_entity }
+-      end
+-    end
+-  end
+-
+-  # PUT /stashes/1
+-  # PUT /stashes/1.json
+-  def update
+-    @stash = Stash.find(params[:id])
+-
+-    respond_to do |format|
+-      if @stash.update_attributes(params[:stash])
+-        format.html { redirect_to @stash, notice: 'Stash was successfully updated.' }
+-        format.json { head :no_content }
+-      else
+-        format.html { render action: "edit" }
+-        format.json { render json: @stash.errors, status: :unprocessable_entity }
+-      end
+-    end
+-  end
+-
+-  # DELETE /stashes/1
+-  # DELETE /stashes/1.json
+-  def destroy
+-    @stash = Stash.find(params[:id])
+-    @stash.destroy
+-
+-    respond_to do |format|
+-      format.html { redirect_to stashes_url }
+-      format.json { head :no_content }
+-    end
+-  end
+-end
+diff --git a/app/views/.DS_Store b/app/views/.DS_Store
+index 2dcf11f..ee2044b 100644
+Binary files a/app/views/.DS_Store and b/app/views/.DS_Store differ
+diff --git a/app/views/authentications/index.html.erb b/app/views/authentications/index.html.erb
+deleted file mode 100644
+index 98711ea..0000000
+--- a/app/views/authentications/index.html.erb
++++ /dev/null
+@@ -1,13 +0,0 @@
+-<% if @authentications %>
+-  <% unless @authentications.empty? %>
+-    <p><strong>You can sign in to this account using:</strong></p>
+-    <div class="authentications">
+-      <% for authentication in @authentications %>
+-		<% end %>
+-      <div class="clear"></div>
+-    </div>
+-  <% end %>
+-  <p><strong>Add another service to sign in with:</strong></p>
+-<% else %>
+-  <p><strong>Sign in through one of these services:</strong></p>
+-<% end %>
+\ No newline at end of file
+diff --git a/app/views/authorizations/index.html.erb b/app/views/authorizations/index.html.erb
+deleted file mode 100644
+index 4f42fc0..0000000
+--- a/app/views/authorizations/index.html.erb
++++ /dev/null
+@@ -1,6 +0,0 @@
+-<h1>Authorized websites to pull data from:</h1>
+-
+-<ul>
+-  <li><%= link_to "Authorize Instagram", instagram_access_path %></li>
+-  <li><%= link_to 'Authorize this Facebook app', facebook_auth_url, :class=>"button" %></li>
+-</ul>
+\ No newline at end of file
+diff --git a/app/views/pages/current.html.erb b/app/views/pages/current.html.erb
+index bb56ee8..51f664d 100644
+--- a/app/views/pages/current.html.erb
++++ b/app/views/pages/current.html.erb
+@@ -61,7 +61,7 @@
+       <br><br>  
+       <div class="lower_nav_links">
+       <%= link_to 'My Stash', stashes_path %><br>  
+-      <%= link_to 'Manage Networks', authorizations_path %><br>
++      <%= link_to 'Manage Networks', edit_authorizations_path %><br>
+       <%= link_to 'My Account', current_user %>
+       </div>
+ 
+diff --git a/app/views/pages/index.html.erb b/app/views/pages/index.html.erb
+index c6ad201..e69de29 100644
+--- a/app/views/pages/index.html.erb
++++ b/app/views/pages/index.html.erb
+@@ -1,91 +0,0 @@
+-<head>
+-	<title>Surfeit Alpha!</title>
+-	
+-		 <%= stylesheet_link_tag "landingdemo", :media => "all" %>
+-		 <%= stylesheet_link_tag "currentLandingStyle", :media => "all" %>
+-		 <%= stylesheet_link_tag "landingstyle", :media => "all" %>
+-		 
+-		 
+-		<link href='http://fonts.googleapis.com/css?family=Economica:700,400italic' rel='stylesheet' type='text/css'>
+-		<noscript>
+-			<%= stylesheet_link_tag "landingnojs.css", :media => "all" %>
+-		</noscript>
+-</head>
+-
+-<body>
+-   
+-        <div class="nav">
+-			<!-- Codrops top bar -->
+-
+-			<header>
+-				<h1 class="surfeitLogoTitle">Surfeit</h1>
+-				<%= image_tag "SurfeitLogo.svg", :class => "surfeitLandingLogo" %>
+-				<%= form_tag "/sessions/create", :class => "loginForm" do %>
+-
+-					<div class="content">
+-      					<% if flash[:notice] %>
+-        				<p id="notice"><%= flash[:notice] %></p>
+-      					<% end %>
+-      				</div>
+-
+-  					<%= label_tag :email, "Email:" %>
+-  					<%= text_field_tag :email%>
+-  					<%= label_tag :password, "Password:" %>
+-  					<%= password_field_tag :password %><br />
+-
+-  				<%= submit_tag "Login", :class => "loginButton" %>
+-  
+-				<% end %>
+-				
+-				<span class="rememberMe"><input type="checkbox" value="remember">Remember Me</span>
+-				
+-				<a class="forgotPwd" href="#">Forgot Your Password?</a>
+-				
+-			</header>
+-			
+-			<div class="contents">
+-	  <section id="content">
+-	  
+-	  <div id="container" class="super-list variable-sizes clearfix">
+-	    
+-		<div class="element twitter width2">
+-		 <div class="smokeScreen">
+-	    	<%= image_tag "stache.svg", :class => 'stache' %>
+-	    	<%= image_tag "expand.svg", :class => 'expand' %>
+-	    	<%= image_tag "contract.svg", :class => 'shrinkRay' %>
+-	     </div>
+-	      <p class="originType">L</p>
+-	      <h3 class="symbol">Test</h3>
+-	      <h2 class="name"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h2>
+-	    </div>
+-	    
+-	    <div class="element youtube width2 height2">
+-	    	<p class="originType">X</p>
+-	    	<h3 class="symbol">Brett Atchley</h3>
+-	    	<iframe width="220" height="150" src="http://www.youtube.com/embed/aT5l1KVe-NU" frameborder="0" allowfullscreen style="top: 3.5em; left: .4em;"></iframe>
+-	    </div>
+-	    
+-	    <div class="element rss width2">
+-	      <p class="originType">R</p>
+-	      <h3 class="symbol">Gizmodo</h3>
+-	      <h2 class="name"><a href="http://gizmodo.com/5959068/a-week-with-the-ipad-mini"  target="_blank" style="position: relative">A week with iPad Mini</a></h2>
+-	    </div>
+-	    
+-	     <div class="element facebook width3">
+-	      <p class="originType">F</p>
+-	      <h3 class="symbol">Brian Martinek</h3>
+-	      <h2 class="name">I'm a god damn back end sage</h2>
+-	    </div>	     
+-	    <!-- <div class="link away" data-number="35"><a href="http://surfeit.me">Surfeit</a></div> -->
+-	  </div>
+-
+-	  <%= link_to "Sign THE FUCK UP", "/users/new" %>
+-	 
+-	
+-	  </section> <!-- #content -->
+-  </div>
+-			
+-        <%= javascript_include_tag "jquery-1.7.1.min" %>
+-		<%= javascript_include_tag "jquery.isotope.min" %>
+-		<%= javascript_include_tag "fake-element" %>
+-</body>
+\ No newline at end of file
+diff --git a/app/views/sessions/callback.erb b/app/views/sessions/callback.erb
+deleted file mode 100644
+index 4d21810..0000000
+--- a/app/views/sessions/callback.erb
++++ /dev/null
+@@ -1,2 +0,0 @@
+-<h1>token</h1>
+-<%= @token %>
+\ No newline at end of file
+diff --git a/app/views/stashes/_form.html.erb b/app/views/stashes/_form.html.erb
+deleted file mode 100644
+index 7ee9aac..0000000
+--- a/app/views/stashes/_form.html.erb
++++ /dev/null
+@@ -1,25 +0,0 @@
+-<%= form_for(@stash) do |f| %>
+-  <% if @stash.errors.any? %>
+-    <div id="error_explanation">
+-      <h2><%= pluralize(@stash.errors.count, "error") %> prohibited this stash from being saved:</h2>
+-
+-      <ul>
+-      <% @stash.errors.full_messages.each do |msg| %>
+-        <li><%= msg %></li>
+-      <% end %>
+-      </ul>
+-    </div>
+-  <% end %>
+-
+-  <div class="field">
+-    <%= f.label :user_id %><br />
+-    <%= f.number_field :user_id %>
+-  </div>
+-  <div class="field">
+-    <%= f.label :stashed_item %><br />
+-    <%= f.text_field :stashed_item %>
+-  </div>
+-  <div class="actions">
+-    <%= f.submit %>
+-  </div>
+-<% end %>
+diff --git a/app/views/stashes/edit.html.erb b/app/views/stashes/edit.html.erb
+deleted file mode 100644
+index dd3d26c..0000000
+--- a/app/views/stashes/edit.html.erb
++++ /dev/null
+@@ -1,6 +0,0 @@
+-<h1>Editing stash</h1>
+-
+-<%= render 'form' %>
+-
+-<%= link_to 'Show', @stash %> |
+-<%= link_to 'Back', stashes_path %>
+diff --git a/app/views/stashes/index.html.erb b/app/views/stashes/index.html.erb
+deleted file mode 100644
+index 6a3ff2e..0000000
+--- a/app/views/stashes/index.html.erb
++++ /dev/null
+@@ -1,39 +0,0 @@
+-  <div class="container">
+-    <header>
+-      <nav>
+-            <%= "Surfeit" %>
+-            <%= '[SurfeitLogo]' %>
+-            <%= link_to 'Current', user_current_path %> |
+-            <%= link_to 'My Stash', stashes_path %> |
+-            <%= link_to 'Networks', authorizations_path %> |
+-            <%= link_to "Account", user_path(@user) %> | 
+-            <%= current_user.name %> 
+-            <%= link_to "Sign Out", logout_path %>
+-      </nav>
+-    </header>
+-
+-<h1>My Stash</h1>
+-
+-<table>
+-  <tr>
+-    <th>User</th>
+-    <th>Stashed item</th>
+-    <th></th>
+-    <th></th>
+-    <th></th>
+-  </tr>
+-
+-<% @stashes.each do |stash| %>
+-  <tr>
+-    <td><%= stash.user_id %></td>
+-    <td><%= stash.stashed_item %></td>
+-    <td><%= link_to 'Show', stash %></td>
+-    <td><%= link_to 'Edit', edit_stash_path(stash) %></td>
+-    <td><%= link_to 'Remove', stash, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+-  </tr>
+-<% end %>
+-</table>
+-
+-<br />
+-
+-<%= link_to 'Manually Add Item to Stash', new_stash_path %>
+diff --git a/app/views/stashes/new.html.erb b/app/views/stashes/new.html.erb
+deleted file mode 100644
+index bc01fd8..0000000
+--- a/app/views/stashes/new.html.erb
++++ /dev/null
+@@ -1,5 +0,0 @@
+-<h1>New stash</h1>
+-
+-<%= render 'form' %>
+-
+-<%= link_to 'Back', stashes_path %>
+diff --git a/app/views/stashes/show.html.erb b/app/views/stashes/show.html.erb
+deleted file mode 100644
+index 8d4ec18..0000000
+--- a/app/views/stashes/show.html.erb
++++ /dev/null
+@@ -1,15 +0,0 @@
+-<p id="notice"><%= notice %></p>
+-
+-<p>
+-  <b>User:</b>
+-  <%= @stash.user_id %>
+-</p>
+-
+-<p>
+-  <b>Stashed item:</b>
+-  <%= @stash.stashed_item %>
+-</p>
+-
+-
+-<%= link_to 'Edit', edit_stash_path(@stash) %> |
+-<%= link_to 'Back', stashes_path %>
+diff --git a/app/views/users/edit.html.erb b/app/views/users/edit.html.erb
+index 6bb4c55..6d62e7e 100644
+--- a/app/views/users/edit.html.erb
++++ b/app/views/users/edit.html.erb
+@@ -8,14 +8,14 @@
+     <header>
+     	<div class="navBar">
+       	<nav>
+-       
+-            <%= link_to 'Current', user_current_path %> |
+-            <%= link_to 'My Stash', stashes_path %> |
+-            <%= link_to 'Networks', authorizations_path %> |
+-            <%= link_to "Account", user_path(@user) %> | 
+-            <%= current_user.name %> 
+-            <%= link_to "Sign Out", logout_path %>
++          <%= link_to 'Current', user_current_path %> |
++          <%= link_to 'My Stash', stashes_path %> |
++          <%= link_to 'Networks', edit_authorizations_path %> |
++          <%= link_to "Account", user_path(@user) %> | 
++          <%= current_user.name %> 
++          <%= link_to "Sign Out", logout_path %>
+       	</nav>
++
+       	<div class="headerContent">
+ 	      <h1 class="surfeitTextLogo">Surfeit</h1>
+ 	      <%= image_tag 'SurfeitLogo.svg', :class => 'surfeitLogo' %>
+diff --git a/app/views/users/show.html.erb b/app/views/users/show.html.erb
+index 2dde95f..693b31f 100644
+--- a/app/views/users/show.html.erb
++++ b/app/views/users/show.html.erb
+@@ -5,7 +5,7 @@
+             <%= '[SurfeitLogo]' %>
+             <%= link_to 'Current', user_current_path %> |
+             <%= link_to 'My Stash', stashes_path %> |
+-            <%= link_to 'Networks', authorizations_path %> |
++            <%= link_to 'Networks', edit_authorizations_path %> |
+             <%= link_to "Account", user_path(@user) %> | 
+             <%= current_user.name %> 
+             <%= link_to "Sign Out", logout_path %>
+diff --git a/config/environments/development.rb b/config/environments/development.rb
+index ea2ad72..9e23b5d 100644
+--- a/config/environments/development.rb
++++ b/config/environments/development.rb
+@@ -33,5 +33,5 @@ Surfeitalpha::Application.configure do
+   config.assets.compress = false
+ 
+   # Expands the lines which load the assets
+-  config.assets.debug = true
++  config.assets.debug = false
+ end
+diff --git a/config/initializers/instagram.rb b/config/initializers/instagram.rb
+index 49de0a1..804a0c8 100644
+--- a/config/initializers/instagram.rb
++++ b/config/initializers/instagram.rb
+@@ -3,6 +3,4 @@ require "instagram"
+ Instagram.configure do |config|
+   config.client_id = "e1997f9475f94cde861fbb8d3a0f8a92"
+   config.client_secret = "762b27c058db4488810e9c68cf189d0f"
+-end
+-
+-CALLBACK_URL = "http://localhost:3000/session/callback"
+\ No newline at end of file
++end
+\ No newline at end of file
+diff --git a/config/routes.rb b/config/routes.rb
+index 64f3c06..9b64918 100644
+--- a/config/routes.rb
++++ b/config/routes.rb
+@@ -1,28 +1,26 @@
+ Surfeitalpha::Application.routes.draw do
++  root to: "pages#current"
++
+   get "feed/index"
+   get "/authentications/index"
+ 
+-  match 'session/:action', :to => 'sessions'
+-  match '/sessions', :to => 'sessions#connect', :as => :instagram_access
+-
+-  get '/' => 'pages#index', :as => :index
+   get '/feed/welcome'
++  get '/current' => 'pages#current', :as => :user_current
+ 
+-  get '/login' => 'sessions#login', :as => :login
+-  post '/sessions/create' => 'sessions#create_surfeit'
+-  match 'auth/twitter/callback', :to => 'sessions#create_twitter', :as => :twitter_auth
+-  # match 'auth/facebook/callback', :to => 'sessions#create_facebook', :as => :facebook_auth
+-  match 'auth/failure', :to => 'sessions#failure'
++  match 'session/callback', :to => 'authorizations#instagram',  :as => :authorize_instagram # JUST FALLBACK, SHOULD REMOVE LATTER
+ 
+-  get '/rss' => 'pages#rss'
++  resource  :session  
++  resource  :authorizations
+ 
+-  #users
+-  get '/current' => 'pages#current', :as => :user_current
+-  get '/sessions/logout' => 'sessions#destroy', :as => :logout
+-
+-  
+   resources :users 
+   resources :stashes
++end
++
++
+ 
+-  get '/authorizations' => 'authorizations#index', :as => :authorizations
+-end
+\ No newline at end of file
++# get '/login' => 'sessions#login', :as => :login
++# post '/sessions/create' => 'sessions#create_surfeit'
++# match 'auth/twitter/callback', :to => 'sessions#create_twitter', :as => :twitter_auth
++# match 'auth/facebook/callback', :to => 'sessions#create_facebook', :as => :facebook_auth
++# match 'auth/failure', :to => 'sessions#failure'
++# get '/sessions/logout' => 'sessions#destroy', :as => :logout
+\ No newline at end of file

@@ -8,14 +8,14 @@
     <header>
     	<div class="navBar">
       	<nav>
-       
-            <%= link_to 'Current', user_current_path %> |
-            <%= link_to 'My Stash', stashes_path %> |
-            <%= link_to 'Networks', channels_path %> |
-            <%= link_to "Account", user_path(@user) %> | 
-            <%= current_user.name %> 
-            <%= link_to "Sign Out", logout_path %>
+          <%= link_to 'Current', user_current_path %> |
+          <%= link_to 'My Stash', stashes_path %> |
+          <%= link_to 'Networks', edit_authorizations_path %> |
+          <%= link_to "Account", user_path(@user) %> | 
+          <%= current_user.name %> 
+          <%= link_to "Sign Out", logout_path %>
       	</nav>
+
       	<div class="headerContent">
 	      <h1 class="surfeitTextLogo">Surfeit</h1>
 	      <%= image_tag 'SurfeitLogo.svg', :class => 'surfeitLogo' %>

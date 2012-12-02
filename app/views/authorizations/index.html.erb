@@ -1,0 +1,30 @@
+<h1>Authorized websites to pull data from:</h1>
+
+<ul>
+	<% unless current_user.access_token('instagram').present? %>
+  	<li><%= link_to "Authorize Instagram", Instagram.authorize_url(redirect_uri: authorize_instagram_url) %></li>
+  <% end %>
+
+  <% unless current_user.access_token('facebook').present? %>
+  	<li><%= link_to 'Authorize this Facebook app', facebook_auth_url , :class=>"button" %></li>
+  <% end %>
+</ul>
+
+
+<ul>
+	<% if current_user.access_token('instagram').present? %>
+  	<li><%= link_to "Deauthorize Instagram", '#' %></li>
+  <% end %>
+
+  <% if current_user.access_token('facebook').present? %>
+  	<li><%= link_to 'Deauthorize Facebook', '#'%></li>
+  <% end %>
+
+
+
+</ul>
+
+
+
+
+<a href="/current">View my feed</a>

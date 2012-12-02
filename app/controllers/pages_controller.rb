@@ -1,41 +1,27 @@
 class PagesController < ApplicationController
-  
-  before_filter :authenticate_user!, :only => [:current]
-  before_filter :instagram, :only => [:current]
 
-  def index
-    redirect_to instagram_access_url if session[:user_id]
-  end
+  before_filter :check_for_authorizations
 
   def current 
+  	@facebook_feed = []
+  	@instagram_feed = []
 
-    # binding.pry
-    if params[:code]
-    session[:access_token] = session[:oauth].get_access_token(params[:code])
-    end   
+    if current_user.access_token('facebook').present?
+    	 @facebook_feed = Koala::Facebook::API.new(current_user.access_token('facebook')).get_object("/me/home")
+    end
 
-    # binding.pry
-
-    @api = Koala::Facebook::API.new(session[:access_token])
-    @graph_data = @api.get_object("/me/home")
+    if current_user.access_token('instagram').present?
+    	@instagram_feed = Instagram.client(:access_token => current_user.access_token('instagram')).user_media_feed.data
+    end
   end
 
-  def instagram
+private
 
-    redirect_to :controller => 'sessions', :action => 'connect' unless session[:access_token] 
-    client = Instagram.client(:access_token => session[:access_token])
-    @mediafeed = client.user_media_feed
-    
-  end
-
-  def facebook  
-  end
-    
-    
-  private
-
-  def authenticate_user!
-    redirect_to index_path, notice: "You must sign in first" unless session[:user_id]
+  def check_for_authorizations
+     redirect_to authorizations_path unless has_authorizations?
   end
 
 end
+
+
+

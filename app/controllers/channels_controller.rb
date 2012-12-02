@@ -1,4 +1,4 @@
-class ChannelsController < ApplicationController
+class AuthorizationsController < ApplicationController
   
   def index
   	

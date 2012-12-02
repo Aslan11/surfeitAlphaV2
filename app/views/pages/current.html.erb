@@ -12,7 +12,7 @@
     <h1><a href="index.html">Surfeit</a></h1>
     
       Welcome, <%= User.find_by_id(session[:user_id]).name %> | 
-      <%= link_to 'Sign Out', logout_path %>
+      <%= link_to 'Sign Out', logout_url, :method => 'delete' %>
     
 
   <section id="options">
@@ -61,7 +61,7 @@
       <br><br>  
       <div class="lower_nav_links">
       <%= link_to 'My Stash', stashes_path %><br>  
-      <%= link_to 'Manage Networks', channels_path %><br>
+      <%= link_to 'Manage Networks', authorizations_path %><br>
       <%= link_to 'My Account', current_user %>
       </div>
 
@@ -89,7 +89,7 @@
       <p class="dateStamp">FUCK YOU ALL BITCHES</p>
     </div>
 
-    <% @mediafeed.data.each do |media| %>
+    <% (@instagram_feed).each do |media| %>
     <div class="element width2 height2 instagram">
     <div class="smokeScreen">
     	<%= image_tag "stache.svg", :class => 'stache' %>
@@ -101,7 +101,7 @@
     </div>
     <% end%> 
     
-    <% @graph_data.each do |status| %>
+    <% (@facebook_feed).each do |status| %>
     <% if status["message"]%>
     <div class="element width2 facebook">
       <p class="originType">F</p>
