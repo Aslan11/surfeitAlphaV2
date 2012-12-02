@@ -89,7 +89,7 @@
       <p class="dateStamp">FUCK YOU ALL BITCHES</p>
     </div>
 
-    <% @mediafeed.data.each do |media| %>
+    <% (@instagram_feed).each do |media| %>
     <div class="element width2 height2 instagram">
     <div class="smokeScreen">
     	<%= image_tag "stache.svg", :class => 'stache' %>
@@ -101,7 +101,7 @@
     </div>
     <% end%> 
     
-    <% (@graph_data || []).each do |status| %>
+    <% (@facebook_feed).each do |status| %>
     <% if status["message"]%>
     <div class="element width2 facebook">
       <p class="originType">F</p>

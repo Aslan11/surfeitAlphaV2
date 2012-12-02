@@ -7,7 +7,8 @@ Surfeitalpha::Application.routes.draw do
   get '/feed/welcome'
   get '/current' => 'pages#current', :as => :user_current
 
-  match 'session/callback', :to => 'authorizations#instagram',  :as => :authorize_instagram # JUST FALLBACK, SHOULD REMOVE LATTER
+  match 'session/callback', :to => 'authorizations#instagram',  :as => :authorize_instagram
+  match 'session/facebook', :to => 'authorizations#facebook',  :as => :authorize_facebook
 
   resource  :session  
   resource  :authorizations

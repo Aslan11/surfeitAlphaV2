@@ -3,15 +3,16 @@ class PagesController < ApplicationController
   before_filter :check_for_authorizations
 
   def current 
-    client = Instagram.client(:access_token => instagram_authorization)
-    @mediafeed = client.user_media_feed
+  	@facebook_feed = []
+  	@instagram_feed = []
 
-    # if params[:code]
-    #   session[:access_token] = session[:oauth].get_access_token(params[:code])
-    # end
+  	if facebook_authorization.present?
+    	 @facebook_feed = Koala::Facebook::API.new(facebook_authorization).get_object("/me/home")
+    end
 
-    # @api = Koala::Facebook::API.new(session[:access_token])
-    # @graph_data = @api.get_object("/me/home")
+    if instagram_authorization.present?
+    	@instagram_feed = Instagram.client(:access_token => instagram_authorization).user_media_feed.data
+    end
   end
 
 private

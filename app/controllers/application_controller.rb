@@ -24,15 +24,15 @@ private
   # social apps authorizations
 
   def instagram_authorization
-    session[:instagram_authorization]
+    cookies[:instagram_authorization]
   end
 
   def facebook_authorization
-    session[:facebook_authorization]
+    cookies[:facebook_authorization]
   end
 
   def has_authorizations?
-    instagram_authorization || facebook_authorization
+    instagram_authorization.present? || facebook_authorization.present?
   end
   helper_method :instagram_authorization, :facebook_authorization, :has_any_authorization?
 
