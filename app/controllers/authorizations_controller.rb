@@ -37,7 +37,8 @@ class AuthorizationsController < ApplicationController
   	binding.pry
   	
 	  AccessToken.create(
-	  	access_token: response.credentials.token, 
+	  	access_token: response.credentials.token,
+	  	access_token_secret: response.credentials.secret, 
 	  	user_id: current_user.id, 
 	  	service: 'twitter'
 	  )

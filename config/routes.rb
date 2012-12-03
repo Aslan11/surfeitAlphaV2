@@ -8,8 +8,7 @@ Surfeitalpha::Application.routes.draw do
 
   match 'session/instagram', :to => 'authorizations#instagram',  :as => :authorize_instagram
   match 'session/facebook', :to => 'authorizations#facebook',  :as => :authorize_facebook
-  match 'auth/twitter/callback', :to => 'authorizations#twitter', :as => :authorize_twitter
-  # match 'session/twitter', :to => 'authorizations#twitter', :as => :authorize_twitter
+  match 'auth/twitter/callback', :to => 'authorizations#twitter', :as => :authorize_twitter # auth/twitter/callback needs to change to session/twitter PLEASE!
 
   resource  :session  
   resources  :authorizations
