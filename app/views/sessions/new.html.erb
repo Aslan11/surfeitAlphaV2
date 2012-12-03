@@ -1,4 +1,4 @@
-<head>
+	<head>
 	<title>Surfeit Alpha!</title>
 	
 		 <%= stylesheet_link_tag "landingdemo", :media => "all" %>
@@ -34,11 +34,13 @@
 
   				<%= submit_tag "Login", :class => "loginButton" %>  
 				<% end %>
+
 				
 				<span class="rememberMe"><input type="checkbox" value="remember">Remember Me</span>
 				<a class="forgotPwd" href="#">Forgot Your Password?</a>
 				
 			</header>
+
 			
 			<div class="contents">
 	  <section id="content">
@@ -73,15 +75,17 @@
 	      <h3 class="symbol">Brian Martinek</h3>
 	      <h2 class="name">I'm a god damn back end sage</h2>
 	    </div>	     
+	      <%= link_to "Sign THE FUCK UP", new_user_path %>
+
 	    <!-- <div class="link away" data-number="35"><a href="http://surfeit.me">Surfeit</a></div> -->
 	  </div>
 
-	  <%= link_to "Sign THE FUCK UP", "/users/new" %>
+	  
 	 
 	
 	  </section> <!-- #content -->
   </div>
-			
+
   <%= javascript_include_tag "jquery-1.7.1.min" %>
 	<%= javascript_include_tag "jquery.isotope.min" %>
 	<%= javascript_include_tag "fake-element" %>

@@ -32,6 +32,21 @@ class AuthorizationsController < ApplicationController
 		redirect_to user_current_path
   end
 
+  def twitter
+  	response = env['omniauth.auth']
+  	binding.pry
+  	
+	  AccessToken.create(
+	  	access_token: response.credentials.token, 
+	  	user_id: current_user.id, 
+	  	service: 'twitter'
+	  )
+	  
+	  redirect_to authorizations_path
+  end
+
+
+
 end
 
 

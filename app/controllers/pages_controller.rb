@@ -5,6 +5,7 @@ class PagesController < ApplicationController
   def current 
   	@facebook_feed = []
   	@instagram_feed = []
+    @twitter_feed = []
 
     if current_user.access_token('facebook').present?
     	 @facebook_feed = Koala::Facebook::API.new(current_user.access_token('facebook')).get_object("/me/home")
@@ -13,6 +14,7 @@ class PagesController < ApplicationController
     if current_user.access_token('instagram').present?
     	@instagram_feed = Instagram.client(:access_token => current_user.access_token('instagram')).user_media_feed.data
     end
+
   end
 
 private
