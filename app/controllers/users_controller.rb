@@ -24,14 +24,9 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
 
-    if session[:user_id] != @user.id
-      redirect_to user_path(session[:user_id]), notice: "Not authorized"
-    else 
-      respond_to do |format|
-        format.html # show.html.erb
-        format.json { render json: @user }
-      end
-    end
+     if session[:user_id] != @user.id
+       redirect_to user_path(session[:user_id]), notice: "Not authorized"
+     end
   end
 
   def new
