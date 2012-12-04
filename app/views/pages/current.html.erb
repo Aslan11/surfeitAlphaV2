@@ -112,6 +112,15 @@
     <%end%>
     <%end%>
    
+    <% (@twitter_feed).each do |tweet| %>
+    <div class="element twitter width2">
+      <p class="originType">L</p>
+      <h3 class="symbol"><%= tweet["user"]["name"]%></h3>
+      <h2 class="name"> <%= tweet["text"]%></h2>
+      <p class="dateStamp"><%= tweet["updated_at"] %></p>
+    </div>
+    <%end%>
+
      <div class="element twitter width2">
 	 <div class="smokeScreen">
     	<%= image_tag "stache.svg", :class => 'stache' %>

@@ -22,6 +22,11 @@ class User < ActiveRecord::Base
 		token ? token.access_token : false
 	end
 
+	def access_token_secret(service)
+		token = AccessToken.find_by_user_id_and_service(id, service)
+		token ? token.access_token_secret : false
+	end
+
 	def self.create_from_omniauth(auth)
 
 		create! do |user|
