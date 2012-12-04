@@ -1,21 +1,21 @@
 Surfeitalpha::Application.routes.draw do
   root to: "pages#current"
 
-  get "feed/index"
 
-  get '/feed/welcome'
   get '/current' => 'pages#current', :as => :user_current
 
-  match 'session/callback', :to => 'authorizations#instagram',  :as => :authorize_instagram
+  match 'session/instagram', :to => 'authorizations#instagram',  :as => :authorize_instagram
   match 'session/facebook', :to => 'authorizations#facebook',  :as => :authorize_facebook
+  match 'auth/twitter/callback', :to => 'authorizations#twitter', :as => :authorize_twitter # auth/twitter/callback needs to change to session/twitter PLEASE!
 
   resource  :session  
   resources  :authorizations
 
-  get '/sessions/destroy' => 'sessions#destroy', :as => :logout
-
   resources :users 
   resources :stashes
+
+  get '/sessions/destroy' => 'sessions#destroy', :as => :logout
+  
 end
 
 

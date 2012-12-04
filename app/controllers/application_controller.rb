@@ -31,8 +31,12 @@ private
     current_user.access_token('facebook')
   end
 
+  def twitter_authorization
+    current_user.access_token('twitter')
+  end
+
   def has_authorizations?
-    instagram_authorization.present? || facebook_authorization.present?
+    instagram_authorization.present? || facebook_authorization.present? || twitter_authorization.present?
   end
   helper_method :instagram_authorization, :facebook_authorization, :has_any_authorization?
 

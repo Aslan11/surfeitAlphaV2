@@ -10,14 +10,14 @@
 	  <th></th>
 	</tr>
 	
-<% @users.each do |user| %>
+<% current_user do |user| %>
 	<tr>
 	  <td><%= user.name %></td>
 	  <td><%= user.email %></td>
 	  <td><%= user.username %></td>
-	  <td><%= link_to 'show', @user %></td>
+	  <td><%= link_to 'show',  %></td>
 	  <td><%= link_to 'edit'  %></td>
-	  <td><%= link_to 'destroy' %></td>
+
 	 	
 	 </tr>
 	<% end %>

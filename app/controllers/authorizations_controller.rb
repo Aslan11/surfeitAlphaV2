@@ -17,7 +17,7 @@ class AuthorizationsController < ApplicationController
 	  	service: 'instagram'
 	  )
 	  
-	  redirect_to user_current_path
+	  redirect_to authorizations_path
  	end
 
  	def facebook
@@ -29,8 +29,23 @@ class AuthorizationsController < ApplicationController
 	  	service: 'facebook'
 	  )
 
-		redirect_to user_current_path
+		redirect_to authorizations_path
   end
+
+  def twitter
+  	response = env['omniauth.auth']
+  	
+	  AccessToken.create(
+	  	access_token: response.credentials.token,
+	  	access_token_secret: response.credentials.secret, 
+	  	user_id: current_user.id, 
+	  	service: 'twitter'
+	  )
+	  
+	  redirect_to authorizations_path
+  end
+
+
 
 end
 

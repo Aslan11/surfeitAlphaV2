@@ -15,12 +15,16 @@ class User < ActiveRecord::Base
 
   def self.from_omniauth(auth)
 	where(auth.slice("provider", "uid")).first || create_from_omniauth(auth)
-	
 	end
 
 	def access_token(service)
 		token = AccessToken.find_by_user_id_and_service(id, service)
 		token ? token.access_token : false
+	end
+
+	def access_token_secret(service)
+		token = AccessToken.find_by_user_id_and_service(id, service)
+		token ? token.access_token_secret : false
 	end
 
 	def self.create_from_omniauth(auth)

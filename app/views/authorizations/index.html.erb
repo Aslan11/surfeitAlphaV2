@@ -8,6 +8,10 @@
   <% unless current_user.access_token('facebook').present? %>
   	<li><%= link_to 'Authorize this Facebook app', facebook_auth_url , :class=>"button" %></li>
   <% end %>
+
+  <% unless current_user.access_token('twitter').present? && current_user.access_token_secret('twitter').present? %>
+    <li><%= link_to 'Authorize this Twitter app', 'auth/twitter', :class=>"button" %></li>
+  <% end %>
 </ul>
 
 
@@ -20,8 +24,9 @@
   	<li><%= link_to 'Deauthorize Facebook', '#'%></li>
   <% end %>
 
-
-
+  <% if current_user.access_token('twitter').present? && current_user.access_token_secret('twitter').present? %>
+    <li><%= link_to "Deauthorize Twitter", '#' %></li>
+  <% end %>
 </ul>
 
 

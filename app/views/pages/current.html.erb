@@ -62,7 +62,7 @@
       <div class="lower_nav_links">
       <%= link_to 'My Stash', stashes_path %><br>  
       <%= link_to 'Manage Networks', authorizations_path %><br>
-      <%= link_to 'My Account', current_user %>
+      <%= link_to 'My Account', users_path %>
       </div>
 
   </nav> <!-- #site-nav -->
@@ -77,17 +77,6 @@
 	
 	<div class="blackout"></div>
 	
-	<div class="element twitter width2">
-	 <div class="smokeScreen">
-    	<%= image_tag "stache.svg", :class => 'stache' %>
-    	<%= image_tag "expand.svg", :class => 'expand' %>
-    	<%= image_tag "contract.svg", :class => 'shrinkRay' %>
-    </div>
-      <p class="originType">L</p>
-      <h3 class="symbol">Test 2</h3>
-      <h2 class="name"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h2>
-      <p class="dateStamp">FUCK YOU ALL BITCHES</p>
-    </div>
 
     <% (@instagram_feed).each do |media| %>
     <div class="element width2 height2 instagram">
@@ -112,6 +101,34 @@
     <%end%>
     <%end%>
    
+    <% (@twitter_feed).each do |tweet| %>
+    <div class="element twitter width2">
+      <p class="originType">L</p>
+      <h3 class="symbol"><%= tweet["user"]["name"]%></h3>
+      <h2 class="name"> <%= tweet["text"]%></h2>
+      <p class="dateStamp"><%= tweet["updated_at"] %></p>
+    </div>
+    <%end%>
+
+    
+<!--     <div class="element rss width2">
+      <p class="originType">R</p>
+      <h3 class="symbol">Gizmodo</h3>
+      <h2 class="name"><a href="http://gizmodo.com/5959068/a-week-with-the-ipad-mini"  target="_blank" style="position: relative">A week with iPad Mini</a></h2>
+    </div> -->
+    	
+    
+<!--      <div class="element twitter width2">
+	 <div class="smokeScreen">
+    	<%= image_tag "stache.svg", :class => 'stache' %>
+    	<%= image_tag "expand.svg", :class => 'expand' %>
+    	<%= image_tag "contract.svg", :class => 'shrinkRay' %>
+    </div>
+      <p class="originType">L</p>
+      <h3 class="symbol">Test</h3>
+      <h2 class="name"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h2>
+    </div> -->
+<!--     
      <div class="element twitter width2">
 	 <div class="smokeScreen">
     	<%= image_tag "stache.svg", :class => 'stache' %>
@@ -122,16 +139,16 @@
       <h3 class="symbol">Test</h3>
       <h2 class="name"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h2>
     </div>
-
-    
+ -->
+<!--     
         <div class="element rss width2">
       <p class="originType">R</p>
       <h3 class="symbol">Gizmodo</h3>
       <h2 class="name"><a href="http://gizmodo.com/5959068/a-week-with-the-ipad-mini"  target="_blank" style="position: relative">A week with iPad Mini</a></h2>
     </div>
-    	
+    	 -->
     
-     <div class="element twitter width2">
+<!--      <div class="element twitter width2">
 	 <div class="smokeScreen">
     	<%= image_tag "stache.svg", :class => 'stache' %>
     	<%= image_tag "expand.svg", :class => 'expand' %>
@@ -140,51 +157,9 @@
       <p class="originType">L</p>
       <h3 class="symbol">Test</h3>
       <h2 class="name"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h2>
-    </div>
-    
-    
-     <div class="element twitter width2">
-	 <div class="smokeScreen">
-    	<%= image_tag "stache.svg", :class => 'stache' %>
-    	<%= image_tag "expand.svg", :class => 'expand' %>
-    	<%= image_tag "contract.svg", :class => 'shrinkRay' %>
-    </div>
-      <p class="originType">L</p>
-      <h3 class="symbol">Test</h3>
-      <h2 class="name"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h2>
-    </div>
-    
-     <div class="element twitter width2">
-	 <div class="smokeScreen">
-    	<%= image_tag "stache.svg", :class => 'stache' %>
-    	<%= image_tag "expand.svg", :class => 'expand' %>
-    	<%= image_tag "contract.svg", :class => 'shrinkRay' %>
-    </div>
-      <p class="originType">L</p>
-      <h3 class="symbol">Test</h3>
-      <h2 class="name"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h2>
-    </div>
+    </div> -->
 
-    
-        <div class="element rss width2">
-      <p class="originType">R</p>
-      <h3 class="symbol">Gizmodo</h3>
-      <h2 class="name"><a href="http://gizmodo.com/5959068/a-week-with-the-ipad-mini"  target="_blank" style="position: relative">A week with iPad Mini</a></h2>
-    </div>
-    	
-    
-     <div class="element twitter width2">
-	 <div class="smokeScreen">
-    	<%= image_tag "stache.svg", :class => 'stache' %>
-    	<%= image_tag "expand.svg", :class => 'expand' %>
-    	<%= image_tag "contract.svg", :class => 'shrinkRay' %>
-    </div>
-      <p class="originType">L</p>
-      <h3 class="symbol">Test</h3>
-      <h2 class="name"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h2>
-    </div>
-
- <div class="element twitter width2">
+<!--  <div class="element twitter width2">
 	 <div class="smokeScreen">
     	<%= image_tag "stache.svg", :class => 'stache' %>
     	<%= image_tag "expand.svg", :class => 'expand' %>
@@ -246,7 +221,7 @@
       <p class="originType">L</p>
       <h3 class="symbol">Sarah Binion</h3>
       <h2 class="name"> b OMG Surfeit is so awesome!!!!</h2>
-    </div>
+    </div> -->
      
     <!-- <div class="link away" data-number="35"><a href="http://surfeit.me">Surfeit</a></div> -->
   </div>
