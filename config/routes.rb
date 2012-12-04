@@ -1,9 +1,7 @@
 Surfeitalpha::Application.routes.draw do
   root to: "pages#current"
 
-  get "feed/index"
 
-  get '/feed/welcome'
   get '/current' => 'pages#current', :as => :user_current
 
   match 'session/instagram', :to => 'authorizations#instagram',  :as => :authorize_instagram
@@ -13,10 +11,11 @@ Surfeitalpha::Application.routes.draw do
   resource  :session  
   resources  :authorizations
 
-  get '/sessions/destroy' => 'sessions#destroy', :as => :logout
-
   resources :users 
   resources :stashes
+
+  get '/sessions/destroy' => 'sessions#destroy', :as => :logout
+  
 end
 
 
