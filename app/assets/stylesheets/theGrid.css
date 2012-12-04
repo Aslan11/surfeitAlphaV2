@@ -4,70 +4,65 @@ html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,addre
 
 
 /* ==================================================================================================================== */
-/* ! The 1140px Grid V2 by Andy Taylor \ http://cssgrid.net \ http://www.twitter.com/andytlr \ http://www.andytlr.com   */
+/* ========================================== The 12col Grid V1 by Kevin Martin =====================================   */
 /* ==================================================================================================================== */
 
-.container {
-padding-left: 20px;
-padding-right: 20px;
-}
 
 .row {
 width: 100%;
-max-width: 1140px;
 min-width: 755px;
 margin: 0 auto;
 overflow: hidden;
 }
 
 .onecol, .twocol, .threecol, .fourcol, .fivecol, .sixcol, .sevencol, .eightcol, .ninecol, .tencol, .elevencol {
-margin-right: 3.8%;
 float: left;
 min-height: 1px;
+position: relative;
 }
 
 .row .onecol {
-width: 4.85%;
+width: 8.3333333333%;
 }
 
 .row .twocol {
-width: 13.45%;
+width: 16.6666666666%;
 }
 
 .row .threecol {
-width: 22.05%;
+width: 24.9999999999%;
 }
 
 .row .fourcol {
-width: 30.75%;
+width: 33.3333333333%
 }
 
 .row .fivecol {
-width: 39.45%;
+width: 41.6666666666%
 }
 
 .row .sixcol {
-width: 48%;
+width: 49.9999999999%;
 }
 
 .row .sevencol {
-width: 56.75%;
+width: 58.3333333333%;
 }
 
 .row .eightcol {
-width: 65.4%;
+width: 66.6666666666%;
 }
 
 .row .ninecol {
-width: 74.05%;
+width: 74.9999999999%;
 }
 
 .row .tencol {
-width: 82.7%;
+width: 83.3333333333%;
 }
 
 .row .elevencol {
-width: 91.35%;
+width: 91.6666666666%;
 }
 
 .row .twelvecol {
@@ -94,7 +89,7 @@ img {
 
 	body {
 	font-size: 0.8em;
-	line-height: 1.5em;
+	/* line-height: 1.5em; */
 	}
 	
 	}

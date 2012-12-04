@@ -1,4 +1,4 @@
-	<head>
+<head>
 	<title>Surfeit Alpha!</title>
 	
 		 <%= stylesheet_link_tag "landingstyle", :media => "all" %>
@@ -7,8 +7,85 @@
 </head>
 
 <body>
-   
-  <div class="container">
+	<div class="container">
+		<div class="row colorGrey">
+			<div class="fourcol colorMint">
+				<div class="signUpHolder colorSky">
+					<a href="#" class="signUp">Sign Up</a>
+				</div>
+			</div>
+			
+			<div class="fourcol z2">
+				<div class="logoBox colorMint">
+					<h1 class="surfeitLogoTitle">Surfeit</h1>
+					<div class="logoHolder">
+					<%= image_tag "SurfeitLogo.svg", :class => "surfeitLandingLogo" %>
+					</div>
+				</div>
+			</div>
+			
+			<div class="fourcol last colorMint">
+			<div class="loginFormBox colorBlack">
+				<%= form_tag session_path, :class => "loginForm" do %>
+						<div class="emailEntry">
+						<%= label_tag :email, "Email:" %>
+						<%= text_field_tag :email%>
+						</div></br>
+						<div class="pwdEntry">
+						<%= label_tag :password, "Password:" %>
+						<%= password_field_tag :password %>
+						</div></br>
+					
+	  					<%= submit_tag "Login", :class => "loginButton" %>
+					
+					<% end %>
+					<a class="forgotPwd" href="#">Forgot Your Password?</a>
+			</div>
+			</div>
+		
+		</div>
+		
+		<div class="row colorGrey z1 secondRow">
+			<div class="fourcol cake">
+				<div class="colorSky frosting">
+					<div class="thingOne colorGrey">
+					
+					</div>
+					
+					<div class="thingTwo colorGrey">
+					
+					</div>
+				</div>
+			</div>
+			
+			<div class="fourcol cake center">
+				<div class="creamWrap colorMint">
+					<div class="thingOne colorGrey">
+					
+					</div>
+					
+					<div class="thingTwo colorGrey">
+					
+					</div>
+				</div>
+			</div>
+			
+			<div class="fourcol cake last">
+			<div class="colorBlack frosting">
+					<div class="thingOne colorGrey">
+					
+					</div>
+					
+					<div class="thingTwo colorGrey">
+					
+					</div>
+				</div>
+			</div>
+			
+		</div>
+	</div>			   
+  <!--
+<div class="container">
   	<div class="row loginHolder">
 		<header>
 			<div class="fivecol surfeitLogoHolder">
@@ -74,5 +151,6 @@
   		</div>
   	</div>
   </div>	
+-->
   <%= javascript_include_tag "jquery-1.7.1.min" %>
 </body>

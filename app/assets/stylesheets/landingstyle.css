@@ -25,403 +25,194 @@
 body{
 	font-family: 'PT Sans';
 }
-.surfeitLandingLogo {
-width: 118px;
-position: absolute;
-left: -29px;
-top: 8px;
+
+.colorBrick{
+	background: #81212D;
 }
 
-.logoBox{
-left: 34px;
-position: absolute;
-top: -1px;
-height: 100px;
-width: 310px
+.colorSunnyD{
+	background: #FFC938;
 }
 
-.magic{
-height: 290px;
-position: relative;
-top: -136px;
+.colorMint{
+	background: #f9ffd9;
 }
 
-.latter{
-	margin: 0 0 0 auto;
-height: inherit;
-width: 386px;
+.colorBlack{
+	background: #181820;
 }
 
-.sunSplash{
-	height: 129px;
-background: #FFC938;
-position: relative;
-width: 120%;
-left: -43px;
-top: 136px;
-z-index: -1;
+.colorSky{
+	background: #97CAD5;
 }
+
+.colorGrey{
+	background: #ccc;
+}
+
+.zNeg{
+	z-index: -1;
+}
+
+.z0{
+	z-index: 0;
+}
+
+.z1{
+	z-index: 1;
+}
+.z2{
+	z-index: 2;
+}
+.z3{
+	z-index: 3;
+}
+
+
+/* CONTAINER 1, ROW 1 /////////////////////////////////////////////////////////////////////////////////////////////////////// */
 
 .signUp{
 font-family: Pacifico;
-color: #81212D;
-float: right;
-position: relative;
-left: -59px;
-top: 10px;
-font-size: 58px;
 text-decoration: none;
-
-}
-
-.emailEntry{
-	width: 187px;
+color: #81212D;
+font-size: 56px;
 position: absolute;
-left: 205px;
-}
-
-.eviscerate{
-height: 86px;
-width: 86px;
-background: #FFC938;
-position: relative;
-top: 9px;
-left: 39%;
-}
-
-.sneaker{
-height: 100%;
-width: 100%;
-background: #181820;
-border-bottom-left-radius: 60px;
-}
-
-.pwdEntry{
-position: absolute;
-left: 178px;
-top: 25px;
-}
-
-.queer{
-position: relative;
-top: -235px;
-}
-
-.rogue{
-width: 100%;
-background: #81212D;
-height: 86px;
-position: relative;
-top: 136px;
-border-top-right-radius: 60px;
-}
-
-.surfeitLogoTitle {
-font-family: "Surfeit";
-font-size: 124px;
-display: block;
-top: 2px;
-color: #181820;
-position: absolute;
-left: 88px;
-font-weight: 100;
-text-shadow: 2px 2px 2px #450808;
-line-height: 1.0;
-}
-
-.surfeitLogoHolder{
-background: #97CAD5;
-position: relative;
-height: 135px;
-border-bottom-right-radius: 50px;
-z-index: 1;
-}
-
-.slideHolder{
-	background: #181820;
-height: 200px;
-}
-
-.cinder{
-	width: 65.4%;
-height: 60px;
-background: #81212D;
-border-bottom-right-radius: 60px
-}
-
-.ember{
-	height: 60px;
-width: 100%;
-position: relative;
-background: #FFC938;
-left: 65.4%;
-border-bottom-left-radius: 60px;
-top: -60px;
-}
-
-.spidey{
-height: 222px;
-background: #F9FFD9;
-border-top-right-radius: 50px;
-}
-.loginHolder{
-	background: #181820;
-	color: #9aa8a8;
-text-shadow: 1px 1px 2px #183435;
-}
-
-input {
-
-}
-
-
-
-.loginForm{
-position: relative;
-top: 4px;
-z-index: 2;
-}
-
-.forgotPwd {
+top: -10px;
+text-shadow: 1px 1px 2px #181820;
+margin-left: 25%;
 	
 }
 
-.loginButton {
-color: #81212D;
-background: #FFC938;
-font-size: 14px;
-padding-top: 1px;
-padding-right: 43px;
-padding-bottom: 2px;
-padding-left: 43px;
-text-decoration: none;
-border: #81212D 1px;
-position: absolute;
-top: 49px;
-left: 251px;
+.surfeitLogoTitle{
+font-family: Surfeit;
+font-size: 136px;
+font-weight: 100;
+text-shadow: 1px 1px 4px #81212D;
+color: #181820;
+width: 290px;
+margin: 0 auto;
 }
 
-.loginButton:hover {
-  background: #81212D;
-color: #FFC938;
+.surfeitLandingLogo{
+	width: inherit;
 }
 
-.loginButton2 {
-  color: #183435;
-  font-size: 14px;
-  padding-top: 10px;
-  padding-right: 40px;
-  padding-bottom: 10px;
-  padding-left: 40px;
-  text-decoration: none;
-  -webkit-box-shadow: 0px 0px 4px #000;
-  -moz-box-shadow: 0px 0px 4px #000;
-  box-shadow: 0px 0px 4px #000;
-  text-shadow: 1px 1px 3px #666666;
-  border: solid #183435 1px;
-  background: -webkit-gradient(linear, 0 0, 0 100%, from(#9EA8A8), to(#495252));
-  background: -moz-linear-gradient(top, #9EA8A8, #495252);
-}
-.loginButton2:hover {
-  background: -webkit-gradient(linear, 0 0, 0 100%, from(#495252), to(#9ea8a8));
-  background: -moz-linear-gradient(top, #495252, #9ea8a8)
-}
-
-/*
-.loginButton {
-border: none;
-background: #9EA8A8;
-color: #183435;
-font-family: 'PT Sans';
-font-size: 12px;
-font-weight: bold;
-position: absolute;
-width: 123px;
-left: 254px;
-top: 24px;
-box-shadow: 0px 0px 4px black;
-}
-
-.loginButton2{
-	border: none;
-background: #9EA8A8;
-color: #183435;
-font-family: 'PT Sans';
-font-size: 12px;
-font-weight: bold;
-position: absolute;
-width: 123px;
-left: 254px;
-top: -4px;
-
-}
-*/
-.signUpButton{
-	border: none;
-background: #797e70;
-color: #425224;
+.logoBox{
 position: relative;
-font-family: 'PT Sans';
-font-size: 11px;
-width: 100px;
-right: 200px;
+height: 208px;
+border-bottom-left-radius: 108px;
+border-bottom-right-radius: 108px;
+}
+
+.logoHolder{
+	width: 80px;
+margin: 0 auto;
+}
+
+.signUpHolder{
+	height: 200px;
+	border-top-right-radius: 60px;
+}
+
+.loginForm{
+	color: #97CAD5;
+text-shadow: 1px 1px 2px #81212D;
+height: 48px;
+}
+
+.emailEntry{
+width: 178px;
+float: right;
+}
+
+.pwdEntry{
+width: 205px;
+position: absolute;
+right: 0px;
+top: 23px;
+}
+
+.loginFormBox{
+	height:	200px;
+	border-top-left-radius: 60px;
+}
+
+.loginButton{
+	position: absolute;
+right: 6px;
+width: 123px;
+border: none;
+top: 46px;
+background: #97CAD5;
+}
+
+.forgotPwd{
+position: absolute;
+right: 6px;
+text-decoration: none;
+color: #97CAD5;
+font-size: 16px;
+top: 68px;
+text-shadow: 1px 1px 2px #81212D;
+}
+
+
+/* CONTAINER 1, ROW 2 /////////////////////////////////////////////////////////////////////////////////////////////////////// */
+.secondRow{
+	height: 164px;
+position: relative;
+top: -112px;
+}
+
+.cake{
+	height: 233px;
+}
+
+.cake *{
+	position: relative;
+}
+
+.frosting{
+	height: 100%
+}
+
+.thingOne{
+height: 100%;
+width: 50%;
+border-top-right-radius: 170px;
+position: absolute;
+}
+
+.thingTwo{
+height: 100.5%;
+width: 50%;
+position: absolute;
+border-top-left-radius: 170px;
+right: 0;
+z-index: 1;
+}
+
+.creamWrap{
+height: 100%;
+top: 104px;	
+}
+
+.center .thingOne{
+border-top-right-radius: 66px;
+}
+
+.center .thingTwo{
+border-top-left-radius: 66px;
 }
 
 
 /* /////////////////////////////////////////////////////////////////////INTITAL MEDIA QUERY/////////////////////////////////////////////////////////// */
 @media only screen and (max-width: 1023px) {
 
-.surfeitLogoTitle {
-font-family: "Surfeit";
-font-size: 90px;
-display: block;
-top: -30px;
-color: black;
-position: absolute;
-left: 88px;
-font-weight: 100;
-text-shadow: 2px 2px 2px #450808;
-line-height: 1.0;
 }
-
-.surfeitLandingLogo {
-width: 88px;
-position: absolute;
-left: 0px;
-top: -26px;
-}
-
-.signUp {
-color: #81212D;
-left: -36px;
-top: 44px;
-font-size: 48px;
-text-decoration: none;
-}
-
-.logoBox {
-left: 4px;
-position: absolute;
-top: 45px;
-height: 100px;
-width: 310px;
-}
-
-.pwdEntry {
-left: 194px;
-}
-
-.emailEntry{
-	left: 214px;
-}
-
-.eviscerate{
-	top: 11px;
-}
-
-}
-
-
 /* /////////////////////////////////////////////////////////////////////SECOND MEDIA QUERY//////////////////////////////////////////////////////////// */
 
 @media handheld, only screen and (max-width: 767px) {
 
-.loginHolder{
-color: #9aa8a8;
-text-shadow: 1px 1px 2px #183435;
-font-size: 28px;
-height: 375px;
-}
-
-.surfeitLogoHolder{
-	height: 100px;
-}
-
-#password {
-position: absolute;
-top: 27px;
-}
-
-.surfeitLogoTitle {
-font-family: "Surfeit";
-font-size: 90px;
-display: block;
-top: 5px;
-color: black;
-position: absolute;
-left: 102px;
-font-weight: 100;
-text-shadow: 2px 2px 2px #582827;
-line-height: 1.0;
-}
-
-.surfeitLandingLogo {
-width: 87px;
-position: absolute;
-left: 8px;
-top: 4px;
-}
-
-.former{
-height: 220px;
-padding-top: 10px;
-}
-
-.latter{
-	width: 268px;
-height: 201px;
-margin: 0 auto;
-}
-
-.rememberMe {
-top: 134px;
-position: relative;
-font-size: 16px;
-left: 2px;
-}
-
-.emailEntry {
-width: 187px;
-position: absolute;
-left: 0px;
-}
-
-input {
-font-size: 24px;
-}
-
-.pwdEntry{
-position: absolute;
-left: 0;
-top: 64px;
-}
-
-.loginButton {
-
-font-size: 14px;
-padding-top: 10px;
-padding-right: 111px;
-padding-bottom: 10px;
-padding-left: 111px;
-text-decoration: none;
-position: absolute;
-top: 155px;
-left: 0;
-}
-
-.magic {
-height: 290px;
-position: relative;
-top: -48px;
-}
-
-.spidey{
-	border-top-right-radius: 0;
-	border-top-left-radius: 50px;
-}
-
-.logoBox {
-top: 0px;
-}
 
 }
