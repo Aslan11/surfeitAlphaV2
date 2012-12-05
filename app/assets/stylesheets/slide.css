@@ -52,8 +52,8 @@ transition: background-position 1s ease-out 0.3s;
 }
 .da-slide h2{
 color: #181820;
-font-size: 61px;
-top: 15px;
+font-size: 58px;
+top: 30px;
 white-space: nowrap;
 z-index: 10;
 text-shadow: 1px 1px 1px rgba(0,0,0,0.1);

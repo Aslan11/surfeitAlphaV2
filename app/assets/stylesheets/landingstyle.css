@@ -252,6 +252,104 @@ margin: 0 auto;
 border-radius: 200px;
 }
 
+.blueBeamLayerOne{
+height: 43px;
+}
+
+.blueBeamLayerTwo{
+height: 300px;
+width: 100%;
+position: absolute;
+}
+
+.blueBeamLensOne{
+	height: 100%;
+background: #97CAD5;
+border-radius: 1000px 0 0 1000px;
+width: 48%;
+left: 18.5%;
+position: absolute;
+}
+
+.blueBeamLensTwo{
+	height: 100%;
+
+border-radius: 1000px 0 0 1000px;
+width: 48%;
+left: 20.5%;
+position: absolute;
+}
+
+.orangeBeamLayerOne{
+height: 43px;
+}
+
+.orangeBeamLayerTwo{
+height: 300px;
+width: 100%;
+position: absolute;
+}
+
+.orangeBeamLensOne{
+height: 100%;
+background: #FFC938;
+border-radius: 0 1000px 1000px 0;
+width: 48%;
+left: 32.5%;
+position: absolute;
+}
+
+.orangeBeamLensTwo{
+height: 100%;
+border-radius: 0 1000px 1000px 0;
+width: 48%;
+left: 30.5%;
+position: absolute;
+}
+
+
+.hocus{
+	height: 100%;
+width: 66%;
+}
+
+.pocus{
+	height: 100%;
+position: absolute;
+width: 33.3333333%;
+top: 0px;
+right: -2px;
+}
+
+.hocusTwo{
+height: 100%;
+width: 32.666666%;
+}
+
+.pocusTwo{
+height: 100%;
+position: absolute;
+width: 66.556666%;
+top: 0px;
+right: -2px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
