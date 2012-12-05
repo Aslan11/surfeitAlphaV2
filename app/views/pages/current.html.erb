@@ -9,7 +9,7 @@
 <body>
 
 <nav id="site-nav" class="meny">
-    <h1><a href="index.html">Surfeit</a></h1>
+    <h1><a href="/current">Surfeit</a></h1>
     
       Welcome, <%= User.find_by_id(session[:user_id]).name %> | 
       <%= link_to 'Sign Out', logout_url, :method => 'delete' %>
