@@ -80,7 +80,6 @@
 	
 	<div class="blackout"></div>
 	
-
     <% (@instagram_feed).each do |media| %>
     <div class="element width2 height2 instagram">
     <div class="smokeScreen">
@@ -91,6 +90,9 @@
     <img src="<%= media.images.first.last.url%>" style="width: 100%; height: 100%">
     <p><%= media.likes.first.last%></p><br>
     <p><%= media.user['username'] %></p><br>
+      <% if media.caption != nil %>
+       <p><%= media.caption.text %></p><br>
+      <% end %>
     </div>
     <% end%> 
     
