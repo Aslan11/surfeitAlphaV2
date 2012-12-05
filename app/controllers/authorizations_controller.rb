@@ -33,7 +33,9 @@ class AuthorizationsController < ApplicationController
   end
 
   def twitter
+  
   	response = env['omniauth.auth']
+  	
   	
 	  AccessToken.create(
 	  	access_token: response.credentials.token,

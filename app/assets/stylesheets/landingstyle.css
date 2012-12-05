@@ -24,6 +24,11 @@
 
 body{
 	font-family: 'PT Sans';
+	background: #81212D;
+}
+
+.container{
+	height: 752px;
 }
 
 .colorBrick{
@@ -120,7 +125,7 @@ z-index: 4;
 }
 
 .loginForm{
-color: #81212D;
+color: #181820;
 height: 48px;
 }
 
@@ -148,6 +153,11 @@ width: 123px;
 border: none;
 top: 46px;
 background: #97CAD5;
+}
+
+.loginButton:hover{
+	background: #181820;
+	color: #97CAD5;
 }
 
 .forgotPwd{
@@ -344,7 +354,7 @@ border-top-right-radius: 12px;
 }
 
 .kruxOne{
--webkit-transform: rotate(45deg) scale(2);
+-webkit-transform: rotate(45deg) scale(2) skew(30deg, 30deg);
 }
 
 .arrow-right {
