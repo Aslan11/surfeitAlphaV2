@@ -6,9 +6,11 @@ class PagesController < ApplicationController
   	@facebook_feed = []
   	@instagram_feed = []
     @twitter_feed = []
+    @tweeting = []
 
     if current_user.access_token('facebook').present?
     	 @facebook_feed = Koala::Facebook::API.new(current_user.access_token('facebook')).get_object("/me/home")
+       # @like_status = @facebook_feed.put_connections("me", "your_app_namespace:like", :object => user_current_path)
     end
 
     if current_user.access_token('instagram').present?
@@ -17,8 +19,8 @@ class PagesController < ApplicationController
 
     if current_user.access_token('twitter').present? && current_user.access_token_secret('twitter').present?
         @twitter_feed = Twitter::Client.new(
-          :consumer_key => ENV['TWITTER_KEY'],
-          :consumer_secret => ENV['TWITTER_KEY_SECRET'],
+          :consumer_key => 'xogiGTZHrPs8AM86wCtHBQ',
+          :consumer_secret => 'iIiM39fNGsC3vbGYJ9tqHT524m9OJWveeQFs5rd0',
           :oauth_token => current_user.access_token('twitter'),
           :oauth_token_secret => current_user.access_token_secret('twitter')
         ).home_timeline
