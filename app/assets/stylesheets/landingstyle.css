@@ -94,7 +94,9 @@ margin: 0 auto;
 }
 
 .surfeitLandingLogo{
-	width: inherit;
+width: 89%;
+margin-top: 5%;
+margin-left: 6%;
 }
 
 .logoBox{
@@ -105,8 +107,11 @@ border-bottom-right-radius: 108px;
 }
 
 .logoHolder{
-	width: 80px;
+width: 77px;
 margin: 0 auto;
+border: solid 2px #81212D;
+border-radius: 340px;
+z-index: 4;
 }
 
 .signUpHolder{
@@ -115,8 +120,7 @@ margin: 0 auto;
 }
 
 .loginForm{
-	color: #97CAD5;
-text-shadow: 1px 1px 2px #81212D;
+color: #81212D;
 height: 48px;
 }
 
@@ -150,10 +154,9 @@ background: #97CAD5;
 position: absolute;
 right: 6px;
 text-decoration: none;
-color: #97CAD5;
+color: #81212D;
 font-size: 16px;
 top: 68px;
-text-shadow: 1px 1px 2px #81212D;
 }
 
 
@@ -178,14 +181,14 @@ top: -112px;
 
 .thingOne{
 height: 100%;
-width: 50%;
+width: 49.5%;
 border-top-right-radius: 170px;
 position: absolute;
 }
 
 .thingTwo{
 height: 100.5%;
-width: 50%;
+width: 49.5%;
 position: absolute;
 border-top-left-radius: 170px;
 right: 0;
@@ -199,11 +202,64 @@ top: 104px;
 
 .center .thingOne{
 border-top-right-radius: 66px;
+border-bottom-right-radius: 1px
 }
 
 .center .thingTwo{
 border-top-left-radius: 66px;
+border-bottom-left-radius: 1px
 }
+
+/* CONTAINER 1, ROW 3 /////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+.thirdRow{
+	top: -112px;
+position: relative;
+}
+
+.sliderHolder{
+	height: 400px;
+}
+
+.fixture{
+	position: absolute;
+height: 43px;
+width: 100%;
+}
+
+.fixieOne{
+height: 100%;
+width: 49.6%;
+position: absolute;
+border-bottom-right-radius: 60px;
+	
+}
+
+.fixieTwo{
+	height: 100%;
+width: 49.6%;
+position: absolute;
+border-bottom-left-radius: 60px;
+right: 0;
+}
+
+.television{
+	position: relative;
+height: 300px;
+width: 100%;
+top: 43px;
+margin: 0 auto;
+border-radius: 200px;
+}
+
+
+
+
+
+
+
+
+
 
 
 /* /////////////////////////////////////////////////////////////////////INTITAL MEDIA QUERY/////////////////////////////////////////////////////////// */
