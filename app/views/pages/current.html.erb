@@ -103,12 +103,16 @@
     <% if status["message"]%>
     <div class="element width2 facebook">
       <p class="originType">F</p>
-      <h3 class="symbol"><%=status["from"]["name"]%></h3>
+      <h3 class="symbol"><%=status["from"]["name"]%></h3><br>
       <h2 class="name"><%=status["message"]%></h2>
+      <p><% if status['likes'] != nil%></p>
+            <p><%= status['likes']['count']%></p>
+          <%end %>
       <p class="dateStamp"><%=status["updated_time"] %></p>
     </div>
     <%end%>
     <%end%>
+
    
     <% (@twitter_feed).each do |tweet| %>
     <div class="element twitter width2">
