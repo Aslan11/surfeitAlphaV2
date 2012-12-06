@@ -74,6 +74,7 @@
 					<div class="thingTwo colorBlack">
 					
 					</div>
+				
 				</div>
 			</div>
 			
@@ -229,7 +230,45 @@
 					<div class="thingTwo colorBlack">
 					
 					</div>
+					<div class="signInMobileHolder colorBlack">
+					<%= form_tag session_path, :class => "" do %>
+						<div class="emailMobileEntry">
+						<%= label_tag :email, "Email:" %>
+						<%= text_field_tag :email%>
+						</div></br>
+						<div class="pwdMobileEntry">
+						<%= label_tag :password, "Password:" %>
+						<%= password_field_tag :password %>
+						</div></br>
+						<div class="loginButtonHolder">
+	  					<%= submit_tag "Login", :class => "loginButton" %>
+						</div>
+					<% end %>
+					<div class="forgotHolder">
+					<a class="forgotMobile" href="#">Forgot Your Password?</a>
+					</div>
+					</div>
 				</div>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="twelvecol last thirdMobileRow">
+			
+			<div class="signUpBox colorSunnyD">
+				<div class="cheech colorBlack">
+				
+				</div>
+				
+				<div class="chong colorBlack">
+				
+				</div>
+				
+				<div class="signUpMobileHolder">
+				<%= link_to 'Sign up', new_user_path, :class => 'signUp'%>
+				</div>
+			</div>
+			
 			</div>
 		</div>
 	</div>
