@@ -64,9 +64,12 @@
       <%= link_to 'Manage Networks', authorizations_path %><br>
       <%= link_to 'My Account', users_path %>
       <form>
-        Tweet: <input type="text" name="firstname"><br>
+        Tweet: <input type="text" class="tweetHolder"><br>
+        <button class="newTweet">Tweet!</button>
       </form>
       </div>
+
+      
 
   </nav> <!-- #site-nav -->
   
@@ -100,12 +103,16 @@
     <% if status["message"]%>
     <div class="element width2 facebook">
       <p class="originType">F</p>
-      <h3 class="symbol"><%=status["from"]["name"]%></h3>
+      <h3 class="symbol"><%=status["from"]["name"]%></h3><br>
       <h2 class="name"><%=status["message"]%></h2>
+      <p><% if status['likes'] != nil%></p>
+            <p><%= status['likes']['count']%></p>
+          <%end %>
       <p class="dateStamp"><%=status["updated_time"] %></p>
     </div>
     <%end%>
     <%end%>
+
    
     <% (@twitter_feed).each do |tweet| %>
     <div class="element twitter width2">
@@ -349,6 +356,12 @@ var $optionSets = $('#options .option-set'),
    });
    
    
+  //Try to tweet
+  var twitterLimbo;
+  $('.newTweet').on("click", function{
+    // twitterLimbo = $('.tweetHolder').getText?
+  });
+
    //Custom jQuery --Kevin
    ///////////////////////
    $(".stache").on("click", function(){

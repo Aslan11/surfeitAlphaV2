@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
 	protect_from_forgery
 	helper_method :current_user
 
-  # before_filter :authenticate!
+  before_filter :authenticate!
 
 private
 
@@ -11,7 +11,6 @@ private
 
   def authenticate!
     unless current_user
-      flash[:error] = "Please sign in first!"
       redirect_to new_session_path
     end
   end
