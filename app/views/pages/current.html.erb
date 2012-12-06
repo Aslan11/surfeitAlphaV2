@@ -64,9 +64,12 @@
       <%= link_to 'Manage Networks', authorizations_path %><br>
       <%= link_to 'My Account', users_path %>
       <form>
-        Tweet: <input type="text" name="firstname"><br>
+        Tweet: <input type="text" class="tweetHolder"><br>
+        <button class="newTweet">Tweet!</button>
       </form>
       </div>
+
+      
 
   </nav> <!-- #site-nav -->
   
@@ -349,6 +352,12 @@ var $optionSets = $('#options .option-set'),
    });
    
    
+  //Try to tweet
+  var twitterLimbo;
+  $('.newTweet').on("click", function{
+    // twitterLimbo = $('.tweetHolder').getText?
+  });
+
    //Custom jQuery --Kevin
    ///////////////////////
    $(".stache").on("click", function(){

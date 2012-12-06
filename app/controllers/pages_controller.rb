@@ -24,6 +24,14 @@ class PagesController < ApplicationController
           :oauth_token => current_user.access_token('twitter'),
           :oauth_token_secret => current_user.access_token_secret('twitter')
         ).home_timeline
+
+        @tweeting = Twitter::Client.new(
+          :consumer_key => 'xogiGTZHrPs8AM86wCtHBQ',
+          :consumer_secret => 'iIiM39fNGsC3vbGYJ9tqHT524m9OJWveeQFs5rd0',
+          :oauth_token => current_user.access_token('twitter'),
+          :oauth_token_secret => current_user.access_token_secret('twitter')
+        )
+
     end
   end
 

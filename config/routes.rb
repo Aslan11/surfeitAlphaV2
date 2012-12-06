@@ -1,7 +1,6 @@
 Surfeitalpha::Application.routes.draw do
   root to: "pages#current"
 
-
   get '/current' => 'pages#current', :as => :user_current
 
   match 'session/instagram', :to => 'authorizations#instagram',  :as => :authorize_instagram

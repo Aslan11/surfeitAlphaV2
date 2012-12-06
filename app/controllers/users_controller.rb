@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
 
 
-  before_filter :ensure_correct_user_id, only: [:show, :edit, :index]
+  before_filter :ensure_correct_user_id
+  skip_before_filter :ensure_correct_user_id, :only => ['new', 'create']
 
   def ensure_correct_user_id
     if session[:user_id] != params[:id].to_i
@@ -23,15 +24,10 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-
-     if session[:user_id] != @user.id
-       redirect_to user_path(session[:user_id]), notice: "Not authorized"
-     end
   end
 
   def new
-    @user = User.new
-      
+    @user = User.new(params[:id])
   end
 
   def edit
@@ -41,7 +37,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(params[:user])
-    (@user.save) ? (session[:user_id] = @user.id ; redirect_to(users_path)) : (redirect_to(new_user_url) ;   flash[:notice] = "User exists!!!")
+    (@user.save) ? (session[:user_id] = @user.id ; redirect_to(users_path)) : (redirect_to(new_session_path) ;   flash[:notice] = "User exists!!!")
 
   end
 
