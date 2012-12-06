@@ -9,7 +9,11 @@ class PagesController < ApplicationController
     @tweeting = []
 
     if current_user.access_token('facebook').present?
-    	 @facebook_feed = Koala::Facebook::API.new(current_user.access_token('facebook')).get_object("/me/home")
+        
+      @facebook_status = Koala::Facebook::API.new(current_user.access_token('facebook')) 
+      # @facebook_status.put_connections("me", "feed", :message => "Surfeit now supports native Facebook status updates!!!")
+    	
+      @facebook_feed = Koala::Facebook::API.new(current_user.access_token('facebook')).get_object("/me/home")
        # @like_status = @facebook_feed.put_connections("me", "your_app_namespace:like", :object => user_current_path)
     end
 

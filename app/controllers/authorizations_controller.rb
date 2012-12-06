@@ -21,7 +21,7 @@ class AuthorizationsController < ApplicationController
  	end
 
  	def facebook
-		response = Koala::Facebook::OAuth.new(APP_ID, APP_SECRET, authorize_facebook_url)
+		response = Koala::Facebook::OAuth.new('333831113381266', '43e26a8d150ba3db9a0308031fdbfd86', authorize_facebook_url)
 		
 		 AccessToken.create(
 	  	access_token: response.get_access_token(params[:code]), 
