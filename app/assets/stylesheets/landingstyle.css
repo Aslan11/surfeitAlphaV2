@@ -374,7 +374,7 @@ height: 0;
 }
 
 .sapphireSocket{
-	left: 61.33333%;
+left: 60.666666%;
 position: absolute;
 top: 174px;
 }
@@ -472,11 +472,51 @@ border-top-right-radius: 12px;
 
 /* /////////////////////////////////////////////////////////////////////INTITAL MEDIA QUERY/////////////////////////////////////////////////////////// */
 @media only screen and (max-width: 1023px) {
+.surfeitLogoTitle {
+font-size: 110px;
+width: 236px;
+}
+
+
+.signUp{
+	margin-left: 13%
+}
+
+.pwdEntry{
+	right: -7px;
+}
+
+.loginButton{
+	right: 16px;
+width: 122px;
+}
+
+.forgotPwd{
+	right: 16px;
+}
+
 
 }
 /* /////////////////////////////////////////////////////////////////////SECOND MEDIA QUERY//////////////////////////////////////////////////////////// */
 
 @media handheld, only screen and (max-width: 767px) {
 
+.mobileTrigger{
+	color: #F00;
+}
+
+.creamWrap{
+	height: 150px;
+}
+
+.thingOne{
+	height: 46%%;
+}
+
+.thingTwo{
+height: 46%;
+right: 20px;
+width: 49.5%;
+}
 
 }

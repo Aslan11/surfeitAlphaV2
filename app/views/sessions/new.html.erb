@@ -11,7 +11,10 @@
 </head>
 
 <body>
-	<div class="container">
+
+	<div class="mobileTrigger">
+	</div>
+	<div class="container nonMobile">
 		<div class="row colorBlack">
 			<div class="fourcol colorMint">
 				<div class="signUpHolder colorSky">
@@ -204,6 +207,32 @@
 		</div>
 	</div>			   
 
+	<div class="container mobile">
+		<div class="row">
+			<div class="twelvecol last">
+			<div class="logoBox colorMint">
+					<h1 class="surfeitLogoTitle">Surfeit</h1>
+					<div class="logoHolder">
+					<%= image_tag "SurfeitLogo.svg", :class => "surfeitLandingLogo" %>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="twelvecol secondMobileRow last">
+			<div class="creamWrap colorMint">
+					<div class="thingOne colorBlack">
+					
+					</div>
+					
+					<div class="thingTwo colorBlack">
+					
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 		
 		<%= javascript_include_tag "jquery-1.7.1.min" %>
 		<%= javascript_include_tag "jquery.cslider"%>
@@ -216,6 +245,49 @@
 				});
 			
 			});
-		</script>	
+		</script>
+		<script type="text/javascript">
+		// global variables
+		var compareColor; //previous color used for comparison
+		var trigger; //the element used to compare changes
+		// for performance, I store the detector element into a variable to avoid
+		// running a DOM query every time we need to test the change conditions
+		var nonMobileHolder
+		var mobileHolder
+		jQuery(document).ready(function(){
+		
+		    //set the initial values
+		    trigger = $('.mobileTrigger');
+		    compareColor = trigger.css('color');
+		    nonMobileHolder = $('.nonMobile');
+		    mobileHolder = $('.mobile');
+		    
+		    $('.mobile').remove();
+		    if(trigger.css('color')== 'rgb(255, 0, 0)'){
+		            $('.nonMobile').remove();
+		            $('body').append(mobileHolder);
+		        }
+		    
+		    $(window).resize(function(){
+		        //compare everytime the window resize event fires
+		        if(trigger.css('color')== 'rgb(255, 0, 0)'){
+		            $('.nonMobile').remove();
+		            if($('body').children('.mobile').size() == 0){
+		            $('body').append(mobileHolder);
+		            }
+		        }
+		        else if($('body').children('.nonMobile').size() > 0){
+				        return
+				}
+			    else{
+				    $('body').append(nonMobileHolder);
+				    $('.mobile').remove();
+			    }
+		        
+		
+		    });
+		
+		});
+		</script>
  
 </body>
