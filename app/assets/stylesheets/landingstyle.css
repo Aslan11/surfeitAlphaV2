@@ -371,10 +371,12 @@ border-style: solid;
 border-width: 20px;
 width: 0;
 height: 0;
+box-shadow: 0px 0px 117px #97CAD5;
+
 }
 
 .sapphireSocket{
-	left: 61.33333%;
+left: 60.666666%;
 position: absolute;
 top: 174px;
 }
@@ -385,6 +387,7 @@ border-style: solid;
 border-width: 20px;
 width: 0;
 height: 0;
+box-shadow: 0px 0px 117px #FFC938;
 }
 
 .amberSocket{
@@ -472,11 +475,173 @@ border-top-right-radius: 12px;
 
 /* /////////////////////////////////////////////////////////////////////INTITAL MEDIA QUERY/////////////////////////////////////////////////////////// */
 @media only screen and (max-width: 1023px) {
+.surfeitLogoTitle {
+font-size: 110px;
+width: 236px;
+}
+
+
+.signUp{
+	margin-left: 13%
+}
+
+.pwdEntry{
+	right: -7px;
+}
+
+.loginButton{
+	right: 16px;
+width: 122px;
+}
+
+.forgotPwd{
+	right: 16px;
+}
+
 
 }
 /* /////////////////////////////////////////////////////////////////////SECOND MEDIA QUERY//////////////////////////////////////////////////////////// */
 
 @media handheld, only screen and (max-width: 767px) {
 
+.mobileTrigger{
+	color: #F00;
+}
+
+.creamWrap{
+	height: 150px;
+}
+
+.thingOne{
+	height: 100px;
+}
+
+.thingTwo{
+height: 100px;
+right: 20px;
+width: 49.5%;
+}
+
+.logoBox {
+
+border-bottom-left-radius: 0 0;
+border-bottom-right-radius: 0 0;
+}
+
+.signInMobileHolder{
+	position: relative;
+top: 90px;
+z-index: 2;
+height: 200px;
+}
+
+.secondMobileRow{
+	height: 272px;
+}
+
+.emailMobileEntry{
+font-size: 26px;
+color: #97CAD5;
+position: relative;
+width: 346px;
+margin: 0 auto;
+}
+
+.emailMobileEntry input{
+width: 200px;
+height: 22px;
+position: absolute;
+top: -2px;
+left: 76px;
+font-size: 32px;
+}
+
+.pwdMobileEntry{
+	position: relative;
+font-size: 26px;
+color: #97CAD5;
+width: 430px;
+margin: 0 auto;
+}
+
+.pwdMobileEntry input{
+	width: 200px;
+height: 22px;
+position: absolute;
+top: -2px;
+left: 119px;
+font-size: 32px;
+}
+
+.loginButton{
+position: relative;
+width: 226px;
+height: 34px;
+font-size: 22px;
+border: none;
+top: 0;
+background: #97CAD5;
+right: 0;
+}
+
+.loginButtonHolder{
+	width: 215px;
+margin: 0 auto;
+}
+
+.forgotMobile{
+	text-decoration: none;
+color: #FFC938;
+position: absolute;
+top: 153px;
+}
+
+.forgotHolder{
+	width: 158px;
+	margin: 0 auto;
+}
+
+.thirdMobileRow{
+	height: 170px;
+}
+
+.cheech{
+	height: 64px;
+width: 49.5%;
+border-bottom-right-radius: 100px;
+}
+
+.chong{
+height: 64px;
+width: 50.5%;
+position: relative;
+top: -64px;
+left: 49.5%;
+border-bottom-left-radius: 100px;
+}
+
+.signUpBox{
+	height: 100%;
+}
+
+.signUpMobileHolder{
+	width: 192px;
+margin: 0 auto;
+}
+
+.signUp{
+	font-family: Pacifico;
+text-decoration: none;
+color: #81212D;
+font-size: 56px;
+position: relative;
+top: -69px;
+text-shadow: 1px 1px 2px #181820;
+margin-left: 0;
+}
+
+.mobile{
+	height: 660px;
+}
 
 }
