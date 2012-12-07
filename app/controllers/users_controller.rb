@@ -1,8 +1,7 @@
 class UsersController < ApplicationController
 
-
-  before_filter :ensure_correct_user_id
-  skip_before_filter :ensure_correct_user_id, :only => ['new', 'create']
+  before_filter :ensure_correct_user_id, :except => [:new, :create]
+  skip_before_filter :authenticate!, :only => ['new', 'create']
 
   def ensure_correct_user_id
     if session[:user_id] != params[:id].to_i
