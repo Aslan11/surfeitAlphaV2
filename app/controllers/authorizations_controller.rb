@@ -29,7 +29,7 @@ class AuthorizationsController < ApplicationController
 	  	service: 'facebook'
 	  )
 
-		redirect_to authorizations_path
+	  redirect_to authorizations_path
   end
 
   def twitter

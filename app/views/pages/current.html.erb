@@ -11,26 +11,13 @@
 <nav id="site-nav" class="meny">
     <h1><a href="/current">Surfeit</a></h1>
     
-      Welcome, <%= User.find_by_id(session[:user_id]).name %> | 
+      Welcome, <%= current_user.name.capitalize %> | 
       <%= link_to 'Sign Out', logout_url, :method => 'delete' %>
     
 
   <section id="options">
    <div class="option-combo">
-      <!--
-<h2>Filter:</h2>
-      
-      <ul id="filter" class="option-set clearfix" data-option-key="filter">
-        <li><a href="#show-all" data-option-value="*" class="selected">All</a></li>
-        <li><a href="#elements" data-option-value=".facebook">Facebook</a></li>
-        <li><a href="#features" data-option-value=".twitter">Twitter</a></li>
-        <li><a href="#features" data-option-value=".instagram">InstaGram</a></li>
-        <li><a href="#features" data-option-value=".youtube">Youtube</a></li>
-        <li><a href="#features" data-option-value=".rss">RSS</a></li>
-        
-      </ul>
--->
-      
+
       <h2>Filter 2.0</h2>
       
       <ul id="filters">
@@ -60,7 +47,6 @@
       </section>
       <br><br>  
       <div class="lower_nav_links">
-      <%= link_to 'My Stash', stashes_path %><br> 
       <%= link_to 'Manage Networks', authorizations_path %><br>
       <%= link_to 'My Account', users_path %>
       <form>
@@ -98,8 +84,10 @@
       <% end %>
     </div>
     <% end%> 
-    
+
+
     <% (@facebook_feed).each do |status| %>
+    <% if status['message']%>
       <div class="element width2 facebook">
         <p class="originType">F</p>
         <h3 class="symbol"><%=status["from"]["name"]%></h3><br>
@@ -109,6 +97,7 @@
             <%end %>
         <p class="dateStamp"><%=status["updated_time"] %></p>
       </div>
+      <% end %>
     <%end%>
 
    
