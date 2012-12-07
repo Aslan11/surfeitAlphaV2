@@ -22,6 +22,12 @@ ActiveRecord::Schema.define(:version => 20121203222313) do
     t.string   "access_token_secret"
   end
 
+  create_table "accounts", :force => true do |t|
+    t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "authorizations", :force => true do |t|
     t.string   "provider"
     t.string   "uid"
