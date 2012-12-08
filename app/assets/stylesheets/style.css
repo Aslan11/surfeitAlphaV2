@@ -20,6 +20,17 @@ src: url(Socialico.otf);
     src: url(andes.ttf) format("truetype");
 }
 
+.likes {
+bottom: -2px;
+right: 22px;
+}
+
+.thumb{
+font-size: 21px;
+top: 1px;
+font-family: typicons;
+}
+
 .stache{
 width: 66%;
 position: absolute;

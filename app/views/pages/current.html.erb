@@ -77,11 +77,13 @@
     	<%= image_tag "contract.svg", :class => 'shrinkRay' %>
     </div>
     <img src="<%= media.images.first.last.url%>" style="width: 100%; height: 100%">
-    <p><%= media.likes.first.last%></p><br>
-    <p><%= media.user['username'] %></p><br>
+    <p class="likes"><%= media.likes.first.last%><span class="thumb">b</span></p><br>
+    <!--
+<p><%= media.user['username'] %></p><br>
       <% if media.caption != nil %>
        <p><%= media.caption.text %></p><br>
       <% end %>
+-->
     </div>
     <% end%> 
 
@@ -93,9 +95,9 @@
         <h3 class="symbol"><%=status["from"]["name"]%></h3><br>
         <h2 class="name"><%=status["message"]%></h2>
         <p><% if status['likes'] != nil%></p>
-              <p><%= status['likes']['count']%></p>
+              <p class="likes"><%= status['likes']['count']%><span class="thumb">b</span></p>
             <%end %>
-        <p class="dateStamp"><%=status["updated_time"] %></p>
+       <!--  <p class="dateStamp"><%=status["updated_time"] %></p> -->
       </div>
       <% end %>
     <%end%>
