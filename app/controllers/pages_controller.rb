@@ -22,6 +22,7 @@ class PagesController < ApplicationController
     end
 
     if current_user.access_token('twitter').present? && current_user.access_token_secret('twitter').present?
+
         @twitter_feed = Twitter::Client.new(
           :consumer_key => 'xogiGTZHrPs8AM86wCtHBQ',
           :consumer_secret => 'iIiM39fNGsC3vbGYJ9tqHT524m9OJWveeQFs5rd0',
@@ -35,7 +36,6 @@ class PagesController < ApplicationController
           :oauth_token => current_user.access_token('twitter'),
           :oauth_token_secret => current_user.access_token_secret('twitter')
         )
-
     end
   end
 

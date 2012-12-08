@@ -49,10 +49,12 @@
       <div class="lower_nav_links">
       <%= link_to 'Manage Networks', authorizations_path %><br>
       <%= link_to 'My Account', users_path %>
-      <form>
+
+      <form method="post">
         Tweet: <input type="text" class="tweetHolder"><br>
-        <button class="newTweet">Tweet!</button>
+        <button class="newTweet"> Tweet!</button>
       </form>
+
       </div>
 
       
@@ -68,7 +70,6 @@
     
 	
 	<div class="blackout"></div>
-	
     <% (@instagram_feed).each do |media| %>
     <div class="element width2 height2 instagram">
     <div class="smokeScreen">

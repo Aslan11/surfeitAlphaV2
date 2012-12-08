@@ -53,6 +53,7 @@ GEM
       json
       rack-oauth2 (>= 0.14.4)
       tzinfo
+    gravtastic (3.2.6)
     hashie (1.2.0)
     hike (1.2.1)
     httpclient (2.3.0.1)
@@ -159,6 +160,7 @@ DEPENDENCIES
   bcrypt-ruby (~> 3.0.0)
   coffee-rails (~> 3.2.1)
   fb_graph
+  gravtastic
   instagram
   jquery-rails
   koala
