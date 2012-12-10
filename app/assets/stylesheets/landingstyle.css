@@ -239,7 +239,7 @@ width: 100%;
 
 .fixieOne{
 height: 100%;
-width: 49.6%;
+width: 49.6666666%;
 position: absolute;
 border-bottom-right-radius: 60px;
 	
@@ -247,7 +247,7 @@ border-bottom-right-radius: 60px;
 
 .fixieTwo{
 	height: 100%;
-width: 49.6%;
+width: 49.66666666%;
 position: absolute;
 border-bottom-left-radius: 60px;
 right: 0;

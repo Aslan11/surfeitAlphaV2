@@ -10,32 +10,40 @@
       </ul>
     </div>
   <% end %>
-    <h2>Sign In</h2>
+  	
+  	
+  	<div class="signUpEngrave">
+    <h2>Sign Up</h2>
+  	</div>
+  	<div class="shebang">
     <span class="nameInput">
     <%= f.label :name, "Name" %>
     <%= f.text_field :name %>
     </span>
+    </br>
      <span class="userInput">
     <%= f.label :username, "Username" %>
     <%= f.text_field :username %>
     </span>
+    </br>
     <span class="emailInput">
     <%= f.label :email, "Email" %>
     <%= f.email_field :email %>
     </span><br>
-    <p class="wereCool">Don't worry, we promise to never share, sell, or spam your email. We're cool like that.</p>
+    <p class="wereCool">We promise to never share, sell, or spam your email. We're cool like that.</p>
     <span class="pwdInput">
     <%= f.label :password, "Password" %>
     <%= f.password_field :password %>
-    </span>
+    </span></br>
     <span class="pwdConfirm">
     <%= f.label :password_confirmation, "Confirm:" %>
     <%= f.password_field :password_confirmation %>
-    </span>
-    <span class="updateInput">
+    </span></br>
 
     <div class="actions">
-    	<%= f.submit "Join Us!" %>
+    	<%= f.submit "Welcome Aboard!", :class => "aboard" %>
+    </div>
+    
     </div>
 	
 <% end %> 

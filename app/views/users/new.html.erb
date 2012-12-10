@@ -3,19 +3,273 @@
   
   <%= stylesheet_link_tag "newUser", :media => "all" %>
   <%= stylesheet_link_tag "theGrid", :media => "all" %>
-  <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
 </head>
  
 <body>
 
-<div class="container">
-	<div class="row">
-		<div class="twelvecol last">
+<div class="mobileTrigger">
+	</div>
+	<div class="container nonMobile">
+		<div class="row colorBlack">
+			<div class="fourcol colorMint">
+				<div class="signUpHolder colorSky">
+				
+				</div>
+			</div>
+			
+			<div class="fourcol z2">
+				<div class="logoBox colorMint">
+					<h1 class="surfeitLogoTitle">Surfeit</h1>
+					<div class="logoHolder">
+					<%= image_tag "SurfeitLogo.svg", :class => "surfeitLandingLogo" %>
+					</div>
+				</div>
+			</div>
+			
+			<div class="fourcol last colorMint">
+			<div class="loginFormBox colorSunnyD">
+				
+			</div>
+			</div>
+		
+		</div>
+		
+		<div class="row colorBlack z1 secondRow">
+			<div class="fourcol cake">
+				<div class="colorSky frosting">
+					<div class="thingOne colorBlack">
+					
+					</div>
+					
+					<div class="thingTwo colorBlack">
+					
+					</div>
+				</div>
+			</div>
+			
+			<div class="fourcol cake center">
+				<div class="creamWrap colorMint">
+					<div class="thingOne colorBlack">
+					
+					</div>
+					
+					<div class="thingTwo colorBlack">
+					
+					</div>
+				
+				</div>
+			</div>
+			
+			<div class="fourcol cake last">
+			<div class="colorSunnyD frosting">
+					<div class="thingOne colorBlack">
+					
+					</div>
+					
+					<div class="thingTwo colorBlack">
+					
+					</div>
+				</div>
+			</div>
+			
+		</div>
+		
+		<div class="row colorBlack z2 thirdRow"> 
+			<div class="threecol">
+				<div class="blueBeamLayerOne colorSky">
+					<div class="hocus colorBlack">
+					
+					</div>
+					<div class="pocus colorBlack">
+					
+					</div>
+				</div>
+				
+				<div class="blueBeamLayerTwo">
+					<div class="blueBeamLensOne">
+					</div>
+					
+					<div class="blueBeamLensTwo colorBlack">
+					</div>
+				</div>
+				
+				<div class="sapphireSocket">
+					<div class="kruxOne sapphire">
+				
+					</div>
+				</div>
+				
+				<div class="blueBeamLensThree colorSky">
+					<div class="echo colorBlack">
+					
+					</div>
+					<div class="gecko colorBrick">
+					<div class="mortar1 colorBlack">
+					</div>
+					</div>
+				</div>
+			</div>
+			
+			
+			<div class="sixcol sliderHolder z3">
+				<div class="fixture colorMint">
+					<div class="fixieOne colorBlack">
+					</div>
+					<div class="fixieTwo colorBlack">
+					</div>
+				</div>
+				
+				<div class="television colorMint">
+					<div class="teleScreen">
+					<%= render 'form' %>
+					</div>
+				</div>
+				
+				<div class="teleBase">
+				</div>
+			</div>
+			
+			<div class="threecol last">
+				<div class="orangeBeamLayerOne colorSunnyD">
+					<div class="hocusTwo colorBlack">
+					
+					</div>
+					<div class="pocusTwo colorBlack">
+					
+					</div>
+				</div>
+				
+				<div class="orangeBeamLayerTwo">
+					<div class="orangeBeamLensOne">
+					</div>
+					
+					<div class="orangeBeamLensTwo colorBlack">
+					</div>
+					
+					
+				</div>
+				<div class="amberSocket">
+					<div class="kruxOne amber">
+				
+					</div>
+				</div>
+				
+				<div class="orangeBeamLensThree colorSunnyD">
+					<div class="echo2 colorBrick">
+					<div class="mortar2 colorBlack">
+					</div>
+					</div>
+					<div class="gecko2 colorBlack">
+					
+					</div>
+				</div>
+			
+			</div>
+		</div>
+		
+		<div class="row colorBrick z3 footerRow">
+			<div class="twelvecol footercol last">
+			</div>
+		</div>
+	</div>			   
+
+	<div class="container mobile">
+		<div class="row">
+			<div class="twelvecol last">
+			<div class="logoBox colorMint">
+					<h1 class="surfeitLogoTitle">Surfeit</h1>
+					<div class="logoHolder">
+					<%= image_tag "SurfeitLogo.svg", :class => "surfeitLandingLogo" %>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="twelvecol secondMobileRow last">
+			<div class="creamWrap colorMint">
+					<div class="thingOne colorBlack">
+					
+					</div>
+					
+					<div class="thingTwo colorBlack">
+					
+					</div>
+					<div class="signInMobileHolder colorBlack">
+					<%= render 'form' %>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="twelvecol last thirdMobileRow">
+			
+			<div class="signUpBox colorSunnyD">
+				<div class="cheech colorBlack">
+				
+				</div>
+				
+				<div class="chong colorBlack">
+				
+				</div>
+				
+				
+			</div>
+			
+			</div>
 		</div>
 	</div>
 
-</div>
-
+	<%= javascript_include_tag "jquery-1.7.1.min" %>
+	<script type="text/javascript">
+		// global variables
+		var compareColor; //previous color used for comparison
+		var trigger; //the element used to compare changes
+		// for performance, I store the detector element into a variable to avoid
+		// running a DOM query every time we need to test the change conditions
+		var nonMobileHolder
+		var mobileHolder
+		var wereCoolHolder
+		jQuery(document).ready(function(){
+		
+		    //set the initial values
+		    trigger = $('.mobileTrigger');
+		    compareColor = trigger.css('color');
+		    nonMobileHolder = $('.nonMobile');
+		    mobileHolder = $('.mobile');
+		    wereCoolHolder = $('.wereCool');
+		    
+		    $('.mobile').remove();
+		    if(trigger.css('color')== 'rgb(255, 0, 0)'){
+		            $('.nonMobile').remove();
+		            $('body').append(mobileHolder);
+		            wereCoolHolder.remove();
+		    };
+		    
+		    $(window).resize(function(){
+		        //compare everytime the window resize event fires
+		        if(trigger.css('color')== 'rgb(255, 0, 0)'){
+		            $('.nonMobile').remove();
+		            if($('body').children('.mobile').size() == 0){
+		            $('body').append(mobileHolder);
+		            wereCoolHolder.remove();
+		            }
+		        }
+		        else if($('body').children('.nonMobile').size() > 0){
+				        return
+				}
+			    else{
+			    	$('.mobile').remove();
+				    $('body').append(nonMobileHolder);				    
+			    }
+		        
+		
+		    });
+		
+		});
+		</script>
 	<!--
 <header>
     	<div class="headerContent">
@@ -31,5 +285,5 @@
     </div>
     <br>
 -->
-    
+
 </body>

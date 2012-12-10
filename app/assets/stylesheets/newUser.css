@@ -1,0 +1,775 @@
+@font-face {
+   font-family: 'PT Sans', sans-serif;
+}
+
+@font-face {
+	font-family: 'Surfeit';
+	src: url(andes.ttf)
+}
+
+/*
+
+  var-grey: #ccc;
+  
+  var-brick: #81212D;
+  
+  var-sunnyD: #FFC938
+  
+  var-mint: #f9ffd9;
+  
+  var-black: #181820;
+  
+  var-sky: #97CAD5;
+*/
+
+body{
+	font-family: 'PT Sans';
+	background: #81212D;
+}
+
+.container{
+	height: 752px;
+}
+
+.colorBrick{
+	background: #81212D;
+}
+
+.colorSunnyD{
+	background: #FFC938;
+}
+
+.colorMint{
+	background: #f9ffd9;
+}
+
+.colorBlack{
+	background: #181820;
+}
+
+.colorSky{
+	background: #97CAD5;
+}
+
+.colorGrey{
+	background: #ccc;
+}
+
+.zNeg{
+	z-index: -1;
+}
+
+.z0{
+	z-index: 0;
+}
+
+.z1{
+	z-index: 1;
+}
+.z2{
+	z-index: 2;
+}
+.z3{
+	z-index: 3;
+}
+
+form h2{
+	font-family: Pacifico;
+color: #181820;
+text-shadow: 1px 1px 1px #81212D;
+font-size: 48px;
+}
+
+.signUpEngrave{
+	height: 90px;
+width: 180px;
+margin: 0 auto;
+}
+
+.shebang{
+	position: relative;
+margin: 0 auto;
+width: 316px;
+}
+
+.nameInput{
+	position: absolute;
+left: 36px;
+}
+
+.userInput{
+	position: absolute;
+left: 8px; 
+}
+
+.emailInput{
+	position: absolute;
+left: 37px;
+}
+
+.pwdInput{
+	position: absolute;
+left: 10px;
+}
+
+.pwdConfirm{
+	position: absolute;
+	left: 18px;
+}
+
+.aboard{
+	border: none;
+background: #97CAD5;
+color: #81212D;
+width: 174px;
+position: absolute;
+left: 81px;
+}
+
+/* CONTAINER 1, ROW 1 /////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+.signUp{
+font-family: Pacifico;
+text-decoration: none;
+color: #81212D;
+font-size: 56px;
+position: absolute;
+top: -10px;
+text-shadow: 1px 1px 2px #181820;
+margin-left: 25%;
+	
+}
+
+.surfeitLogoTitle{
+font-family: Surfeit;
+font-size: 136px;
+font-weight: 100;
+text-shadow: 1px 1px 4px #81212D;
+color: #181820;
+width: 290px;
+margin: 0 auto;
+}
+
+.surfeitLandingLogo{
+width: 89%;
+margin-top: 5%;
+margin-left: 6%;
+}
+
+.logoBox{
+position: relative;
+height: 208px;
+border-bottom-left-radius: 508px 200px;
+border-bottom-right-radius: 508px 208px;
+}
+
+.logoHolder{
+width: 77px;
+margin: 0 auto;
+border: solid 2px #81212D;
+border-radius: 340px;
+z-index: 4;
+}
+
+.signUpHolder{
+	height: 200px;
+	border-top-right-radius: 60px;
+}
+
+.loginForm{
+color: #181820;
+height: 48px;
+}
+
+.emailEntry{
+width: 178px;
+float: right;
+}
+
+.pwdEntry{
+width: 205px;
+position: absolute;
+right: 0px;
+top: 23px;
+}
+
+.loginFormBox{
+	height:	200px;
+	border-top-left-radius: 60px;
+}
+
+.loginButton{
+	position: absolute;
+right: 6px;
+width: 123px;
+border: none;
+top: 46px;
+background: #97CAD5;
+}
+
+.loginButton:hover{
+	background: #181820;
+	color: #97CAD5;
+}
+
+.forgotPwd{
+position: absolute;
+right: 6px;
+text-decoration: none;
+color: #81212D;
+font-size: 16px;
+top: 68px;
+}
+
+
+/* CONTAINER 1, ROW 2 /////////////////////////////////////////////////////////////////////////////////////////////////////// */
+.secondRow{
+	height: 164px;
+position: relative;
+top: -112px;
+}
+
+.cake{
+	height: 233px;
+}
+
+.cake *{
+	position: relative;
+}
+
+.frosting{
+	height: 100%
+}
+
+.thingOne{
+height: 100%;
+width: 49.5%;
+border-top-right-radius: 170px;
+position: absolute;
+}
+
+.thingTwo{
+height: 100.5%;
+width: 49.5%;
+position: absolute;
+border-top-left-radius: 170px;
+right: 0;
+z-index: 1;
+}
+
+.creamWrap{
+height: 100%;
+top: 104px;	
+}
+
+.center .thingOne{
+border-top-right-radius: 63px;
+border-bottom-right-radius: 1px
+}
+
+.center .thingTwo{
+border-top-left-radius: 63px;
+border-bottom-left-radius: 1px
+}
+
+/* CONTAINER 1, ROW 3 /////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+.thirdRow{
+	top: -112px;
+position: relative;
+}
+
+.sliderHolder{
+	height: 400px;
+}
+
+.fixture{
+	position: absolute;
+height: 43px;
+width: 100%;
+}
+
+.fixieOne{
+height: 100%;
+width: 49.6666666%;
+position: absolute;
+border-bottom-right-radius: 60px;
+	
+}
+
+.fixieTwo{
+	height: 100%;
+width: 49.66666666%;
+position: absolute;
+border-bottom-left-radius: 60px;
+right: 0;
+}
+
+.television{
+	position: relative;
+height: 300px;
+width: 100%;
+top: 43px;
+margin: 0 auto;
+border-radius: 200px;
+}
+
+.blueBeamLayerOne{
+height: 43px;
+}
+
+.blueBeamLayerTwo{
+height: 300px;
+width: 100%;
+position: absolute;
+}
+
+.blueBeamLensOne{
+	height: 100%;
+background: #97CAD5;
+border-radius: 1000px 0 0 1000px;
+width: 48%;
+left: 18.5%;
+position: absolute;
+}
+
+.blueBeamLensTwo{
+height: 100%;
+border-radius: 1000px 0 0 1000px;
+width: 48%;
+left: 19%;
+position: absolute;
+}
+
+.blueBeamLensThree{
+	height: 57px;
+width: 100%;
+position: absolute;
+top: 343px;
+}
+
+.orangeBeamLayerOne{
+height: 43px;
+}
+
+.orangeBeamLayerTwo{
+height: 300px;
+width: 100%;
+position: absolute;
+}
+
+.orangeBeamLensOne{
+height: 100%;
+background: #FFC938;
+border-radius: 0 1000px 1000px 0;
+width: 48%;
+left: 32.5%;
+position: absolute;
+}
+
+.orangeBeamLensTwo{
+height: 100%;
+border-radius: 0 1000px 1000px 0;
+width: 48%;
+left: 31.8%;
+position: absolute;
+}
+
+.orangeBeamLensThree{
+	height: 57px;
+width: 100%;
+position: absolute;
+top: 343px;
+}
+
+
+.hocus{
+	height: 100%;
+width: 66%;
+border-bottom-right-radius: 12px;
+}
+
+.pocus{
+	height: 100%;
+position: absolute;
+width: 33.3333333%;
+top: 0px;
+right: -2px;
+border-bottom-left-radius: 12px;
+}
+
+.echo{
+height: 100%;
+width: 66%;
+border-bottom-right-radius: 18px;
+border-top-right-radius: 12px;
+}
+
+.kruxOne{
+-webkit-transform: rotate(45deg) scale(2) skew(30deg, 30deg);
+}
+
+.arrow-right {
+	width: 0; 
+	height: 0; 
+	border-top: 60px solid transparent;
+	border-bottom: 60px solid transparent;
+	border-left: 60px solid green;
+}
+
+.sapphire {
+border-color: #97CAD5 #31798a #7d99a0 #c5e3ea;
+border-style: solid;
+border-width: 20px;
+width: 0;
+height: 0;
+box-shadow: 0px 0px 117px #97CAD5;
+
+}
+
+.sapphireSocket{
+left: 60.666666%;
+position: absolute;
+top: 174px;
+}
+
+.amber {
+border-color: #FFC938 #a67e12 #bfa14f #ffe192;
+border-style: solid;
+border-width: 20px;
+width: 0;
+height: 0;
+box-shadow: 0px 0px 117px #FFC938;
+}
+
+.amberSocket{
+right: 60.666666%;
+position: absolute;
+top: 174px;
+}
+
+.kruxTwo{
+	height:	10px;
+	width: 10px;
+}
+
+.gecko{
+		height: 100%;
+position: absolute;
+width: 33.3333333%;
+top: 0px;
+right: -2px;
+}
+
+.hocusTwo{
+height: 100%;
+width: 32.666666%;
+border-bottom-right-radius: 12px;
+}
+
+.pocusTwo{
+height: 100%;
+position: absolute;
+width: 66.556666%;
+top: 0px;
+right: -2px;
+border-bottom-left-radius: 12px;
+}
+
+.echo2{
+	height: 100%;
+width: 33%;
+}
+
+.gecko2{
+			height: 100%;
+position: absolute;
+width: 66.6666666%;
+top: 0px;
+right: -2px;
+border-bottom-left-radius: 18px;
+border-top-left-radius: 12px;
+}
+
+.mortar1{
+height: 100%;
+width: 100%;
+border-bottom-left-radius: 20px;
+border-top-left-radius: 12px;
+}
+.mortar2{
+	height: 100%;
+	width: 100%;
+	border-bottom-right-radius: 20px;
+border-top-right-radius: 12px;
+}
+
+
+
+.teleScreen form{
+	width: 50%;
+	margin: 0 auto;
+}
+
+
+
+
+
+
+/* /////////////////////////////////////////////////////////////////////INTITAL MEDIA QUERY/////////////////////////////////////////////////////////// */
+@media only screen and (max-width: 1023px) {
+.surfeitLogoTitle {
+font-size: 110px;
+width: 236px;
+}
+
+.shebang{
+	width: 204px;
+}
+
+.signUp{
+	margin-left: 13%
+}
+
+.pwdEntry{
+	right: -7px;
+}
+
+.loginButton{
+	right: 16px;
+width: 122px;
+}
+
+.forgotPwd{
+	right: 16px;
+}
+
+.nameInput input{
+	width: 115px;
+}
+
+.nameInput{
+	left: 7px;
+}
+
+.userInput{
+	left: -15px;
+}
+.userInput input{
+	width: 115px;
+}
+
+.emailInput{
+	left: 9px;
+}
+
+.pwdInput{
+	left: -11px;
+}
+
+.pwdConfirm{
+	left: -6px;
+}
+.emailInput input{
+	width: 115px;
+}
+.pwdInput input{
+	width: 115px;
+}
+
+.pwdConfirm input{
+	width: 115px;
+}
+
+.aboard{
+	border: none;
+background: #97CAD5;
+color: #81212D;
+width: 121px;
+position: absolute;
+left: 43px;
+bottom: -27px;
+}
+
+}
+/* /////////////////////////////////////////////////////////////////////SECOND MEDIA QUERY//////////////////////////////////////////////////////////// */
+
+@media handheld, only screen and (max-width: 767px) {
+
+.mobileTrigger{
+	color: #F00;
+}
+
+.creamWrap{
+	height: 150px;
+}
+
+.thingOne{
+	height: 100px;
+}
+
+.thingTwo{
+height: 100px;
+right: 20px;
+width: 49.5%;
+}
+
+.logoBox {
+
+border-bottom-left-radius: 0 0;
+border-bottom-right-radius: 0 0;
+}
+
+.signInMobileHolder{
+	position: relative;
+top: 90px;
+z-index: 2;
+height: 200px;
+}
+
+.secondMobileRow{
+	height: 272px;
+}
+
+.emailMobileEntry{
+font-size: 26px;
+color: #97CAD5;
+position: relative;
+width: 346px;
+margin: 0 auto;
+}
+
+.emailMobileEntry input{
+width: 200px;
+height: 22px;
+position: absolute;
+top: -2px;
+left: 76px;
+font-size: 32px;
+}
+
+.pwdMobileEntry{
+	position: relative;
+font-size: 26px;
+color: #97CAD5;
+width: 430px;
+margin: 0 auto;
+}
+
+.pwdMobileEntry input{
+	width: 200px;
+height: 22px;
+position: absolute;
+top: -2px;
+left: 119px;
+font-size: 32px;
+}
+
+.loginButton{
+position: relative;
+width: 226px;
+height: 34px;
+font-size: 22px;
+border: none;
+top: 0;
+background: #97CAD5;
+right: 0;
+}
+
+.loginButtonHolder{
+	width: 215px;
+margin: 0 auto;
+}
+
+.forgotMobile{
+	text-decoration: none;
+color: #FFC938;
+position: absolute;
+top: 153px;
+}
+
+.forgotHolder{
+	width: 158px;
+	margin: 0 auto;
+}
+
+.thirdMobileRow{
+	height: 170px;
+}
+
+.cheech{
+	height: 64px;
+width: 49.5%;
+border-bottom-right-radius: 100px;
+}
+
+.chong{
+height: 64px;
+width: 50.5%;
+position: relative;
+top: -64px;
+left: 49.5%;
+border-bottom-left-radius: 100px;
+}
+
+.signUpBox{
+	height: 100%;
+}
+
+.signUpMobileHolder{
+	width: 192px;
+margin: 0 auto;
+}
+
+form h2{
+	color: #FFC938;
+}
+
+.signUp{
+	font-family: Pacifico;
+text-decoration: none;
+color: #81212D;
+font-size: 56px;
+position: relative;
+top: -69px;
+text-shadow: 1px 1px 2px #181820;
+margin-left: 0;
+}
+
+.mobile{
+	height: 660px;
+}
+
+.new_user{
+	position: relative;
+top: -75px;
+}
+
+.shebang{
+	color: #97CAD5;
+width: 225px;
+height: 104px;
+margin: 0 auto;
+}
+
+.userInput {
+left: -21px;
+}
+
+.emailInput {
+left: 8px;
+}
+
+.pwdInput {
+left: -19px;
+}
+
+.pwdConfirm {
+left: -11px;
+}
+
+.aboard{
+	left: 51px;
+}
+
+}
