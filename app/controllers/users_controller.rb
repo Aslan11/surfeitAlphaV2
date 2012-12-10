@@ -5,7 +5,7 @@ class UsersController < ApplicationController
 
   def ensure_correct_user_id
     if session[:user_id] != params[:id].to_i
-      flash[:message] = "You are not authorized to see/edit/delete any other User's user information."
+      flash[:notice] = "You are not authorized to see/edit/delete any other User's user information."
       redirect_to user_url(session[:user_id])
       return
     end
@@ -36,7 +36,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(params[:user])
-    (@user.save) ? (session[:user_id] = @user.id ; redirect_to(users_path)) : (redirect_to(new_session_path) ;   flash[:notice] = "User exists!!!")
+    (@user.save) ? (session[:user_id] = @user.id ; redirect_to(users_path)) : (redirect_to new_user_path, :flash => { :error => "Insufficient rights!" })
 
   end
 
