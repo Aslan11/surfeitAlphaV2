@@ -236,6 +236,35 @@ opacity: 0.33;
 	height: 60px;
 }
 
+.formHolder{
+width: 184px;
+margin: 0 auto;
+z-index: 6;
+position: relative;
+top: 298px;
+font-size: 19px;
+font-family: 'PT sans';
+color: white;
+text-align: center;
+text-shadow: 1px 1px 2px black;
+}
+
+.aboard{
+	
+}
+
+.actions{
+	
+}
+
+.cubicHolder{
+	height: 477px;
+width: 600px;
+margin: 0 auto;
+top: -250px;
+position: relative;
+}
+
 .pwdMobileEntry{
 	height: 60px;
 top: -23px;

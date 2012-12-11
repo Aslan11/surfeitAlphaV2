@@ -12,6 +12,65 @@
 
 <body>
 
+<div class="container">
+			<div class="twelvecol last">
+				<div class="nombre">
+					<p class="surfeitTitle">SURFEIT</p>
+				</div>
+				
+				<div class="motto">
+					<p class="mottoLabel">YOUR INTERNET <em>YOUR</em> WAY</p>
+				</div>
+			</div>
+			<div class="twelvecol last" style="height: 477px;">
+			<div class="fixit" style="height: 477px;">
+				<div class="logoHolder">
+					<%= image_tag "SurfeitLogo.svg", :class => "logo" %>
+				</div>
+				<div class="sliderHex">
+					<div class="slideCube">
+						<div class="side top"></div>
+						<div class="side left"></div>
+						<div class="side right"></div> 	
+					</div>
+				</div>
+				<div class="signUpHex">
+				<div class="signUpCube">
+					<div class="engraving">
+						<%= link_to 'Sign Up', new_user_path, :class => 'signUp'%>
+					</div>
+						<div class="side top"></div>
+						<div class="side left"></div>
+						<div class="side right"></div> 	
+					</div>
+				</div>
+				<div class="loginHex">
+					<div class="loginCube">
+						<div class="side top"></div>
+						<div class="side left"></div>
+						<div class="side right">
+						<%= form_tag session_path, :class => "" do %>
+						<div class="emailMobileEntry">
+						<span><%= label_tag :email, "EMAIL" %></span>
+						<%= text_field_tag :email, value = nil, :style => 'width: 90px; top: 32px; position: relative;'%>
+						</div></br>
+						<div class="pwdMobileEntry">
+						<span><%= label_tag :password, "PASSWORD", :style => 'position: relative; font-size:19px;' %></span>
+						<%= password_field_tag :password, value = nil, :style => 'width: 90px; top: 33px; position: relative;'%>
+						</div></br>
+						<div class="loginButtonHolder">
+	  					<%= submit_tag "LOGIN", :class => "loginButton", :style => 'position: relative; top: -33px; left: -9px; border: none; background: black; color: white; font-size: 31px; text-shadow: 0px 0px 27px white;' %>
+						</div>
+					<% end %>
+						<!-- <span>EMAIL<input type="text" style="width: 90px;"></input></span></br><span style="top: 70px">PWD<input type="text" style="width: 90px;"></input></span><span class="loginButtonHolder">LOGIN</span> -->
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!--
+
 	<div class="mobileTrigger">
 	</div>
 	<div class="container nonMobile">
@@ -360,5 +419,6 @@
 		
 		});
 		</script>
+-->
  
 </body>
