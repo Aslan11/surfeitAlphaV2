@@ -12,6 +12,16 @@ class User < ActiveRecord::Base
   validates_presence_of :name, :email
   validates_uniqueness_of :email, :username
 
+  validates :password, :presence => true,
+                       :confirmation => true,
+                       :length => {:within => 6..15},
+                       :on => :create
+  validates :password, :confirmation => true,
+                       :length => {:within => 6..15},
+                       :allow_blank => true,
+                       :on => :update
+
+
   before_validation do
   		self.username = self.username.downcase
   		self.email = self.email.downcase
@@ -37,7 +47,7 @@ class User < ActiveRecord::Base
 			user.provider = auth["provider"]
 			user.uid = auth["uid"]
 			user.name = auth["info"]["name"]
-			# user.username = auth["info"]["username"]
+			user.username = ["authinfo"]["username"]
 			user.password = auth["uid"]
 			user.email = auth["info"]["email"]			
 		end
