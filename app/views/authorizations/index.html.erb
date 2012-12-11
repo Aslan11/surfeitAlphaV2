@@ -31,7 +31,9 @@
 
 <ul>
 	<% if current_user.access_token('instagram').present? %>
-  	<li><%= link_to "Deauthorize Instagram", '#' %></li>
+  	<li><%= link_to "Deauthorize Instagram",'#' %></li>
+
+
   <% end %>
 
   <% if current_user.access_token('facebook').present? %>

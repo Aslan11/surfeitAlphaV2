@@ -1,10 +1,12 @@
 class AuthorizationsController < ApplicationController
   
+	
+	
   def index	  
  	end
 
  	def destroy
- 		AccessToken.destroy(user_id: params[:user_id], service: params[:service])
+ 		current_user.access_tokens.where(service: params[:service]).destroy_all
  		redirect_to authorizations_path
  	end
 

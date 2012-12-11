@@ -8,13 +8,13 @@ Surfeitalpha::Application.routes.draw do
   match 'auth/twitter/callback', :to => 'authorizations#twitter', :as => :authorize_twitter # auth/twitter/callback needs to change to session/twitter PLEASE!
 
   resource  :session  
-  resources  :authorizations
+  resources  :authorizations  
 
   resources :users 
   resources :stashes
 
   get '/sessions/destroy' => 'sessions#destroy', :as => :logout
-  
+
 end
 
 
