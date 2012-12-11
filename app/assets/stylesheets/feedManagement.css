@@ -8,6 +8,11 @@
 	src: url(Socialico.otf)
 }
 
+@font-face{
+	font-family: 'typicons';
+	src: url(typicons.ttf)
+}
+
 body{
 	background: -webkit-radial-gradient(#ffffff 0%, #d8d8d8 100%);
 	height: 680px;
