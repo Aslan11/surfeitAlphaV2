@@ -1,4 +1,61 @@
 <head>
+	<title>Surfeit Alpha!</title>
+	
+		 <%= stylesheet_link_tag "newUser", :media => "all" %>
+		 <%= stylesheet_link_tag "theGrid", :media => "all" %>
+		 <%= stylesheet_link_tag "slide", :media => "all" %>
+		 
+		 <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+		 <%= javascript_include_tag "modernizr" %>
+
+</head>
+
+<body>
+
+<div class="container">
+	<div class="twelvecol last">
+		<div class="nombre">
+			<p class="surfeitTitle">SURFEIT</p>
+		</div>
+				
+		<div class="motto">
+			<p class="mottoLabel">YOUR INTERNET <em>YOUR</em> WAY</p>
+		</div>
+	</div>
+	
+	<div class="twelvecol last" style="height: 477px;">
+		<div class="fixit" style="height: 477px;">
+			<div class="formHolder">
+			<%= render 'form' %>
+			</div>
+			<div class="cubicHolder">
+			<div class="logoHolder">
+				<%= image_tag "SurfeitLogo.svg", :class => "logo" %>
+			</div>
+			
+			<div class="sliderHex">
+				<div class="slideCube">
+					<div class="side top"></div>
+					<div class="side left"></div>
+					<div class="side right"></div> 	
+				</div>
+			</div>
+			<div class="signUpHex">
+				<div class="signUpCube">
+					
+					<div class="side top"></div>
+					<div class="side left"></div>
+					<div class="side right"></div> 	
+				</div>
+			</div>
+			</div>
+		</div>
+	</div>
+</div> 
+</body>
+
+<!--
+<head>
 <title>Surfeit Alpha</title>
   
   <%= stylesheet_link_tag "newUser", :media => "all" %>

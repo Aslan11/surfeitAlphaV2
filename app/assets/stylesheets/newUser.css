@@ -1,775 +1,293 @@
-@font-face {
-   font-family: 'PT Sans', sans-serif;
+@font-face{
+	font-family: 'Magic';
+	src: url(euro.ttf);
 }
-
-@font-face {
-	font-family: 'Surfeit';
-	src: url(andes.ttf)
-}
-
-/*
-
-  var-grey: #ccc;
-  
-  var-brick: #81212D;
-  
-  var-sunnyD: #FFC938
-  
-  var-mint: #f9ffd9;
-  
-  var-black: #181820;
-  
-  var-sky: #97CAD5;
-*/
 
 body{
-	font-family: 'PT Sans';
-	background: #81212D;
+	background: -webkit-radial-gradient(#ffffff 0%, #d8d8d8 100%);
+	height: 680px;
 }
 
-.container{
-	height: 752px;
-}
-
-.colorBrick{
-	background: #81212D;
-}
-
-.colorSunnyD{
-	background: #FFC938;
-}
-
-.colorMint{
-	background: #f9ffd9;
-}
-
-.colorBlack{
-	background: #181820;
-}
-
-.colorSky{
-	background: #97CAD5;
-}
-
-.colorGrey{
-	background: #ccc;
-}
-
-.zNeg{
-	z-index: -1;
-}
-
-.z0{
-	z-index: 0;
-}
-
-.z1{
-	z-index: 1;
-}
-.z2{
-	z-index: 2;
-}
-.z3{
-	z-index: 3;
-}
-
-form h2{
-	font-family: Pacifico;
-color: #181820;
-text-shadow: 1px 1px 1px #81212D;
-font-size: 48px;
-}
-
-.signUpEngrave{
-	height: 90px;
-width: 180px;
+.nombre{
+font-family: Magic;
+font-size: 124px;
 margin: 0 auto;
+width: 400px;
+height: 94px;
+line-height: 1;
+padding-bottom: 74px;
 }
 
-.shebang{
-	position: relative;
-margin: 0 auto;
-width: 316px;
-}
-
-.nameInput{
-	position: absolute;
-left: 36px;
-}
-
-.userInput{
-	position: absolute;
-left: 8px; 
-}
-
-.emailInput{
-	position: absolute;
-left: 37px;
-}
-
-.pwdInput{
-	position: absolute;
-left: 10px;
-}
-
-.pwdConfirm{
-	position: absolute;
-	left: 18px;
-}
-
-.aboard{
-	border: none;
-background: #97CAD5;
-color: #81212D;
-width: 174px;
-position: absolute;
-left: 81px;
-}
-
-/* CONTAINER 1, ROW 1 /////////////////////////////////////////////////////////////////////////////////////////////////////// */
-
-.signUp{
-font-family: Pacifico;
-text-decoration: none;
-color: #81212D;
-font-size: 56px;
-position: absolute;
-top: -10px;
-text-shadow: 1px 1px 2px #181820;
-margin-left: 25%;
-	
-}
-
-.surfeitLogoTitle{
-font-family: Surfeit;
-font-size: 136px;
-font-weight: 100;
-text-shadow: 1px 1px 4px #81212D;
-color: #181820;
-width: 290px;
-margin: 0 auto;
-}
-
-.surfeitLandingLogo{
-width: 89%;
-margin-top: 5%;
-margin-left: 6%;
-}
-
-.logoBox{
+.surfeitTitle{
 position: relative;
-height: 208px;
-border-bottom-left-radius: 508px 200px;
-border-bottom-right-radius: 508px 208px;
+top: 10px;
+color: black;
+text-shadow: 0px 0px 2px rgb(255, 134, 3)
 }
-
-.logoHolder{
-width: 77px;
+.sliderHex{
+	width: 500px;
 margin: 0 auto;
-border: solid 2px #81212D;
-border-radius: 340px;
-z-index: 4;
 }
-
-.signUpHolder{
-	height: 200px;
-	border-top-right-radius: 60px;
-}
-
-.loginForm{
-color: #181820;
-height: 48px;
-}
-
-.emailEntry{
-width: 178px;
-float: right;
-}
-
-.pwdEntry{
-width: 205px;
-position: absolute;
-right: 0px;
-top: 23px;
-}
-
-.loginFormBox{
-	height:	200px;
-	border-top-left-radius: 60px;
-}
-
-.loginButton{
-	position: absolute;
-right: 6px;
-width: 123px;
-border: none;
-top: 46px;
-background: #97CAD5;
-}
-
-.loginButton:hover{
-	background: #181820;
-	color: #97CAD5;
-}
-
-.forgotPwd{
-position: absolute;
-right: 6px;
-text-decoration: none;
-color: #81212D;
-font-size: 16px;
-top: 68px;
-}
-
-
-/* CONTAINER 1, ROW 2 /////////////////////////////////////////////////////////////////////////////////////////////////////// */
-.secondRow{
-	height: 164px;
+.slideCube{
 position: relative;
-top: -112px;
-}
-
-.cake{
-	height: 233px;
-}
-
-.cake *{
-	position: relative;
-}
-
-.frosting{
-	height: 100%
-}
-
-.thingOne{
-height: 100%;
-width: 49.5%;
-border-top-right-radius: 170px;
-position: absolute;
-}
-
-.thingTwo{
-height: 100.5%;
-width: 49.5%;
-position: absolute;
-border-top-left-radius: 170px;
-right: 0;
+height: 500px;
+margin: auto;
+left: 137px;
 z-index: 1;
 }
 
-.creamWrap{
-height: 100%;
-top: 104px;	
-}
 
-.center .thingOne{
-border-top-right-radius: 63px;
-border-bottom-right-radius: 1px
-}
-
-.center .thingTwo{
-border-top-left-radius: 63px;
-border-bottom-left-radius: 1px
-}
-
-/* CONTAINER 1, ROW 3 /////////////////////////////////////////////////////////////////////////////////////////////////////// */
-
-.thirdRow{
-	top: -112px;
+.signUpHex{
+	height: 0;
+top: -512px;
 position: relative;
 }
 
-.sliderHolder{
-	height: 400px;
-}
-
-.fixture{
+.side{
 	position: absolute;
-height: 43px;
-width: 100%;
+	width: 220px;
+	height: 220px;
+	background: #530000;
 }
 
-.fixieOne{
-height: 100%;
-width: 49.6666666%;
-position: absolute;
-border-bottom-right-radius: 60px;
+.top{
+		
+	-webkit-transform: rotate(-45deg) skew(15deg, 15deg);
+	position: absolute;
+	top: 0.5px;
 	
+	background: #530000; /* Old browsers */
+	background: -moz-linear-gradient(224deg, rgb(212, 0, 231) 0%, #c90000 100%); /* FF3.6+ */ 
+	background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,rgb(212, 0, 231)), color-stop(100%,#c90000)); /* Chrome,Safari4+ */ 
+	background: -webkit-linear-gradient(224deg, rgb(212, 0, 231) 0%,#c90000 100%); /* Chrome10+,Safari5.1+ */ 
+	background: -o-linear-gradient(224deg, rgb(212, 0, 231) 0%,#c90000 100%); /* Opera 11.10+ */ 
+	background: -ms-linear-gradient(224deg, rgb(212, 0, 231) 0%,#c90000 100%); /* IE10+ */ 
+	background: linear-gradient(224deg, rgb(212, 0, 231) 0%,#c90000 100%); /* W3C */ 
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#530000', endColorstr='#c90000',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */;
 }
 
-.fixieTwo{
-	height: 100%;
-width: 49.66666666%;
-position: absolute;
-border-bottom-left-radius: 60px;
-right: 0;
+.left{
+	
+	-webkit-transform: rotate(15deg) skew(15deg, 15deg) translate(-50%, 100%);
+	background: #530000; /* Old browsers */
+	 background: -moz-linear-gradient(45deg, rgb(255, 134, 3) 0%, #c90000 100%); /* FF3.6+ */ 
+	 background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,rgb(255, 134, 3)), color-stop(100%,#c90000)); /* Chrome,Safari4+ */ 
+	 
+	background: -webkit-linear-gradient(45deg, rgb(255, 134, 3) 0%,#c90000 100%); /* Chrome10+,Safari5.1+ */
+	 background: -o-linear-gradient(45deg, rgb(255, 134, 3) 0%,#c90000 100%); /* Opera 11.10+ */ 
+	 background: -ms-linear-gradient(45deg, rgb(255, 134, 3) 0%,#c90000 100%); /* IE10+ */ 
+	 background: linear-gradient(45deg, rgb(255, 134, 3) 0%,#c90000 100%); /* W3C */ 
+	 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#530000', endColorstr='#c90000',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */;
 }
 
-.television{
-	position: relative;
-height: 300px;
-width: 100%;
-top: 43px;
+.right{
+	
+	-webkit-transform: rotate(-15deg) skew(-15deg, -15deg) translate(50%, 100%);
+	background: -moz-linear-gradient(135deg, rgb(2, 161, 250) 0%, #c90000 100%); /* FF3.6+ */ 
+	background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,rgb(2, 161, 250)), color-stop(100%,#c90000)); /* Chrome,Safari4+ */ 
+	background: -webkit-linear-gradient(135deg, rgb(2, 161, 250) 0%,#c90000 100%); /* Chrome10+,Safari5.1+ */ 
+	background: -o-linear-gradient(135deg, rgb(2, 161, 250) 0%,#c90000 100%); /* Opera 11.10+ */ 
+	background: -ms-linear-gradient(135deg, rgb(2, 161, 250) 0%,#c90000 100%); /* IE10+ */
+	background: linear-gradient(135deg, rgb(2, 161, 250) 0%,#c90000 100%); /* W3C */ 
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#530000', endColorstr='#c90000',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */;
+}
+
+.signUpCube{
+width: 230px;
+height: 230px;
 margin: 0 auto;
-border-radius: 200px;
+position: relative;
+left: -199px;
+top: -513;
+z-index: 2;
+-webkit-transition: -webkit-transform 1500ms;
 }
 
-.blueBeamLayerOne{
-height: 43px;
+.signUpCube .side{
+	width: 120px;
+	height: 120px;
+	background: rgba(43,41,41,0.7);
+	-webkit-transition: background 1500ms;
+	left: 54px;
 }
 
-.blueBeamLayerTwo{
-height: 300px;
-width: 100%;
+.signUpCube:hover{
+	-webkit-transform: rotate(-360deg);
+}
+
+.signUpCube:hover .side{
+background: -moz-linear-gradient(45deg, rgba(248,80,50,0.6) 0%,rgba(241,111,92,0.6) 50%,rgba(246,41,12,0.6) 51%,rgba(240,47,23,0.6) 71%,rgba(231,56,39,0.6) 100%); /* FF3.6+ */
+background: -webkit-linear-gradient(45deg, rgba(50, 232, 248, 0.6) 0%,rgba(92, 229, 241, 0.6) 50%,rgba(12, 162, 246, 0.6) 51%,rgba(23, 223, 240, 0.6) 71%,rgba(39, 139, 231, 0.6) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(45deg, rgba(248,80,50,0.6) 0%,rgba(241,111,92,0.6) 50%,rgba(246,41,12,0.6) 51%,rgba(240,47,23,0.6) 71%,rgba(231,56,39,0.6) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(45deg, rgba(248,80,50,0.6) 0%,rgba(241,111,92,0.6) 50%,rgba(246,41,12,0.6) 51%,rgba(240,47,23,0.6) 71%,rgba(231,56,39,0.6) 100%); /* IE10+ */
+background: linear-gradient(45deg, rgba(248,80,50,0.6) 0%,rgba(241,111,92,0.6) 50%,rgba(246,41,12,0.6) 51%,rgba(240,47,23,0.6) 71%,rgba(231,56,39,0.6) 100%); /* W3C */
+
+}
+
+.signUpCube .top{
+	width: 119px;
+height: 120px;
+
+	left: 55px;
+top: 0;
+}
+
+.engraving{
 position: absolute;
-}
-
-.blueBeamLensOne{
-	height: 100%;
-background: #97CAD5;
-border-radius: 1000px 0 0 1000px;
-width: 48%;
-left: 18.5%;
-position: absolute;
-}
-
-.blueBeamLensTwo{
-height: 100%;
-border-radius: 1000px 0 0 1000px;
-width: 48%;
-left: 19%;
-position: absolute;
-}
-
-.blueBeamLensThree{
-	height: 57px;
-width: 100%;
-position: absolute;
-top: 343px;
-}
-
-.orangeBeamLayerOne{
-height: 43px;
-}
-
-.orangeBeamLayerTwo{
-height: 300px;
-width: 100%;
-position: absolute;
-}
-
-.orangeBeamLensOne{
-height: 100%;
-background: #FFC938;
-border-radius: 0 1000px 1000px 0;
-width: 48%;
-left: 32.5%;
-position: absolute;
-}
-
-.orangeBeamLensTwo{
-height: 100%;
-border-radius: 0 1000px 1000px 0;
-width: 48%;
-left: 31.8%;
-position: absolute;
-}
-
-.orangeBeamLensThree{
-	height: 57px;
-width: 100%;
-position: absolute;
-top: 343px;
-}
-
-
-.hocus{
-	height: 100%;
-width: 66%;
-border-bottom-right-radius: 12px;
-}
-
-.pocus{
-	height: 100%;
-position: absolute;
-width: 33.3333333%;
-top: 0px;
-right: -2px;
-border-bottom-left-radius: 12px;
-}
-
-.echo{
-height: 100%;
-width: 66%;
-border-bottom-right-radius: 18px;
-border-top-right-radius: 12px;
-}
-
-.kruxOne{
--webkit-transform: rotate(45deg) scale(2) skew(30deg, 30deg);
-}
-
-.arrow-right {
-	width: 0; 
-	height: 0; 
-	border-top: 60px solid transparent;
-	border-bottom: 60px solid transparent;
-	border-left: 60px solid green;
-}
-
-.sapphire {
-border-color: #97CAD5 #31798a #7d99a0 #c5e3ea;
-border-style: solid;
-border-width: 20px;
-width: 0;
-height: 0;
-box-shadow: 0px 0px 117px #97CAD5;
-
-}
-
-.sapphireSocket{
-left: 60.666666%;
-position: absolute;
-top: 174px;
-}
-
-.amber {
-border-color: #FFC938 #a67e12 #bfa14f #ffe192;
-border-style: solid;
-border-width: 20px;
-width: 0;
-height: 0;
-box-shadow: 0px 0px 117px #FFC938;
-}
-
-.amberSocket{
-right: 60.666666%;
-position: absolute;
-top: 174px;
-}
-
-.kruxTwo{
-	height:	10px;
-	width: 10px;
-}
-
-.gecko{
-		height: 100%;
-position: absolute;
-width: 33.3333333%;
-top: 0px;
-right: -2px;
-}
-
-.hocusTwo{
-height: 100%;
-width: 32.666666%;
-border-bottom-right-radius: 12px;
-}
-
-.pocusTwo{
-height: 100%;
-position: absolute;
-width: 66.556666%;
-top: 0px;
-right: -2px;
-border-bottom-left-radius: 12px;
-}
-
-.echo2{
-	height: 100%;
-width: 33%;
-}
-
-.gecko2{
-			height: 100%;
-position: absolute;
-width: 66.6666666%;
-top: 0px;
-right: -2px;
-border-bottom-left-radius: 18px;
-border-top-left-radius: 12px;
-}
-
-.mortar1{
-height: 100%;
-width: 100%;
-border-bottom-left-radius: 20px;
-border-top-left-radius: 12px;
-}
-.mortar2{
-	height: 100%;
-	width: 100%;
-	border-bottom-right-radius: 20px;
-border-top-right-radius: 12px;
-}
-
-
-
-.teleScreen form{
-	width: 50%;
-	margin: 0 auto;
-}
-
-
-
-
-
-
-/* /////////////////////////////////////////////////////////////////////INTITAL MEDIA QUERY/////////////////////////////////////////////////////////// */
-@media only screen and (max-width: 1023px) {
-.surfeitLogoTitle {
-font-size: 110px;
-width: 236px;
-}
-
-.shebang{
-	width: 204px;
+height: 119px;
+font-size: 70px;
+width: 187px;
+z-index: 4;
+color: white;
+left: 25px;
+line-height: .8;
+font-family: Magic;
+text-shadow: 2px 2px 2px black;
+top: 92px;
 }
 
 .signUp{
-	margin-left: 13%
+text-decoration: none;
+color: white;
+text-align: center;
+font-size: 56px;
 }
 
-.pwdEntry{
-	right: -7px;
+.motto{
+font-family: Magic;
+font-size: 31px;
+margin: -55px auto 0px auto;
+width: 392px;
+height: 94px;
+color: black;
+text-shadow: 0px 0px 2px rgb(255, 134, 3);
+line-height: 1;
+font-weight: 900;
 }
 
-.loginButton{
-	right: 16px;
-width: 122px;
-}
-
-.forgotPwd{
-	right: 16px;
-}
-
-.nameInput input{
-	width: 115px;
-}
-
-.nameInput{
-	left: 7px;
-}
-
-.userInput{
-	left: -15px;
-}
-.userInput input{
-	width: 115px;
-}
-
-.emailInput{
-	left: 9px;
-}
-
-.pwdInput{
-	left: -11px;
-}
-
-.pwdConfirm{
-	left: -6px;
-}
-.emailInput input{
-	width: 115px;
-}
-.pwdInput input{
-	width: 115px;
-}
-
-.pwdConfirm input{
-	width: 115px;
-}
-
-.aboard{
-	border: none;
-background: #97CAD5;
-color: #81212D;
-width: 121px;
-position: absolute;
-left: 43px;
-bottom: -27px;
-}
-
-}
-/* /////////////////////////////////////////////////////////////////////SECOND MEDIA QUERY//////////////////////////////////////////////////////////// */
-
-@media handheld, only screen and (max-width: 767px) {
-
-.mobileTrigger{
-	color: #F00;
-}
-
-.creamWrap{
-	height: 150px;
-}
-
-.thingOne{
-	height: 100px;
-}
-
-.thingTwo{
-height: 100px;
-right: 20px;
-width: 49.5%;
-}
-
-.logoBox {
-
-border-bottom-left-radius: 0 0;
-border-bottom-right-radius: 0 0;
-}
-
-.signInMobileHolder{
+.zipOne{
 	position: relative;
-top: 90px;
-z-index: 2;
-height: 200px;
+top: 27px;
+left: -12px;
 }
 
-.secondMobileRow{
-	height: 272px;
+.zipTwo{
+	position: relative;
+top: 42px;
+left: 22px;
+}
+
+.loginHex{
+position: relative;
+width: 225px;
+height: 225px;
+top: -800px;
+margin: 0 auto;
+}
+
+.loginCube{
+height: 225px;
+position: relative;
+left: 264px;
+top: 206px;
+}
+
+.loginCube .side{
+	width: 100px;
+	height: 100px;
+	background: black;
+}
+
+.loginCube .right{
+	z-index: 2;
+	height: 190px;
+}
+
+.loginCube .left{
+	height: 190px;
+}
+
+.loginCube .top{
+	top: 92px;
+}
+
+.logoHolder{
+width: 210px;
+height: 210px;
+margin: 0 auto;
+position: relative;
+top: 330px;
+z-index: 5;
+border-radius: 100%;
+box-shadow: 0px 0px 44px;
+}
+
+.fixit {
+position: relative;
+top: -244px;
+}
+
+.logo{
+	width: 100%;
+opacity: 0.33;
 }
 
 .emailMobileEntry{
-font-size: 26px;
-color: #97CAD5;
+	height: 60px;
+}
+
+.formHolder{
+width: 184px;
+margin: 0 auto;
+z-index: 6;
 position: relative;
-width: 346px;
-margin: 0 auto;
-}
-
-.emailMobileEntry input{
-width: 200px;
-height: 22px;
-position: absolute;
-top: -2px;
-left: 76px;
-font-size: 32px;
-}
-
-.pwdMobileEntry{
-	position: relative;
-font-size: 26px;
-color: #97CAD5;
-width: 430px;
-margin: 0 auto;
-}
-
-.pwdMobileEntry input{
-	width: 200px;
-height: 22px;
-position: absolute;
-top: -2px;
-left: 119px;
-font-size: 32px;
-}
-
-.loginButton{
-position: relative;
-width: 226px;
-height: 34px;
-font-size: 22px;
-border: none;
-top: 0;
-background: #97CAD5;
-right: 0;
-}
-
-.loginButtonHolder{
-	width: 215px;
-margin: 0 auto;
-}
-
-.forgotMobile{
-	text-decoration: none;
-color: #FFC938;
-position: absolute;
-top: 153px;
-}
-
-.forgotHolder{
-	width: 158px;
-	margin: 0 auto;
-}
-
-.thirdMobileRow{
-	height: 170px;
-}
-
-.cheech{
-	height: 64px;
-width: 49.5%;
-border-bottom-right-radius: 100px;
-}
-
-.chong{
-height: 64px;
-width: 50.5%;
-position: relative;
-top: -64px;
-left: 49.5%;
-border-bottom-left-radius: 100px;
-}
-
-.signUpBox{
-	height: 100%;
-}
-
-.signUpMobileHolder{
-	width: 192px;
-margin: 0 auto;
-}
-
-form h2{
-	color: #FFC938;
-}
-
-.signUp{
-	font-family: Pacifico;
-text-decoration: none;
-color: #81212D;
-font-size: 56px;
-position: relative;
-top: -69px;
-text-shadow: 1px 1px 2px #181820;
-margin-left: 0;
-}
-
-.mobile{
-	height: 660px;
-}
-
-.new_user{
-	position: relative;
-top: -75px;
-}
-
-.shebang{
-	color: #97CAD5;
-width: 225px;
-height: 104px;
-margin: 0 auto;
-}
-
-.userInput {
-left: -21px;
-}
-
-.emailInput {
-left: 8px;
-}
-
-.pwdInput {
-left: -19px;
-}
-
-.pwdConfirm {
-left: -11px;
+top: 298px;
+font-size: 19px;
+font-family: 'PT sans';
+color: white;
+text-align: center;
+text-shadow: 1px 1px 2px black;
 }
 
 .aboard{
-	left: 51px;
+	
 }
 
+.actions{
+	
+}
+
+.cubicHolder{
+	height: 477px;
+width: 600px;
+margin: 0 auto;
+top: -250px;
+position: relative;
+}
+
+.pwdMobileEntry{
+	height: 60px;
+top: -23px;
+position: relative;
+}
+
+#password{
+	width: 90px;
+top: 32px;
+position: relative;
+}
+.right span{
+position: absolute;
+right: -2;
+color: white;
+font-family: 'PT sans';
+font-size: 33px;
+line-height: 1;
+text-shadow: 0px 0px 19px white;
+}
+
+.right .loginButtonHolder{
+top: 145px;
+font-size: 32;
+left: 1px;
 }

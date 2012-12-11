@@ -10,11 +10,7 @@
       </ul>
     </div>
   <% end %>
-  	
-  	
-  	<div class="signUpEngrave">
-    <h2>Sign Up</h2>
-  	</div>
+  
   	<div class="shebang">
     <span class="nameInput">
     <%= f.label :name, "Name" %>
@@ -30,18 +26,17 @@
     <%= f.label :email, "Email" %>
     <%= f.email_field :email %>
     </span><br>
-    <p class="wereCool">We promise to never share, sell, or spam your email. We're cool like that.</p>
     <span class="pwdInput">
     <%= f.label :password, "Password" %>
     <%= f.password_field :password %>
     </span></br>
     <span class="pwdConfirm">
-    <%= f.label :password_confirmation, "Confirm:" %>
+    <%= f.label :password_confirmation, "Confirm" %>
     <%= f.password_field :password_confirmation %>
     </span></br>
 
     <div class="actions">
-    	<%= f.submit "Welcome Aboard!", :class => "aboard" %>
+    	<%= f.submit "SUBMIT", :class => "aboard" %>
     </div>
     
     </div>
