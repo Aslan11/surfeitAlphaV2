@@ -23,12 +23,6 @@ line-height: 1;
 padding-bottom: 74px;
 }
 
-.backstep{
-text-decoration: none;
-color: white;
-font-size: 76px;
-}
-
 .surfeitTitle{
 position: relative;
 top: 10px;
@@ -47,6 +41,11 @@ left: 137px;
 z-index: 1;
 }
 
+.editor{
+	text-decoration: none;
+color: white;
+font-size: 100px;
+}
 
 .signUpHex{
 	height: 0;
@@ -110,7 +109,7 @@ margin: 0 auto;
 position: relative;
 left: -199px;
 top: -513;
-z-index: 2;
+z-index: 4;
 -webkit-transition: -webkit-transform 1500ms;
 }
 
@@ -228,7 +227,7 @@ height: 210px;
 margin: 0 auto;
 position: relative;
 top: 330px;
-z-index: 5;
+z-index: 4;
 border-radius: 100%;
 box-shadow: 0px 0px 44px;
 }
@@ -252,17 +251,17 @@ opacity: 0.33;
 }
 
 .formHolder{
-width: 184px;
+width: 344px;
 margin: 0 auto;
-z-index: 6;
+z-index: 5;
 position: relative;
-top: 260px;
-font-size: 35px;
-font-family: MAGIC;
+top: 326px;
+font-size: 40px;
+font-family: Magic;
 color: white;
 text-align: center;
 text-shadow: 1px 1px 2px black;
-line-height: .5;
+line-height: 1;
 }
 
 #error_explanation{
@@ -294,7 +293,7 @@ font-weight: bolder;
 height: 477px;
 width: 600px;
 margin: 0 auto;
-top: -308px;
+top: -244px;
 position: relative;
 }
 
