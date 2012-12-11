@@ -1,17 +1,4 @@
-<div class="navBar">
-    <header>
-      <nav>
-            <%= "Surfeit" %>
-            <%= '[SurfeitLogo]' %>
-            <%= link_to 'Current', user_current_path %> |
-            <%= link_to 'Networks', authorizations_path %> |
-            <%= link_to "Account", users_path %> | 
-            <%= current_user.name.capitalize %> 
-            <%= link_to "Sign Out", logout_path %>
-      </nav>
-    </header>
-
-
+<!--
 <h1>Authorized websites to pull data from:</h1>
 
 <ul>
@@ -42,8 +29,134 @@
     <li><%= link_to "Deauthorize Twitter", '#' %></li>
   <% end %>
 </ul>
+-->
+<head>
+	<title>Surfeit Alpha!</title>
+	
+		 <%= stylesheet_link_tag "feedManagement", :media => "all" %>
+		 <%= stylesheet_link_tag "theGrid", :media => "all" %>
+		 <%= stylesheet_link_tag "slide", :media => "all" %>
+		 
+		 <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+		 <%= javascript_include_tag "modernizr" %>
 
+</head>
 
+<body>
 
+<div class="container">
+	<div class="twelvecol last">
+		<div class="nombre">
+			<p class="surfeitTitle">SURFEIT</p>
+		</div>
+				
+		<div class="motto">
+			<p class="mottoLabel">CURRENT DASHBOARD</p>
+		</div>
+	</div>
+	
+	<div class="twelvecol last" style="height: 477px;">
+		<div class="fixit" style="height: 477px;">
+			<div class="globeHolder">
+			
+			</div>
+			<div class="cubicHolder">
+			<div class="sliderHex">
+				<div class="slideCube">
+					<div class="side top"></div>
+					<div class="side left"></div>
+					<div class="side right"></div> 	
+				</div>
+			</div>
+			<div class="signUpHex">
+				<div class="signUpCube">	
+					<div class="engraving">
+					<% unless current_user.access_token('facebook').present? %>
+						<%= link_to 'F', facebook_auth_url , :class => "unauthorizedFacebook" %>
+					<% end %>
+					
+					<% if current_user.access_token('facebook').present? %>
+						<%= link_to 'F', '#', :class => "authorizedFacebook" %>
+					<% end %>
+					</div>
+					<% unless current_user.access_token('facebook').present? %>
+					<div class="side top"></div>
+					<div class="side left"></div>
+					<div class="side right"></div> 	
+					<% end %>
+					
+					<% if current_user.access_token('facebook').present? %>
+					<div class="top activate"></div>
+					<div class="left activate"></div>
+					<div class="right activate"></div> 	
+					<% end %>
+				</div>
+			</div>
+			
+			<div class="signUpHex2">
+				<div class="signUpCube">
+					<div class="engraving">
+					
+					<% unless current_user.access_token('instagram').present? %>
+						<%= link_to "D", Instagram.authorize_url(redirect_uri: authorize_instagram_url), :class => "unauthorizedInsta" %>
+  					<% end %>
+  					
+  					<% if current_user.access_token('instagram').present? %>
+						<%= link_to "D", Instagram.authorize_url(redirect_uri: authorize_instagram_url), :class => "authorizedInsta" %>
+  					<% end %>
+  					
+					</div>
+					<% unless current_user.access_token('instagram').present? %>
+					<div class="side top"></div>
+					<div class="side left"></div>
+					<div class="side right"></div> 	
+					<% end %>
+					
+					<% if current_user.access_token('instagram').present? %>
+					<div class="top activate2"></div>
+					<div class="left activate2"></div>
+					<div class="right activate2"></div> 	
+					<% end %>	
+				</div>
+			</div>
+			
+			<div class="signUpHex3">
+				<div class="signUpCube">
+					<div class="engraving">
+					<% unless current_user.access_token('twitter').present? && current_user.access_token_secret('twitter').present? %>
+						<%= link_to "L", 'auth/twitter', :class => "unauthorizedTwitter" %>
+					<%end%>
+					
+					<% if current_user.access_token('twitter').present? && current_user.access_token_secret('twitter').present? %>
+						<%= link_to "L", 'auth/twitter', :class => "authorizedTwitter" %>
+					<%end%>
+					</div>
+					<% unless current_user.access_token('twitter').present? && current_user.access_token_secret('twitter').present? %>
+					<div class="side top"></div>
+					<div class="side left"></div>
+					<div class="side right"></div> 
+					<%end%>
+					
+					<% if current_user.access_token('twitter').present? && current_user.access_token_secret('twitter').present? %>
+					<div class="top activate3"></div>
+					<div class="left activate3"></div>
+					<div class="right activate3"></div> 
+					<%end%>
+						
+				</div>
+			</div>
+			</div>
+			
+		</div>
+		<div class=navHolder>
+				<nav>
+					<%= link_to 'Current', user_current_path %> |
+					<%= link_to 'Networks', authorizations_path %> |
+					<%= link_to "Account", users_path %> | 
+					<%= link_to "Sign Out", logout_path %>
+				</nav>
+			</div>
+	</div>
+</div> 
+</body>
 
-<a href="/current">View my feed</a>

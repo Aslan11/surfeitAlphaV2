@@ -8,6 +8,11 @@ body{
 	height: 680px;
 }
 
+.mottoLabel{
+	width: 222px;
+margin: 0 auto;
+}
+
 .nombre{
 font-family: Magic;
 font-size: 124px;
@@ -16,11 +21,6 @@ width: 400px;
 height: 94px;
 line-height: 1;
 padding-bottom: 74px;
-}
-
-.mottoLabel{
-	width: 276px;
-margin: 0 auto;
 }
 
 .surfeitTitle{
@@ -227,6 +227,10 @@ border-radius: 100%;
 box-shadow: 0px 0px 44px;
 }
 
+.navHolder{
+	text-align: center;
+}
+
 .fixit {
 position: relative;
 top: -244px;
@@ -246,12 +250,30 @@ width: 184px;
 margin: 0 auto;
 z-index: 6;
 position: relative;
-top: 298px;
+top: 260px;
 font-size: 19px;
 font-family: 'PT sans';
 color: white;
 text-align: center;
 text-shadow: 1px 1px 2px black;
+line-height: 1;
+}
+
+#error_explanation{
+	position: absolute;
+font-family: 'pt sans';
+color: black;
+left: 290px;
+font-size: 26px;
+font-weight: 100;
+}
+
+nav a{
+text-decoration: none;
+font-family: Magic;
+color: black;
+font-size: 33px;
+font-weight: bolder;
 }
 
 .aboard{
@@ -263,10 +285,10 @@ text-shadow: 1px 1px 2px black;
 }
 
 .cubicHolder{
-	height: 477px;
+height: 477px;
 width: 600px;
 margin: 0 auto;
-top: -250px;
+top: -308px;
 position: relative;
 }
 

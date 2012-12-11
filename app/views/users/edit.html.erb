@@ -1,30 +1,60 @@
  <head>
 <title>Surfeit Alpha</title>
   
-  <%= stylesheet_link_tag "newUser", :media => "all" %>
+  <%= stylesheet_link_tag "editUser", :media => "all" %>
+  <%= stylesheet_link_tag "theGrid", :media => "all" %>
 </head>
 
   <body>
-    <header>
-    	<div class="navBar">
-      	<nav>
-          <%= link_to 'Current', user_current_path %> |
-          <%= link_to 'Networks', authorizations_path %> |
-          <%= link_to "Account", users_path %> | 
-          <%= current_user.name.capitalize %> 
-          <%= link_to "Sign Out", logout_path %>
-      	</nav>
-
-      	<div class="headerContent">
-	      <h1 class="surfeitTextLogo">Surfeit</h1>
-	      <%= image_tag 'SurfeitLogo.svg', :class => 'surfeitLogo' %>
-	      <h2 class='createYourAccount'>Update User Information</h2>
-	  </div>
-    </header>
-
-
-    <div class="container">
-    	<%= render 'form_edit' %>
-    </div>
-    <br>
+  <div class="container">
+	<div class="twelvecol last">
+		<div class="nombre">
+			<p class="surfeitTitle">SURFEIT</p>
+		</div>
+				
+		<div class="motto">
+			<p class="mottoLabel">EDIT ACCOUNT</p>
+		</div>
+	</div>
+	
+	<div class="twelvecol last" style="height: 477px;">
+		<div class="fixit" style="height: 477px;">
+			<div class="formHolder">
+			<%= render 'form_edit' %>
+			</div>
+			<div class="cubicHolder">
+			<div class="logoHolder">
+				<%= image_tag "SurfeitLogo.svg", :class => "logo" %>
+			</div>
+			
+			<div class="sliderHex">
+				<div class="slideCube">
+					<div class="side top"></div>
+					<div class="side left"></div>
+					<div class="side right"></div> 	
+				</div>
+			</div>
+			<div class="signUpHex">
+				<div class="signUpCube">
+					
+					<div class="side top"></div>
+					<div class="side left"></div>
+					<div class="side right"></div> 	
+				</div>
+			</div>
+			</div>
+		</div>
+	
+	
+			<div class=navHolder>
+				<nav>
+					<%= link_to 'Current', user_current_path %> |
+					<%= link_to 'Networks', authorizations_path %> |
+					<%= link_to "Account", users_path %> | 
+					<%= link_to "Sign Out", logout_path %>
+				</nav>
+			</div>
+		</div>
+	</div> 	
 </body>
+
