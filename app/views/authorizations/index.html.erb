@@ -78,7 +78,7 @@
 					<% end %>
 					
 					<% if current_user.access_token('facebook').present? %>
-						<%= link_to 'F', '#', :class => "authorizedFacebook" %>
+						<%= link_to 'F', remove_authorizations_path(:service => 'facebook'), :class => "authorizedFacebook" %>
 					<% end %>
 					</div>
 					<% unless current_user.access_token('facebook').present? %>
@@ -104,7 +104,7 @@
   					<% end %>
   					
   					<% if current_user.access_token('instagram').present? %>
-						<%= link_to "D", Instagram.authorize_url(redirect_uri: authorize_instagram_url), :class => "authorizedInsta" %>
+						<%= link_to "D", remove_authorizations_path(:service => 'instagram'), :class => "authorizedInsta" %>
   					<% end %>
   					
 					</div>
@@ -130,7 +130,7 @@
 					<%end%>
 					
 					<% if current_user.access_token('twitter').present? && current_user.access_token_secret('twitter').present? %>
-						<%= link_to "L", 'auth/twitter', :class => "authorizedTwitter" %>
+						<%= link_to "L", remove_authorizations_path(:service => 'twitter') , :class => "authorizedTwitter" %>
 					<%end%>
 					</div>
 					<% unless current_user.access_token('twitter').present? && current_user.access_token_secret('twitter').present? %>
