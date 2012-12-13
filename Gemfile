@@ -12,7 +12,7 @@ gem 'koala'
 gem 'twitter'
 gem 'gravtastic'
 
-gem 'sqlite3'
+gem 'pg'
 
 gem 'instagram'
 
