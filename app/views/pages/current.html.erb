@@ -8,61 +8,36 @@
 </head>
 
 <body>
-
 <nav id="site-nav" class="meny">
     <h1><a href="/current">Surfeit</a></h1>
-    
-      Welcome, <%= current_user.name.capitalize %> | 
-      <%= link_to 'Sign Out', logout_url, :method => 'delete' %>
-    
-
+    <h3>Welcome, <%= current_user.name.capitalize %> | <%= link_to 'Sign Out', logout_url, :method => 'delete' %></h3>
   <section id="options">
    <div class="option-combo">
 
-      <h2>Filter 2.0</h2>
-      
       <ul id="filters">
 		  <li><a href="#" data-filter=".facebook"><span class="fbGlowIcon">F</span></a></li>
 		  <li><a href="#" data-filter=".twitter"><span class="twitterGlowIcon">L</span></a></li>
 		  <li><a href="#" data-filter=".instagram"><span class="instaGlowIcon">D</span></a></li>
-		  <li><a href="#" data-filter=".rss"><span class="rssGlowIcon">R</span></a></li>
 	  </ul>
-	  <!--
 
-      <h2>Sort:</h2>
-      <ul id="sort" class="option-set clearfix" data-option-key="sortBy">
-        <li><a href="#mixed" data-option-value="originType" >Origin</a></li>
-        <li><a href="#original" data-option-value="original-order" class="selected">Recent</a></li>
-      </ul>
-      
-      
--->
-     <!--
- Prepend:
-      <ul class="clearfix">
-      <li id="prepend"><a href='#prepend'>Prepend</a></li>
-      </ul>
-    </div>
-      
--->
-      </section>
       <br><br>  
       <div class="lower_nav_links">
       <%= link_to 'Manage Networks', authorizations_path %><br>
       <%= link_to 'My Account', users_path %>
-
-      <form method="post">
-        Tweet: <input type="text" class="tweetHolder"><br>
-        <button class="newTweet"> Tweet!</button>
-      </form>
-
       </div>
-
+</section>
       
 
   </nav> <!-- #site-nav -->
   
-  
+  <div class="sliderHex">
+  	<span class="tipOff">O</span>
+	<div class="slideCube">
+		<div class="side top"></div>
+		<div class="side right"></div> 	
+		<div class="side left"></div>
+	</div>
+  </div>
   
   <div class="contents">
   
@@ -73,11 +48,6 @@
 	<div class="blackout"></div>
     <% (@instagram_feed).each do |media| %>
     <div class="element width2 height2 instagram">
-    <div class="smokeScreen">
-    	<%= image_tag "stache.svg", :class => 'stache' %>
-    	<%= image_tag "expand.svg", :class => 'expand' %>
-    	<%= image_tag "contract.svg", :class => 'shrinkRay' %>
-    </div>
     <img src="<%= media.images.first.last.url%>" style="width: 100%; height: 100%">
     <p class="likes"><%= media.likes.first.last%><span class="thumb">b</span></p><br>
     <!--
@@ -231,57 +201,6 @@ var $optionSets = $('#options .option-set'),
     
    });
    
-   
-  //Try to tweet
-  
-
-   //Custom jQuery --Kevin
-   ///////////////////////
-
-   
-   var tempWidth = '';
-   var tempHeight = '';
-   var tempTransform = '';
-   var tempZIndex = '';
-  
-  
-   //smokeScreen
-   $(".smokeScreen").each(function(){
-		$(this).hover(
-		function() {
-		$(this).stop().animate({"opacity": ".80"}, "slow");
-		},
-		function() {
-		$(this).stop().animate({"opacity": "0"}, "slow");
-		});
-	});
-  
-   //expansion
-   $(".expand").on("click", function(){
-	   
-   	   tempWidth = $(this).parent().parent().css("width");
-   	   tempHeight = $(this).parent().parent().css("height");
-   	   tempTransform = $(this).parent().parent().css("webkitTransform");
-   	   tempZIndex = $(this).parent().parent().css("zIndex");
-	   $(this).parent().parent().css({webkitTransform: "", left: "23%", width: "700px", height: "700px", zIndex: "5"});
-	   $(".blackout").css({webkitTransform: "", zIndex: "4", width: "100%", height: "100%", opacity: ".80"});
-	   $(this).css({display: "none"});
-	   $(".shrinkRay").css({display: "block"});   
-	   if($(this).parent().parent().hasClass("twitter") == true){
-		   $(this).parent().parent().addClass("expanded");
-	   };
-	  
-   });
-   
-   $(".shrinkRay").on("click", function(){
-	   
-	 $(".blackout").css({zIndex: "0", width: "0px", height: "0px"});
-	 $(this).parent().parent().css({webkitTransform: tempTransform, left: "0px", width: tempWidth, height: tempHeight, zIndex: tempZIndex});
-	 $(this).parent().parent().removeClass("expanded");
-	 $("#container").isotope({ sortBy: 'original-order' });
-	 $(".shrinkRay").css({display: "none"});
-	 $(".expand").css({display: "block"}); 
-   });
   </script> 
   <script>
 			// Create an instance of Meny
