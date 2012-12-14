@@ -36,7 +36,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(params[:user])
-    (@user.save) ? (session[:user_id] = @user.id ; redirect_to(users_path)) : (redirect_to new_user_path, :flash => { :error => "Insufficient rights!" })
+    (@user.save) ? (session[:user_id] = @user.id ; redirect_to(authorizations_path)) : (redirect_to new_user_path, :notice => "Not enough rights to go here man")
 
   end
 

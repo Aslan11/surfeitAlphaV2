@@ -14,7 +14,7 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       redirect_to user_current_path
     else
-      redirect_to new_session_path, :notice => "Email & Password do not match"
+      redirect_to new_session_path, :notice => "Username or Password Incorrect"
     end
 	end
 
