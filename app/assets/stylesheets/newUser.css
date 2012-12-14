@@ -18,6 +18,12 @@ line-height: 1;
 padding-bottom: 74px;
 }
 
+.backstep{
+text-decoration: none;
+color: white;
+font-size: 76px;
+}
+
 .mottoLabel{
 	width: 276px;
 margin: 0 auto;
