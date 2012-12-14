@@ -1,7 +1,7 @@
 
 <head>
 
-	 <title>Surfeit Alpha</title>
+	 <title>Surfeit Beta!</title>
   
   <%= stylesheet_link_tag "style", :media => "all" %>
   <link href='http://fonts.googleapis.com/css?family=Economica:700,400italic' rel='stylesheet' type='text/css'>
@@ -9,15 +9,15 @@
 
 <body>
 <nav id="site-nav" class="meny">
-    <h1><a href="/current">SURFEIT</a></h1>
+    <h1><a href="/current">SURFEIT <span class="betaTag">beta</span></a></h1>
     <h3>Welcome, <%= current_user.name.capitalize %> | <%= link_to 'Sign Out', logout_url, :method => 'delete' %></h3>
   <section id="options">
    <div class="option-combo">
 
       <ul id="filters">
-		  <li><a href="#" data-filter=".facebook"><span class="fbGlowIcon">F</span></a></li>
-		  <li><a href="#" data-filter=".twitter"><span class="twitterGlowIcon">L</span></a></li>
-		  <li><a href="#" data-filter=".instagram"><span class="instaGlowIcon">D</span></a></li>
+		  <li class="fbButtonHolder"><a href="#" data-filter=".facebook"><span class="fbGlowIcon">F</span></a></li>
+		  <li class="twitterButtonHolder"><a href="#" data-filter=".twitter"><span class="twitterGlowIcon">L</span></a></li>
+		  <li class="instaButtonHolder"><a href="#" data-filter=".instagram"><span class="instaGlowIcon">D</span></a></li>
 	  </ul>
 
       <br><br>  
@@ -100,7 +100,7 @@
         masonry: {
           columnWidth: 120
         },
-        sortBy: 'number',
+        sortBy: 'originType',
         getSortData: {
           number: function( $elem ) {
             var number = $elem.hasClass('element') ? 
@@ -152,16 +152,28 @@
 		  return false;
 		});
       
-       $('#prepend a').click(function(){
-        var $newEls = $( fakeElement.getGroup() );
-        $container
-          .prepend( $newEls ).isotope('reloadItems').isotope({ sortBy: 'original-order' })
-          // set sort back to symbol for inserting
-          .isotope('option', { sortBy: 'symbol' });
-
-        return false;
+          
+      $('li').children('a').on("click", function(){
+	      if ($('.fbButtonHolder').children('a').hasClass('selected') == true){
+	      	$('.fbButtonHolder').css("border-top", "86px solid black")
+	      }
+	      else{
+		      $('.fbButtonHolder').css("border-top", "86px solid grey")
+	      }
+	       if ($('.twitterButtonHolder').children('a').hasClass('selected') == true){
+	      	$('.twitterButtonHolder').css("border-top", "86px solid black")
+	      }
+	      else{
+		      $('.twitterButtonHolder').css("border-top", "86px solid grey")
+	      };
+	       if ($('.instaButtonHolder').children('a').hasClass('selected') == true){
+	      	$('.instaButtonHolder').css("border-top", "86px solid black")
+	      }
+	      else{
+		      $('.instaButtonHolder').css("border-top", "86px solid grey")
+	      };
       });
-
+      
     
       
       /*
