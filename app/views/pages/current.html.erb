@@ -100,7 +100,7 @@
         masonry: {
           columnWidth: 120
         },
-        sortBy: 'number',
+        sortBy: 'originType',
         getSortData: {
           number: function( $elem ) {
             var number = $elem.hasClass('element') ? 
@@ -152,16 +152,7 @@
 		  return false;
 		});
       
-       $('#prepend a').click(function(){
-        var $newEls = $( fakeElement.getGroup() );
-        $container
-          .prepend( $newEls ).isotope('reloadItems').isotope({ sortBy: 'original-order' })
-          // set sort back to symbol for inserting
-          .isotope('option', { sortBy: 'symbol' });
-
-        return false;
-      });
-      
+          
       $('li').children('a').on("click", function(){
 	      if ($('.fbButtonHolder').children('a').hasClass('selected') == true){
 	      	$('.fbButtonHolder').css("border-top", "86px solid black")
