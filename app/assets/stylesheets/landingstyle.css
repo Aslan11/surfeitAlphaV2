@@ -18,6 +18,17 @@ line-height: 1;
 padding-bottom: 74px;
 }
 
+.whoWeAre{
+	position: absolute;
+color: white;
+font-family: Magic;
+z-index: 7;
+font-size: 34px;
+text-align: center;
+top: -32px;
+text-shadow: 1px 1px 2px black;
+}
+
 .surfeitTitle{
 position: relative;
 top: 10px;
@@ -157,7 +168,7 @@ font-size: 56px;
 font-family: Magic;
 font-size: 31px;
 margin: -55px auto 0px auto;
-width: 392px;
+width: 361px;
 height: 94px;
 color: black;
 text-shadow: 0px 0px 2px rgb(255, 134, 3);
