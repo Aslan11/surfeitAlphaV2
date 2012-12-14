@@ -13,7 +13,6 @@ gem 'twitter'
 gem 'gravtastic'
 
 gem 'pg'
-
 gem 'instagram'
 
 # Gems used only for assets and not required
