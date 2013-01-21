@@ -18,6 +18,24 @@ line-height: 1;
 padding-bottom: 74px;
 }
 
+.whoWeAre{
+position: absolute;
+color: black;
+font-family: Magic;
+z-index: 7;
+font-size: 34px;
+text-align: center;
+top: -32px;
+text-shadow: 1px 1px 3px black;
+width: 600px;
+}
+
+.whoWeAre p{
+	position: relative;
+left: -194px;
+top: 368px;
+}
+
 .surfeitTitle{
 position: relative;
 top: 10px;
@@ -157,7 +175,7 @@ font-size: 56px;
 font-family: Magic;
 font-size: 31px;
 margin: -55px auto 0px auto;
-width: 392px;
+width: 361px;
 height: 94px;
 color: black;
 text-shadow: 0px 0px 2px rgb(255, 134, 3);
@@ -199,7 +217,7 @@ top: 206px;
 }
 
 .loginCube .right{
-	z-index: 2;
+	z-index: 7;
 	height: 190px;
 }
 
