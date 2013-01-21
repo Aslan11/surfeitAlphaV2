@@ -13,6 +13,7 @@ gem 'twitter'
 gem 'gravtastic'
 
 gem 'pg'
+gem 'sqlite3'
 gem 'instagram'
 
 # Gems used only for assets and not required
